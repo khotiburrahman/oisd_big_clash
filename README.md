@@ -3,7 +3,7 @@
 Repositori ini otomatis mengunduh, menggabungkan, dan menyaring data dari **OISD Big** dan **LoyalSoldier Reject List** menjadi satu file aturan (*Rule Provider*) Clash.
 
 ### 📊 Statistik Pembaruan Terakhir
-* **Waktu Pembaruan:** 2026-06-24 22:27:26 UTC
+* **Waktu Pembaruan:** 2026-06-24 23:01:46 UTC
 * **Total Domain Mentah Diunduh:** 333399 domain
 * **Total Domain Identik/Duplikat yang Dibuang:** 84149 domain
 * **Total Domain Unik Akhir (di file YAML):** **249250 domain**
