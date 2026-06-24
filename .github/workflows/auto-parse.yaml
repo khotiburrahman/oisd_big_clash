@@ -20,7 +20,7 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Download and Clean Domains with Python
+    - name: Download and Clean Adblock Syntax with Python
       run: |
         python -c "
         import urllib.request
@@ -30,7 +30,6 @@ jobs:
         print('Mengunduh data...')
         req_headers = {'User-Agent': 'Mozilla/5.0'}
         
-        # 1. Download dari kedua sumber
         req_oisd = urllib.request.Request('https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt', headers=req_headers)
         req_loyal = urllib.request.Request('https://raw.githubusercontent.com/LoyalSoldier/clash-rules/release/reject.txt', headers=req_headers)
         
@@ -41,18 +40,24 @@ jobs:
         total_input = 0
         total_duplikat = 0
         
-        # 2. Gabungkan dan bersihkan karakter ilegal
         for line in (oisd_data + '\n' + loyal_data).splitlines():
             line = line.strip()
-            if not line or line.startswith(('#', '!', '[', '-')):
+            # Abaikan baris kosong, komentar, atau rule pengecualian
+            if not line or line.startswith(('#', '!', '[', '-', '@@')):
                 continue
                 
-            # Ambil kolom pertama
-            domain = line.split()[0]
+            # Ambil kolom pertama (mengantisipasi jika ada komentar di ujung baris)
+            raw_domain = line.split()[0]
             
-            # Bersihkan karakter ^, \r, \n, spasi, atau titik di ujung-ujung domain
-            domain = re.sub(r'[\^ \r\n\t]+$', '', domain)
-            domain = domain.strip('.')
+            # 1. Bersihkan format Adblock: hapus '||' di awal jika ada
+            if raw_domain.startswith('||'):
+                raw_domain = raw_domain[2:]
+                
+            # 2. Bersihkan format Adblock: hapus '^' atau karakter sisa di akhir
+            raw_domain = re.sub(r'[\^ \r\n\t]+$', '', raw_domain)
+            
+            # 3. Bersihkan tanda titik di paling awal atau paling akhir domain
+            domain = raw_domain.strip('.')
             
             if '.' in domain:
                 total_input += 1
@@ -61,17 +66,17 @@ jobs:
                 else:
                     unique_domains.add(domain)
 
-        # 3. Sortir sesuai abjad
+        # Sortir sesuai abjad
         sorted_domains = sorted(list(unique_domains))
         total_unik = len(sorted_domains)
         
-        # 4. Tulis ulang file oisd_big.yaml (Murni tanda kutip lurus, bebas dari karakter ^)
+        # Tulis ke file dengan format murni seperti Screenshot_20260625-062420.jpg
         with open('oisd_big.yaml', 'w', encoding='utf-8') as f:
             f.write('payload:\n')
             for d in sorted_domains:
                 f.write(f\"  - '+.{d}'\n\")
                 
-        # 5. Tulis statistik ke README
+        # Tulis statistik ke README
         waktu_sekarang = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
         with open('README.md', 'w', encoding='utf-8') as f:
             f.write('# OISD Big & LoyalSoldier Reject Combined for Clash\n\n')
@@ -81,7 +86,7 @@ jobs:
             f.write(f'* **Total Domain Duplikat Identik Dibuang:** {total_duplikat} domain\n')
             f.write(f'* **Total Aturan Unik Akhir di YAML:** **{total_unik} domain**\n')
             
-        print('Pembersihan sukses!')
+        print('Proses pembersihan Adblock syntax selesai!')
         "
 
     - name: Commit and Push changes
@@ -96,7 +101,7 @@ jobs:
           git add keepalive.txt
           git commit -m "Keepalive: Perpanjang masa tenggang"
         else
-          git commit -m "Update oisd_big.yaml via Python (Fix Karakter Topi)"
+          git commit -m "Update oisd_big.yaml via Python (Fix Adblock Syntax)"
         fi
         
         git push origin HEAD
