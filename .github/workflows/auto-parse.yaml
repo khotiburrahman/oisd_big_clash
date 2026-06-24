@@ -22,72 +22,67 @@ jobs:
 
     - name: Download and Clean Adblock Syntax with Python
       run: |
-        python -c "
+        cat << 'EOF' > run.py
         import urllib.request
         import re
         from datetime import datetime
 
-        print('Mengunduh data...')
-        req_headers = {'User-Agent': 'Mozilla/5.0'}
+        print("Mengunduh data...")
+        req_headers = {"User-Agent": "Mozilla/5.0"}
         
-        req_oisd = urllib.request.Request('https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt', headers=req_headers)
-        req_loyal = urllib.request.Request('https://raw.githubusercontent.com/LoyalSoldier/clash-rules/release/reject.txt', headers=req_headers)
+        req_oisd = urllib.request.Request("https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt", headers=req_headers)
+        req_loyal = urllib.request.Request("https://raw.githubusercontent.com/LoyalSoldier/clash-rules/release/reject.txt", headers=req_headers)
         
-        oisd_data = urllib.request.urlopen(req_oisd).read().decode('utf-8')
-        loyal_data = urllib.request.urlopen(req_loyal).read().decode('utf-8')
+        oisd_data = urllib.request.urlopen(req_oisd).read().decode("utf-8")
+        loyal_data = urllib.request.urlopen(req_loyal).read().decode("utf-8")
         
         unique_domains = set()
         total_input = 0
         total_duplikat = 0
         
-        for line in (oisd_data + '\n' + loyal_data).splitlines():
+        for line in (oisd_data + "\n" + loyal_data).splitlines():
             line = line.strip()
-            # Abaikan baris kosong, komentar, atau rule pengecualian
-            if not line or line.startswith(('#', '!', '[', '-', '@@')):
+            if not line or line.startswith(("#", "!", "[", "-", "@@")):
                 continue
                 
-            # Ambil kolom pertama (mengantisipasi jika ada komentar di ujung baris)
             raw_domain = line.split()[0]
             
-            # 1. Bersihkan format Adblock: hapus '||' di awal jika ada
-            if raw_domain.startswith('||'):
+            if raw_domain.startswith("||"):
                 raw_domain = raw_domain[2:]
                 
-            # 2. Bersihkan format Adblock: hapus '^' atau karakter sisa di akhir
-            raw_domain = re.sub(r'[\^ \r\n\t]+$', '', raw_domain)
+            raw_domain = re.sub(r"[\^ \r\n\t]+$", "", raw_domain)
+            domain = raw_domain.strip(".")
             
-            # 3. Bersihkan tanda titik di paling awal atau paling akhir domain
-            domain = raw_domain.strip('.')
-            
-            if '.' in domain:
+            if "." in domain:
                 total_input += 1
                 if domain in unique_domains:
                     total_duplikat += 1
                 else:
                     unique_domains.add(domain)
 
-        # Sortir sesuai abjad
         sorted_domains = sorted(list(unique_domains))
         total_unik = len(sorted_domains)
         
-        # Tulis ke file dengan format murni seperti Screenshot_20260625-062420.jpg
-        with open('oisd_big.yaml', 'w', encoding='utf-8') as f:
-            f.write('payload:\n')
+        # Menggunakan chr(39) untuk menjamin tanda kutip lurus murni standar ASCII (')
+        q = chr(39)
+        with open("oisd_big.yaml", "w", encoding="utf-8") as f:
+            f.write("payload:\n")
             for d in sorted_domains:
-                f.write(f\"  - '+.{d}'\n\")
+                f.write(f"  - {q}+.{d}{q}\n")
                 
-        # Tulis statistik ke README
-        waktu_sekarang = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
-        with open('README.md', 'w', encoding='utf-8') as f:
-            f.write('# OISD Big & LoyalSoldier Reject Combined for Clash\n\n')
-            f.write('### 📊 Statistik Pembaruan Terakhir\n')
-            f.write(f'* **Waktu Pembaruan:** {waktu_sekarang} UTC\n')
-            f.write(f'* **Total Domain Mentah Diunduh:** {total_input} domain\n')
-            f.write(f'* **Total Domain Duplikat Identik Dibuang:** {total_duplikat} domain\n')
-            f.write(f'* **Total Aturan Unik Akhir di YAML:** **{total_unik} domain**\n')
+        waktu_sekarang = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+        with open("README.md", "w", encoding="utf-8") as f:
+            f.write("# OISD Big & LoyalSoldier Reject Combined for Clash\n\n")
+            f.write("### 📊 Statistik Pembaruan Terakhir\n")
+            f.write(f"* **Waktu Pembaruan:** {waktu_sekarang} UTC\n")
+            f.write(f"* **Total Domain Mentah Diunduh:** {total_input} domain\n")
+            f.write(f"* **Total Domain Duplikat Identik Dibuang:** {total_duplikat} domain\n")
+            f.write(f"* **Total Aturan Unik Akhir di YAML:** **{total_unik} domain**\n")
             
-        print('Proses pembersihan Adblock syntax selesai!')
-        "
+        print("Proses selesai!")
+        EOF
+        python run.py
+        rm run.py
 
     - name: Commit and Push changes
       run: |
@@ -101,7 +96,7 @@ jobs:
           git add keepalive.txt
           git commit -m "Keepalive: Perpanjang masa tenggang"
         else
-          git commit -m "Update oisd_big.yaml via Python (Fix Adblock Syntax)"
+          git commit -m "Update oisd_big.yaml via Python (Fix Quotes murni)"
         fi
         
         git push origin HEAD
