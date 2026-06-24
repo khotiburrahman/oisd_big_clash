@@ -1,4 +1,4 @@
-name: Update OISD Clash YAML
+name: Combine OISD and LoyalSoldier to Clash YAML
 
 on:
   schedule:
@@ -15,53 +15,107 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Download, Parse, and Convert to Clash YAML
+    - name: Download, Combine, Parse, and Generate Stats
       run: |
-        echo "payload:" > oisd_big.yaml
+        echo "Mengunduh data dari OISD dan LoyalSoldier..."
         
-        curl -sL -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-        "https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt" | \
+        # 1. Unduh file mentah ke file sementara
+        curl -sL -A "Mozilla/5.0" "https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt" > oisd_raw.txt
+        curl -sL -A "Mozilla/5.0" "https://raw.githubusercontent.com/LoyalSoldier/clash-rules/release/gfw.txt" > loyalsoldier_raw.txt
+
+        # 2. Proses penggabungan, ekstraksi Apex Domain, dan penghitungan duplikat menggunakan AWK
         awk '
-          /^[[:space:]]*$/ || /^#/ || /^!/ || /^\[/ {next}
-          {
-            domain = $1
-            gsub(/^\.+|\.+$/, "", domain)
-            n = split(domain, parts, ".")
+          # Fungsi untuk memproses dan mengekstrak Apex Domain
+          function process_domain(raw_domain) {
+            gsub(/^\.+|\.+$/, "", raw_domain)
+            n = split(raw_domain, parts, ".")
             if (n > 2) {
               if (parts[n-1] ~ /^(com|co|net|org|gov|ac|sch|web|my|or|edu)$/) {
-                apex = parts[n-2]"."parts[n-1]"."parts[n]
+                return parts[n-2]"."parts[n-1]"."parts[n]
               } else {
-                apex = parts[n-1]"."parts[n]
+                return parts[n-1]"."parts[n]
               }
-            } else {
-              apex = domain
             }
+            return raw_domain
+          }
+
+          # Mulai membaca baris file
+          {
+            # Abaikan baris kosong, komentar, atau aturan bawaan adblock/clash
+            if ($0 ~ /^[[:space:]]*$/ || $0 ~ /^#/ || $0 ~ /^!/ || $0 ~ /^\[/ || $0 ~ /^-/) next
+            
+            # Ambil kolom pertama (bersihkan jika ada spasi)
+            raw_dom = $1
+            apex = process_domain(raw_dom)
+            
             if (apex ~ /\./) {
-              unique[apex] = 1
+              total_input++
+              if (apex in unique) {
+                total_duplikat++
+              } else {
+                unique[apex] = 1
+                total_unik++
+              }
             }
           }
+
+          # Tulis hasil akhir setelah semua file selesai dibaca
           END {
+            # Tulis ke file Clash YAML
+            print "payload:" > "oisd_big.yaml"
             PROCINFO["sorted_in"] = "@ind_str_asc"
             for (d in unique) {
-              print "  - \047+." d "\047"
+              print "  - \047+." d "\047" >> "oisd_big.yaml"
             }
+            
+            # Simpan variabel statistik untuk digunakan di langkah pembuatan README
+            print total_input > "stat_total.txt"
+            print total_unik > "stat_unik.txt"
+            print total_duplikat > "stat_duplikat.txt"
           }
-        ' >> oisd_big.yaml
+        ' oisd_raw.txt loyalsoldier_raw.txt
+
+    - name: Generate README.md
+      run: |
+        TOTAL_ALL=$(cat stat_total.txt)
+        TOTAL_UNIK=$(cat stat_unik.txt)
+        TOTAL_DUPLIKAT=$(cat stat_duplikat.txt)
+        WAKTU_SEKARANG=$(date -u # Perintah untuk format waktu UTC
+
+        echo -e "# OISD Big & LoyalSoldier Combined for Clash\n" > README.md
+        echo -e "Repositori ini otomatis mengunduh, menggabungkan, dan menyaring data dari **OISD Big** dan **LoyalSoldier GFW List** menjadi satu file aturan (*Rule Provider*) Clash.\n" >> README.md
+        echo -e "### 📊 Statistik Pembaruan Terakhir" >> README.md
+        echo -e "* **Waktu Pembaruan:** $WAKTU_SEKARANG UTC" >> README.md
+        echo -e "* **Total Domain Mentah Diunduh:** $TOTAL_ALL domain" >> README.md
+        echo -e "* **Total Domain Identik/Duplikat yang Dibuang:** $TOTAL_DUPLIKAT domain" >> README.md
+        echo -e "* **Total Domain Unik Akhir (di file YAML):** **$TOTAL_UNIK domain**\n" >> README.md
+        echo -e "### 🔗 Link Rule Provider Clash" >> README.md
+        echo -e "\`\`\`yaml" >> README.md
+        echo -e "rule-providers:" >> README.md
+        echo -e "  oisd_big:" >> README.md
+        echo -e "    type: http" >> README.md
+        echo -e "    behavior: domain" >> README.md
+        echo -e "    url: \"https://raw.githubusercontent.com/${{ github.repository }}/main/oisd_big.yaml\"" >> README.md
+        echo -e "    path: ./providers/oisd_big.yaml" >> README.md
+        echo -e "    interval: 3600" >> README.md
+        echo -e "\`\`\`" >> README.md
+
+        # Hapus file sampah sementara agar tidak ikut ter-commit
+        rm -f oisd_raw.txt loyalsoldier_raw.txt stat_total.txt stat_unik.txt stat_duplikat.txt
 
     - name: Commit and Push changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add oisd_big.yaml
+        git add oisd_big.yaml README.md
         
-        # Jika sewaktu-waktu OISD tidak update, kita buat dummy file agar tetap ada commit (Anti-Suspend GitHub)
         if git diff --staged --quiet; then
-          echo "Tidak ada perubahan domain dari OISD. Memicu keepalive otomatis..."
+          echo "Tidak ada perubahan data dari kedua sumber. Memicu keepalive..."
           date +%s > keepalive.txt
           git add keepalive.txt
-          git commit -m "Keepalive: Reset masa tenggang 60 hari GitHub"
+          git commit -m "Keepalive: Perpanjang masa tenggang GitHub"
         else
-          git commit -m "Update oisd_big.yaml tiap jam"
+          git commit -m "Update oisd_big.yaml & README (Gabungan + Filter Duplikat)"
         fi
         
         git push origin HEAD
