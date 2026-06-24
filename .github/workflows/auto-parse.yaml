@@ -15,10 +15,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # Trik khusus repositori publik agar cron tidak mati otomatis setelah 60 hari
-    - name: Auto Keepalive Actions
-      uses: gautamkrishnar/keepalive-workflow@v1
-
     - name: Download, Parse, and Convert to Clash YAML
       run: |
         echo "payload:" > oisd_big.yaml
@@ -57,5 +53,15 @@ jobs:
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
         git add oisd_big.yaml
-        git commit -m "Update oisd_big.yaml tiap jam" || echo "Tidak ada perubahan"
+        
+        # Jika sewaktu-waktu OISD tidak update, kita buat dummy file agar tetap ada commit (Anti-Suspend GitHub)
+        if git diff --staged --quiet; then
+          echo "Tidak ada perubahan domain dari OISD. Memicu keepalive otomatis..."
+          date +%s > keepalive.txt
+          git add keepalive.txt
+          git commit -m "Keepalive: Reset masa tenggang 60 hari GitHub"
+        else
+          git commit -m "Update oisd_big.yaml tiap jam"
+        fi
+        
         git push origin HEAD
