@@ -15,41 +15,31 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Download, Combine, Parse, and Generate Stats
+    - name: Download, Combine, and Keep Original Domains (No Subdomain Truncation)
       run: |
         echo "Mengunduh data dari OISD Big dan LoyalSoldier Reject..."
         
-        # 1. Unduh file mentah ke file sementara (Menggunakan sumber reject.txt milik LoyalSoldier)
+        # 1. Unduh file mentah ke file sementara
         curl -sL -A "Mozilla/5.0" "https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt" > oisd_raw.txt
         curl -sL -A "Mozilla/5.0" "https://raw.githubusercontent.com/LoyalSoldier/clash-rules/release/reject.txt" > loyalsoldier_raw.txt
 
-        # 2. Proses penggabungan, ekstraksi Apex Domain, dan penghitungan duplikat menggunakan AWK
+        # 2. Gabungkan data asli tanpa memotong subdomain, hanya hapus duplikat baris yang identik
         awk '
-          function process_domain(raw_domain) {
-            gsub(/^\.+|\.+$/, "", raw_domain)
-            n = split(raw_domain, parts, ".")
-            if (n > 2) {
-              if (parts[n-1] ~ /^(com|co|net|org|gov|ac|sch|web|my|or|edu)$/) {
-                return parts[n-2]"."parts[n-1]"."parts[n]
-              } else {
-                return parts[n-1]"."parts[n]
-              }
-            }
-            return raw_domain
-          }
-
           {
+            # Abaikan baris kosong, komentar, atau baris konfigurasi bawaan
             if ($0 ~ /^[[:space:]]*$/ || $0 ~ /^#/ || $0 ~ /^!/ || $0 ~ /^\[/ || $0 ~ /^-/) next
             
-            raw_dom = $1
-            apex = process_domain(raw_dom)
+            # Ambil domain murni apa adanya (kolom pertama)
+            domain = $1
+            # Bersihkan tanda titik di awal atau akhir baris jika ada
+            gsub(/^\.+|\.+$/, "", domain)
             
-            if (apex ~ /\./) {
+            if (domain ~ /\./) {
               total_input++
-              if (apex in unique) {
+              if (domain in unique) {
                 total_duplikat++
               } else {
-                unique[apex] = 1
+                unique[domain] = 1
                 total_unik++
               }
             }
@@ -76,23 +66,13 @@ jobs:
         WAKTU_SEKARANG=$(date -u "+%Y-%m-%d %H:%M:%S")
 
         echo -e "# OISD Big & LoyalSoldier Reject Combined for Clash\n" > README.md
-        echo -e "Repositori ini otomatis mengunduh, menggabungkan, dan menyaring data dari **OISD Big** dan **LoyalSoldier Reject List** menjadi satu file aturan (*Rule Provider*) Clash.\n" >> README.md
+        echo -e "Repositori ini otomatis menggabungkan data asli **OISD Big** dan **LoyalSoldier Reject List** dengan akurasi domain 100% tanpa merusak subdomain asli.\n" >> README.md
         echo -e "### 📊 Statistik Pembaruan Terakhir" >> README.md
         echo -e "* **Waktu Pembaruan:** $WAKTU_SEKARANG UTC" >> README.md
         echo -e "* **Total Domain Mentah Diunduh:** $TOTAL_ALL domain" >> README.md
-        echo -e "* **Total Domain Identik/Duplikat yang Dibuang:** $TOTAL_DUPLIKAT domain" >> README.md
-        echo -e "* **Total Domain Unik Akhir (di file YAML):** **$TOTAL_UNIK domain**\n" >> README.md
-        echo -e "### 🔗 Link Rule Provider Clash" >> README.md
-        echo -e "\`\`\`yaml" >> README.md
-        echo -e "rule-providers:" >> README.md
-        echo -e "  oisd_big:" >> README.md
-        echo -e "    type: http" >> README.md
-        echo -e "    behavior: domain" >> README.md
-        echo -e "    url: \"https://raw.githubusercontent.com/${{ github.repository }}/main/oisd_big.yaml\"" >> README.md
-        echo -e "    path: ./providers/oisd_big.yaml" >> README.md
-        echo -e "    interval: 3600" >> README.md
-        echo -e "\`\`\`" >> README.md
-
+        echo -e "* **Total Domain Duplikat Identik Dibuang:** $TOTAL_DUPLIKAT domain" >> README.md
+        echo -e "* **Total Aturan Unik Akhir di YAML:** **$TOTAL_UNIK domain**\n" >> README.md
+        
         rm -f oisd_raw.txt loyalsoldier_raw.txt stat_total.txt stat_unik.txt stat_duplikat.txt
 
     - name: Commit and Push changes
@@ -105,9 +85,9 @@ jobs:
           echo "Tidak ada perubahan data dari kedua sumber. Memicu keepalive..."
           date +%s > keepalive.txt
           git add keepalive.txt
-          git commit -m "Keepalive: Perpanjang masa tenggang GitHub"
+          git commit -m "Keepalive: Perpanjang masa tenggang"
         else
-          git commit -m "Update oisd_big.yaml & README (OISD + LoyalSoldier Reject)"
+          git commit -m "Update oisd_big.yaml & README (Akurasi Domain Asli 100%)"
         fi
         
         git push origin HEAD
