@@ -80,7 +80,7 @@ jobs:
         TOTAL_ALL=$(cat stat_total.txt)
         TOTAL_UNIK=$(cat stat_unik.txt)
         TOTAL_DUPLIKAT=$(cat stat_duplikat.txt)
-        WAKTU_SEKARANG=$(date -u # Perintah untuk format waktu UTC
+        WAKTU_SEKARANG=$(date -u) # Perintah untuk format waktu UTC
 
         echo -e "# OISD Big & LoyalSoldier Combined for Clash\n" > README.md
         echo -e "Repositori ini otomatis mengunduh, menggabungkan, dan menyaring data dari **OISD Big** dan **LoyalSoldier GFW List** menjadi satu file aturan (*Rule Provider*) Clash.\n" >> README.md
