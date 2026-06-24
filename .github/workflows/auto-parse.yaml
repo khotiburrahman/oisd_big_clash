@@ -1,4 +1,4 @@
-name: Combine OISD and LoyalSoldier to Clash YAML
+name: Combine OISD and LoyalSoldier Reject to Clash YAML
 
 on:
   schedule:
@@ -17,15 +17,14 @@ jobs:
 
     - name: Download, Combine, Parse, and Generate Stats
       run: |
-        echo "Mengunduh data dari OISD dan LoyalSoldier..."
+        echo "Mengunduh data dari OISD Big dan LoyalSoldier Reject..."
         
-        # 1. Unduh file mentah ke file sementara
+        # 1. Unduh file mentah ke file sementara (Menggunakan sumber reject.txt milik LoyalSoldier)
         curl -sL -A "Mozilla/5.0" "https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt" > oisd_raw.txt
-        curl -sL -A "Mozilla/5.0" "https://raw.githubusercontent.com/LoyalSoldier/clash-rules/release/gfw.txt" > loyalsoldier_raw.txt
+        curl -sL -A "Mozilla/5.0" "https://raw.githubusercontent.com/LoyalSoldier/clash-rules/release/reject.txt" > loyalsoldier_raw.txt
 
         # 2. Proses penggabungan, ekstraksi Apex Domain, dan penghitungan duplikat menggunakan AWK
         awk '
-          # Fungsi untuk memproses dan mengekstrak Apex Domain
           function process_domain(raw_domain) {
             gsub(/^\.+|\.+$/, "", raw_domain)
             n = split(raw_domain, parts, ".")
@@ -39,12 +38,9 @@ jobs:
             return raw_domain
           }
 
-          # Mulai membaca baris file
           {
-            # Abaikan baris kosong, komentar, atau aturan bawaan adblock/clash
             if ($0 ~ /^[[:space:]]*$/ || $0 ~ /^#/ || $0 ~ /^!/ || $0 ~ /^\[/ || $0 ~ /^-/) next
             
-            # Ambil kolom pertama (bersihkan jika ada spasi)
             raw_dom = $1
             apex = process_domain(raw_dom)
             
@@ -59,16 +55,13 @@ jobs:
             }
           }
 
-          # Tulis hasil akhir setelah semua file selesai dibaca
           END {
-            # Tulis ke file Clash YAML
             print "payload:" > "oisd_big.yaml"
             PROCINFO["sorted_in"] = "@ind_str_asc"
             for (d in unique) {
               print "  - \047+." d "\047" >> "oisd_big.yaml"
             }
             
-            # Simpan variabel statistik untuk digunakan di langkah pembuatan README
             print total_input > "stat_total.txt"
             print total_unik > "stat_unik.txt"
             print total_duplikat > "stat_duplikat.txt"
@@ -80,10 +73,10 @@ jobs:
         TOTAL_ALL=$(cat stat_total.txt)
         TOTAL_UNIK=$(cat stat_unik.txt)
         TOTAL_DUPLIKAT=$(cat stat_duplikat.txt)
-        WAKTU_SEKARANG=$(date -u) # Perintah untuk format waktu UTC
+        WAKTU_SEKARANG=$(date -u "+%Y-%m-%d %H:%M:%S")
 
-        echo -e "# OISD Big & LoyalSoldier Combined for Clash\n" > README.md
-        echo -e "Repositori ini otomatis mengunduh, menggabungkan, dan menyaring data dari **OISD Big** dan **LoyalSoldier GFW List** menjadi satu file aturan (*Rule Provider*) Clash.\n" >> README.md
+        echo -e "# OISD Big & LoyalSoldier Reject Combined for Clash\n" > README.md
+        echo -e "Repositori ini otomatis mengunduh, menggabungkan, dan menyaring data dari **OISD Big** dan **LoyalSoldier Reject List** menjadi satu file aturan (*Rule Provider*) Clash.\n" >> README.md
         echo -e "### 📊 Statistik Pembaruan Terakhir" >> README.md
         echo -e "* **Waktu Pembaruan:** $WAKTU_SEKARANG UTC" >> README.md
         echo -e "* **Total Domain Mentah Diunduh:** $TOTAL_ALL domain" >> README.md
@@ -100,7 +93,6 @@ jobs:
         echo -e "    interval: 3600" >> README.md
         echo -e "\`\`\`" >> README.md
 
-        # Hapus file sampah sementara agar tidak ikut ter-commit
         rm -f oisd_raw.txt loyalsoldier_raw.txt stat_total.txt stat_unik.txt stat_duplikat.txt
 
     - name: Commit and Push changes
@@ -115,7 +107,7 @@ jobs:
           git add keepalive.txt
           git commit -m "Keepalive: Perpanjang masa tenggang GitHub"
         else
-          git commit -m "Update oisd_big.yaml & README (Gabungan + Filter Duplikat)"
+          git commit -m "Update oisd_big.yaml & README (OISD + LoyalSoldier Reject)"
         fi
         
         git push origin HEAD
