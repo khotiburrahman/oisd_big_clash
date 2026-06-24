@@ -15,65 +15,74 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Download, Combine, and Keep Original Domains (No Subdomain Truncation)
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.x'
+
+    - name: Download and Clean Domains with Python
       run: |
-        echo "Mengunduh data dari OISD Big dan LoyalSoldier Reject..."
+        python -c "
+        import urllib.request
+        import re
+        from datetime import datetime
+
+        print('Mengunduh data...')
+        req_headers = {'User-Agent': 'Mozilla/5.0'}
         
-        # 1. Unduh file mentah ke file sementara
-        curl -sL -A "Mozilla/5.0" "https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt" > oisd_raw.txt
-        curl -sL -A "Mozilla/5.0" "https://raw.githubusercontent.com/LoyalSoldier/clash-rules/release/reject.txt" > loyalsoldier_raw.txt
-
-        # 2. Gabungkan data asli tanpa memotong subdomain, hanya hapus duplikat baris yang identik
-        awk '
-          {
-            # Abaikan baris kosong, komentar, atau baris konfigurasi bawaan
-            if ($0 ~ /^[[:space:]]*$/ || $0 ~ /^#/ || $0 ~ /^!/ || $0 ~ /^\[/ || $0 ~ /^-/) next
-            
-            # Ambil domain murni apa adanya (kolom pertama)
-            domain = $1
-            # Bersihkan tanda titik di awal atau akhir baris jika ada
-            gsub(/^\.+|\.+$/, "", domain)
-            
-            if (domain ~ /\./) {
-              total_input++
-              if (domain in unique) {
-                total_duplikat++
-              } else {
-                unique[domain] = 1
-                total_unik++
-              }
-            }
-          }
-
-          END {
-            print "payload:" > "oisd_big.yaml"
-            PROCINFO["sorted_in"] = "@ind_str_asc"
-            for (d in unique) {
-              print "  - \047+." d "\047" >> "oisd_big.yaml"
-            }
-            
-            print total_input > "stat_total.txt"
-            print total_unik > "stat_unik.txt"
-            print total_duplikat > "stat_duplikat.txt"
-          }
-        ' oisd_raw.txt loyalsoldier_raw.txt
-
-    - name: Generate README.md
-      run: |
-        TOTAL_ALL=$(cat stat_total.txt)
-        TOTAL_UNIK=$(cat stat_unik.txt)
-        TOTAL_DUPLIKAT=$(cat stat_duplikat.txt)
-        WAKTU_SEKARANG=$(date -u "+%Y-%m-%d %H:%M:%S")
-
-        echo -e "# OISD Big & LoyalSoldier Reject Combined for Clash\n" > README.md
-        echo -e "Repositori ini otomatis menggabungkan data asli **OISD Big** dan **LoyalSoldier Reject List** dengan akurasi domain 100% tanpa merusak subdomain asli.\n" >> README.md
-        echo -e "### 📊 Statistik Pembaruan Terakhir" >> README.md
-        echo -e "* **Waktu Pembaruan:** $WAKTU_SEKARANG UTC" >> README.md
-        echo -e "* **Total Domain Mentah Diunduh:** $TOTAL_ALL domain" >> README.md
-        echo -e "* **Total Domain Duplikat Identik Dibuang:** $TOTAL_DUPLIKAT domain" >> README.md
-        echo -e "* **Total Aturan Unik Akhir di YAML:** **$TOTAL_UNIK domain**\n" >> README.md
+        # 1. Download dari kedua sumber
+        req_oisd = urllib.request.Request('https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt', headers=req_headers)
+        req_loyal = urllib.request.Request('https://raw.githubusercontent.com/LoyalSoldier/clash-rules/release/reject.txt', headers=req_headers)
         
-        rm -f oisd_raw.txt loyalsoldier_raw.txt stat_total.txt stat_unik.txt stat_duplikat.txt
+        oisd_data = urllib.request.urlopen(req_oisd).read().decode('utf-8')
+        loyal_data = urllib.request.urlopen(req_loyal).read().decode('utf-8')
+        
+        unique_domains = set()
+        total_input = 0
+        total_duplikat = 0
+        
+        # 2. Gabungkan dan bersihkan karakter ilegal
+        for line in (oisd_data + '\n' + loyal_data).splitlines():
+            line = line.strip()
+            if not line or line.startswith(('#', '!', '[', '-')):
+                continue
+                
+            # Ambil kolom pertama
+            domain = line.split()[0]
+            
+            # Bersihkan karakter ^, \r, \n, spasi, atau titik di ujung-ujung domain
+            domain = re.sub(r'[\^ \r\n\t]+$', '', domain)
+            domain = domain.strip('.')
+            
+            if '.' in domain:
+                total_input += 1
+                if domain in unique_domains:
+                    total_duplikat += 1
+                else:
+                    unique_domains.add(domain)
+
+        # 3. Sortir sesuai abjad
+        sorted_domains = sorted(list(unique_domains))
+        total_unik = len(sorted_domains)
+        
+        # 4. Tulis ulang file oisd_big.yaml (Murni tanda kutip lurus, bebas dari karakter ^)
+        with open('oisd_big.yaml', 'w', encoding='utf-8') as f:
+            f.write('payload:\n')
+            for d in sorted_domains:
+                f.write(f\"  - '+.{d}'\n\")
+                
+        # 5. Tulis statistik ke README
+        waktu_sekarang = datetime.utcnow().strftime('%Y-%m-%d %H:%M:%S')
+        with open('README.md', 'w', encoding='utf-8') as f:
+            f.write('# OISD Big & LoyalSoldier Reject Combined for Clash\n\n')
+            f.write('### 📊 Statistik Pembaruan Terakhir\n')
+            f.write(f'* **Waktu Pembaruan:** {waktu_sekarang} UTC\n')
+            f.write(f'* **Total Domain Mentah Diunduh:** {total_input} domain\n')
+            f.write(f'* **Total Domain Duplikat Identik Dibuang:** {total_duplikat} domain\n')
+            f.write(f'* **Total Aturan Unik Akhir di YAML:** **{total_unik} domain**\n')
+            
+        print('Pembersihan sukses!')
+        "
 
     - name: Commit and Push changes
       run: |
@@ -82,12 +91,12 @@ jobs:
         git add oisd_big.yaml README.md
         
         if git diff --staged --quiet; then
-          echo "Tidak ada perubahan data dari kedua sumber. Memicu keepalive..."
+          echo "Tidak ada perubahan. Memicu keepalive..."
           date +%s > keepalive.txt
           git add keepalive.txt
           git commit -m "Keepalive: Perpanjang masa tenggang"
         else
-          git commit -m "Update oisd_big.yaml & README (Akurasi Domain Asli 100%)"
+          git commit -m "Update oisd_big.yaml via Python (Fix Karakter Topi)"
         fi
         
         git push origin HEAD
