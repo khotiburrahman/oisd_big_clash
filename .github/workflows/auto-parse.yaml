@@ -19,10 +19,6 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Install dependencies
-      run: |
-        pip install tldextract
-
     - name: Run parser script
       run: python parse.py
 
