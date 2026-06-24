@@ -1,58 +1,78 @@
-import urllib.request
-import re
-import os
+name: Update OISD Clash YAML
 
-# Memastikan file disimpan di direktori kerja GitHub Actions yang aktif
-current_dir = os.path.dirname(os.path.abspath(__file__))
-output_file = os.path.join(current_dir, "oisd_big.yaml")
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch:
 
-url = "https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt"
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
 
-def extract_apex_domain(domain_str):
-    domain_str = domain_str.strip().lower()
-    parts = domain_str.split('.')
-    if len(parts) > 2:
-        if parts[-2] in ['com', 'co', 'net', 'org', 'gov', 'ac', 'sch', 'web', 'my', 'or', 'edu']:
-            return '.'.join(parts[-3:])
-        else:
-            return '.'.join(parts[-2:])
-    return domain_str
-
-try:
-    print("Mengunduh file oisd_big.txt...")
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-    with urllib.request.urlopen(req) as response:
-        raw_data = response.read().decode('utf-8', errors='ignore')
-        lines = raw_data.splitlines()
-
-    unique_domains = set()
-    print(f"Total baris masuk: {len(lines)}")
-    
-    for line in lines:
-        line = line.strip()
-        if not line or line.startswith(("#", "!", "[")):
-            continue
+    - name: Download, Parse, and Convert to Clash YAML
+      run: |
+        echo "Mengunduh dan memproses data langsung dengan cURL dan AWK..."
+        
+        # 1. Tulis baris pertama ke file target
+        echo "payload:" > oisd_big.yaml
+        
+        # 2. Unduh menggunakan cURL dengan menyamar sebagai browser (User-Agent Chrome)
+        #    Lalu filter komentar, bersihkan subdomain secara instan, hapus duplikat, dan format ke Clash YAML
+        curl -sL -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+        "https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt" | \
+        awk '
+          # Abaikan baris kosong, komentar (#), aturan adblock (! atau [)
+          /^[[:space:]]*$/ || /^#/ || /^!/ || /^\[/ {next}
+          
+          {
+            # Ambil kolom pertama (mengantisipasi jika ada spasi/format hosts)
+            domain = $1
+            # Bersihkan karakter titik di ujung jika ada
+            gsub(/^\.+|\.+$/, "", domain)
             
-        domain_match = re.search(r'^([a-zA-Z0-9\.\-_]+)', line)
-        if not domain_match:
-            continue
+            # Logika ekstraksi Apex Domain (Domain Utama)
+            n = split(domain, parts, ".")
+            if (n > 2) {
+              # Cek akhiran ganda yang umum (.co.id, .com.br, dll)
+              if (parts[n-1] ~ /^(com|co|net|org|gov|ac|sch|web|my|or|edu)$/) {
+                apex = parts[n-2]"."parts[n-1]"."parts[n]
+              } else {
+                apex = parts[n-1]"."parts[n]
+              }
+            } else {
+              apex = domain
+            }
             
-        clean_domain = domain_match.group(1).strip('.')
-        apex = extract_apex_domain(clean_domain)
-        if apex and '.' in apex:
-            unique_domains.add(apex)
+            # Simpan ke dalam array untuk menghilangkan duplikat
+            if (apex ~ /\./) {
+              unique[apex] = 1
+            }
+          }
+          
+          END {
+            # Urutkan secara alfabetis dan tulis dengan format Clash Rule Provider
+            PROCINFO["sorted_in"] = "@ind_str_asc"
+            for (d in unique) {
+              print "  - \047+." d "\047"
+            }
+          }
+        ' >> oisd_big.yaml
 
-    sorted_domains = sorted(list(unique_domains))
-    print(f"Menemukan {len(sorted_domains)} domain utama yang unik.")
+    - name: Verifikasi Ukuran File di Log
+      run: |
+        ls -lh oisd_big.yaml
+        wc -l oisd_big.yaml
 
-    # Tulis ulang file secara total (mengganti isi lama)
-    print(f"Menulis hasil ke: {output_file}")
-    with open(output_file, 'w', encoding='utf-8') as f:
-        f.write("payload:\n")
-        for domain in sorted_domains:
-            f.write(f"  - '+.{domain}'\n")
-            
-    print("Proses penulisan skrip selesai dengan sukses.")
-
-except Exception as e:
-    print(f"Terjadi error: {e}")
+    - name: Commit and Push changes
+      run: |
+        git config --local user.email "github-actions[bot]@users.noreply.github.com"
+        git config --local user.name "github-actions[bot]"
+        git add oisd_big.yaml
+        git commit -m "Update oisd_big.yaml murni lewat bash" || echo "Tidak ada perubahan"
+        git push origin HEAD
