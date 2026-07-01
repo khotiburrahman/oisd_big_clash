@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: write
-      
+
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
@@ -29,30 +29,30 @@ jobs:
 
         print("Mengunduh data...")
         req_headers = {"User-Agent": "Mozilla/5.0"}
-        
+
         req_oisd = urllib.request.Request("https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt", headers=req_headers)
         req_loyal = urllib.request.Request("https://raw.githubusercontent.com/LoyalSoldier/clash-rules/release/reject.txt", headers=req_headers)
-        
+
         oisd_data = urllib.request.urlopen(req_oisd).read().decode("utf-8")
         loyal_data = urllib.request.urlopen(req_loyal).read().decode("utf-8")
-        
+
         unique_domains = set()
         total_input = 0
         total_duplikat = 0
-        
+
         for line in (oisd_data + "\n" + loyal_data).splitlines():
             line = line.strip()
             if not line or line.startswith(("#", "!", "[", "-", "@@")):
                 continue
-                
+
             raw_domain = line.split()[0]
-            
+
             if raw_domain.startswith("||"):
                 raw_domain = raw_domain[2:]
-                
+
             raw_domain = re.sub(r"[\^ \r\n\t]+$", "", raw_domain)
             domain = raw_domain.strip(".")
-            
+
             if "." in domain:
                 total_input += 1
                 if domain in unique_domains:
@@ -62,14 +62,20 @@ jobs:
 
         sorted_domains = sorted(list(unique_domains))
         total_unik = len(sorted_domains)
-        
-        # Menggunakan chr(39) untuk menjamin tanda kutip lurus murni standar ASCII (')
+
+        # --- File 1: oisd_big.yaml (format '+.domain') ---
         q = chr(39)
         with open("oisd_big.yaml", "w", encoding="utf-8") as f:
             f.write("payload:\n")
             for d in sorted_domains:
                 f.write(f"  - {q}+.{d}{q}\n")
-                
+
+        # --- File 2: oisd_big_old.yaml (format DOMAIN-SUFFIX, tanpa payload:) ---
+        with open("oisd_big_old.yaml", "w", encoding="utf-8") as f:
+            for d in sorted_domains:
+                f.write(f"  - DOMAIN-SUFFIX,{d}\n")
+
+        # --- README ---
         waktu_sekarang = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
         with open("README.md", "w", encoding="utf-8") as f:
             f.write("# OISD Big & LoyalSoldier Reject Combined for Clash\n\n")
@@ -78,7 +84,7 @@ jobs:
             f.write(f"* **Total Domain Mentah Diunduh:** {total_input} domain\n")
             f.write(f"* **Total Domain Duplikat Identik Dibuang:** {total_duplikat} domain\n")
             f.write(f"* **Total Aturan Unik Akhir di YAML:** **{total_unik} domain**\n")
-            
+
         print("Proses selesai!")
         EOF
         python run.py
@@ -88,15 +94,15 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add oisd_big.yaml README.md
-        
+        git add oisd_big.yaml oisd_big_old.yaml README.md
+
         if git diff --staged --quiet; then
           echo "Tidak ada perubahan. Memicu keepalive..."
           date +%s > keepalive.txt
           git add keepalive.txt
           git commit -m "Keepalive: Perpanjang masa tenggang"
         else
-          git commit -m "Update oisd_big.yaml via Python (Fix Quotes murni)"
+          git commit -m "Update oisd_big.yaml dan oisd_big_old.yaml (format DOMAIN-SUFFIX)"
         fi
-        
+
         git push origin HEAD
