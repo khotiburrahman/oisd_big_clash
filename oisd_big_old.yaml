@@ -15,7 +15,6 @@ payload:
   - DOMAIN-SUFFIX,0-10.dev.api.binance.com
   - DOMAIN-SUFFIX,0-10.eu.api.binance.com
   - DOMAIN-SUFFIX,0-10.us.api.binance.com
-  - DOMAIN-SUFFIX,0-100-newbi.ikpool.com
   - DOMAIN-SUFFIX,0-100-pool.abseits.ski
   - DOMAIN-SUFFIX,0-100-pool.api.b3pool.com
   - DOMAIN-SUFFIX,0-100-pool.b3pool.com
@@ -524,7 +523,6 @@ payload:
   - DOMAIN-SUFFIX,0004.us.api.binance.com
   - DOMAIN-SUFFIX,00044.workers.dev
   - DOMAIN-SUFFIX,000491b06a.com
-  - DOMAIN-SUFFIX,00050682.openvpn.www.eth.bw.com
   - DOMAIN-SUFFIX,000550-8.us.api.binance.com
   - DOMAIN-SUFFIX,000550-8.us.binance.com
   - DOMAIN-SUFFIX,000550-8.us.dev.api.binance.com
@@ -559,7 +557,6 @@ payload:
   - DOMAIN-SUFFIX,00085.workers.dev
   - DOMAIN-SUFFIX,00087df472cb41829dde2c6b5c5625f6.fp.measure.office.com
   - DOMAIN-SUFFIX,000888.ddns.net
-  - DOMAIN-SUFFIX,0008d6ba2e.com
   - DOMAIN-SUFFIX,0009.api.binance.com
   - DOMAIN-SUFFIX,0009.binance.com
   - DOMAIN-SUFFIX,0009.dev.api.binance.com
@@ -1405,6 +1402,7 @@ payload:
   - DOMAIN-SUFFIX,0244.org
   - DOMAIN-SUFFIX,0246.bitcoin.com
   - DOMAIN-SUFFIX,02466b.ethosdistro.com
+  - DOMAIN-SUFFIX,0246cba9d4.com
   - DOMAIN-SUFFIX,024d.bitcoin.com
   - DOMAIN-SUFFIX,024e3caef2.com
   - DOMAIN-SUFFIX,024fpv.com
@@ -1553,7 +1551,6 @@ payload:
   - DOMAIN-SUFFIX,032admin-test-dev.api.gethash.cc
   - DOMAIN-SUFFIX,032amsterdam03.api.gethash.cc
   - DOMAIN-SUFFIX,032amsterdamnew.api.gethash.cc
-  - DOMAIN-SUFFIX,032api.btcguild.com
   - DOMAIN-SUFFIX,032au05.api.gethash.cc
   - DOMAIN-SUFFIX,032auth.api.cryptopool.eu
   - DOMAIN-SUFFIX,032c802b11b043f7b826e13f747f8879.bitcoin.com
@@ -1567,9 +1564,6 @@ payload:
   - DOMAIN-SUFFIX,032doge.rapidhash.net
   - DOMAIN-SUFFIX,032eml.api.cryptopool.eu
   - DOMAIN-SUFFIX,032eml.cryptopool.eu
-  - DOMAIN-SUFFIX,032eu-stratum-lb-9ikj2.btcguild.com
-  - DOMAIN-SUFFIX,032eu-stratum-lb489kj.btcguild.com
-  - DOMAIN-SUFFIX,032eu-stratum.btcguild.com
   - DOMAIN-SUFFIX,032eu2.api.gethash.cc
   - DOMAIN-SUFFIX,032exchange.api.cryptopool.eu
   - DOMAIN-SUFFIX,032explorer.customspeed.nl
@@ -1581,14 +1575,11 @@ payload:
   - DOMAIN-SUFFIX,032mail.customspeed.nl
   - DOMAIN-SUFFIX,032mail9.api.cryptopool.eu
   - DOMAIN-SUFFIX,032mailer.api.cryptopool.eu
-  - DOMAIN-SUFFIX,032mine1.btcguild.com
-  - DOMAIN-SUFFIX,032mine2.btcguild.com
   - DOMAIN-SUFFIX,032mining.bitcoin.cz
   - DOMAIN-SUFFIX,032msr.dark-mine.su
   - DOMAIN-SUFFIX,032my.api.gethash.cc
   - DOMAIN-SUFFIX,032nmc.bitcoins.sk
   - DOMAIN-SUFFIX,032nmc2.bitcoins.sk
-  - DOMAIN-SUFFIX,032nmergedmining.btcguild.com
   - DOMAIN-SUFFIX,032nnode-8.minercircle.com
   - DOMAIN-SUFFIX,032node-11.minercircle.com
   - DOMAIN-SUFFIX,032ns2.triplemining.com
@@ -1606,31 +1597,23 @@ payload:
   - DOMAIN-SUFFIX,032pool.letshash.online
   - DOMAIN-SUFFIX,032pools.rapidhash.net
   - DOMAIN-SUFFIX,032poste.finbits.net
-  - DOMAIN-SUFFIX,032qww.btcguild.com
   - DOMAIN-SUFFIX,032router.api.gethash.cc
   - DOMAIN-SUFFIX,032s79.as.bitcoin.com
   - DOMAIN-SUFFIX,032s79.as.seeds.bitcoin.com
   - DOMAIN-SUFFIX,032s85.as.bitcoin.com
   - DOMAIN-SUFFIX,032s85.as.seeds.bitcoin.com
-  - DOMAIN-SUFFIX,032sc.btcguild.com
   - DOMAIN-SUFFIX,032seed2.net.terracoin.org
   - DOMAIN-SUFFIX,032seed3.net.terracoin.org
   - DOMAIN-SUFFIX,032server1.api.cryptopool.eu
   - DOMAIN-SUFFIX,032service.api.cryptopool.eu
   - DOMAIN-SUFFIX,032shibe.api.cryptopool.eu
   - DOMAIN-SUFFIX,032smtp01.api.cryptopool.eu
-  - DOMAIN-SUFFIX,032stratum-us-privatedns.btcguild.com
-  - DOMAIN-SUFFIX,032stratum.btcguild.com
   - DOMAIN-SUFFIX,032support.api.gethash.cc
   - DOMAIN-SUFFIX,032test.pkr.api.cryptopool.eu
   - DOMAIN-SUFFIX,032tw.api.cryptopool.eu
   - DOMAIN-SUFFIX,032u.forre.st
-  - DOMAIN-SUFFIX,032us-vip-stratum.btcguild.com
   - DOMAIN-SUFFIX,032uscentral.api.gethash.cc
-  - DOMAIN-SUFFIX,032uscentral.btcguild.com
-  - DOMAIN-SUFFIX,032useast.btcguild.com
   - DOMAIN-SUFFIX,032vip.api.cryptopool.eu
-  - DOMAIN-SUFFIX,032w.btcguild.com
   - DOMAIN-SUFFIX,032w.w.w.bitcoin.com
   - DOMAIN-SUFFIX,032w.w.w.seeds.bitcoin.com
   - DOMAIN-SUFFIX,032ww1.api.gethash.cc
@@ -1653,8 +1636,6 @@ payload:
   - DOMAIN-SUFFIX,032www.bp.bitcoin.com
   - DOMAIN-SUFFIX,032www.bp.seeds.bitcoin.com
   - DOMAIN-SUFFIX,032www.bs.hashhot.com
-  - DOMAIN-SUFFIX,032www.btcguild.com
-  - DOMAIN-SUFFIX,032www.btcguild.comwww.btcguild.com
   - DOMAIN-SUFFIX,032www.customspeed.nl
   - DOMAIN-SUFFIX,032www.dark-mine.su
   - DOMAIN-SUFFIX,032www.g.bitcoin.com
@@ -1666,7 +1647,6 @@ payload:
   - DOMAIN-SUFFIX,032www.pkr.cryptopool.eu
   - DOMAIN-SUFFIX,032www.rc.hashhot.com
   - DOMAIN-SUFFIX,032www.sc.hashhot.com
-  - DOMAIN-SUFFIX,032www.sss.btcguild.com
   - DOMAIN-SUFFIX,032x.bcc.cryptopool.eu
   - DOMAIN-SUFFIX,032xhd.api.gethash.cc
   - DOMAIN-SUFFIX,032xlc.dark-mine.su
@@ -1902,7 +1882,6 @@ payload:
   - DOMAIN-SUFFIX,04b9055b2a.com
   - DOMAIN-SUFFIX,04c.bitcoin.com
   - DOMAIN-SUFFIX,04cbdddeea3.bitcoin.com
-  - DOMAIN-SUFFIX,04cbf4193b.com
   - DOMAIN-SUFFIX,04cc5c.ethosdistro.com
   - DOMAIN-SUFFIX,04cdtwl7jm4e.apac-1-6.binance.com
   - DOMAIN-SUFFIX,04consultanovidadebr.fr
@@ -2252,7 +2231,6 @@ payload:
   - DOMAIN-SUFFIX,066bocaiezu.bitcoin.com
   - DOMAIN-SUFFIX,067.bitcoin.com
   - DOMAIN-SUFFIX,067cccb153.bitcoin.com
-  - DOMAIN-SUFFIX,067f87da09.com
   - DOMAIN-SUFFIX,067f8b99e4.bitcoin.com
   - DOMAIN-SUFFIX,067oij53m.com
   - DOMAIN-SUFFIX,0682.openvpn.www.eth.bw.com
@@ -2907,7 +2885,6 @@ payload:
   - DOMAIN-SUFFIX,0793.bitcoin.com
   - DOMAIN-SUFFIX,0794.info
   - DOMAIN-SUFFIX,0796223.weebly.com
-  - DOMAIN-SUFFIX,0798.openvpn.www.eth.bw.com
   - DOMAIN-SUFFIX,079kk.com
   - DOMAIN-SUFFIX,07aba.bitcoin.com
   - DOMAIN-SUFFIX,07agenjoker123.weebly.com
@@ -3315,7 +3292,6 @@ payload:
   - DOMAIN-SUFFIX,0938jp.weebly.com
   - DOMAIN-SUFFIX,0938roundcube.weebly.com
   - DOMAIN-SUFFIX,09392.weebly.com
-  - DOMAIN-SUFFIX,09399d89cc.com
   - DOMAIN-SUFFIX,094.bitcoin.com
   - DOMAIN-SUFFIX,0941.org
   - DOMAIN-SUFFIX,094847.webflow.io
@@ -3708,7 +3684,6 @@ payload:
   - DOMAIN-SUFFIX,0alpha.crypto-webminer.com
   - DOMAIN-SUFFIX,0alpha1.abseits.ski
   - DOMAIN-SUFFIX,0alpha4.gethash.cc
-  - DOMAIN-SUFFIX,0alpha5.beeppool.org
   - DOMAIN-SUFFIX,0alpha6.abseits.ski
   - DOMAIN-SUFFIX,0alpha6.gethash.cc
   - DOMAIN-SUFFIX,0alphadecor.minexca.com
@@ -3760,7 +3735,6 @@ payload:
   - DOMAIN-SUFFIX,0ams2.dev.api.binance.com
   - DOMAIN-SUFFIX,0ams2.eu.api.binance.com
   - DOMAIN-SUFFIX,0ams2.us.api.binance.com
-  - DOMAIN-SUFFIX,0amsterdam.bytecoins.world
   - DOMAIN-SUFFIX,0amsterdam0.abseits.ski
   - DOMAIN-SUFFIX,0amsterdam0.gethash.cc
   - DOMAIN-SUFFIX,0amsterdam01.abseits.ski
@@ -3826,7 +3800,6 @@ payload:
   - DOMAIN-SUFFIX,0antispam.suremine.com
   - DOMAIN-SUFFIX,0antispam.theblocksfactory.com
   - DOMAIN-SUFFIX,0antispam.uralscoin.info
-  - DOMAIN-SUFFIX,0antispam.xmrminingpro.com
   - DOMAIN-SUFFIX,0antivirus-secure.binance.com
   - DOMAIN-SUFFIX,0anyone.triplemining.com
   - DOMAIN-SUFFIX,0anzbank.eu.api.binance.com
@@ -3895,7 +3868,6 @@ payload:
   - DOMAIN-SUFFIX,0api-etnx.abseits.ski
   - DOMAIN-SUFFIX,0api-fno.abseits.ski
   - DOMAIN-SUFFIX,0api-ita.abseits.ski
-  - DOMAIN-SUFFIX,0api-krb.easyhash.io
   - DOMAIN-SUFFIX,0api-mobile.58coin.com
   - DOMAIN-SUFFIX,0api-nhbottest.hashing.com
   - DOMAIN-SUFFIX,0api-sha256.coinminers.net
@@ -3914,7 +3886,6 @@ payload:
   - DOMAIN-SUFFIX,0api.bitcoin.com
   - DOMAIN-SUFFIX,0api.bitcoin.cz
   - DOMAIN-SUFFIX,0api.btcguild.com
-  - DOMAIN-SUFFIX,0api.bytecoins.world
   - DOMAIN-SUFFIX,0api.ccminer.org
   - DOMAIN-SUFFIX,0api.crypto.ba
   - DOMAIN-SUFFIX,0api.cryptonight.net
@@ -4102,11 +4073,9 @@ payload:
   - DOMAIN-SUFFIX,0asia.abseits.ski
   - DOMAIN-SUFFIX,0asia.chunkypools.com
   - DOMAIN-SUFFIX,0asia.cryptoknight.cc
-  - DOMAIN-SUFFIX,0asia.equihub.pro
   - DOMAIN-SUFFIX,0asia.gethash.cc
   - DOMAIN-SUFFIX,0asia.mecrypto.club
   - DOMAIN-SUFFIX,0asia.mine.zpool.ca
-  - DOMAIN-SUFFIX,0asia.veriblockpool.com
   - DOMAIN-SUFFIX,0asia1.coinking.io
   - DOMAIN-SUFFIX,0asia1.nanopool.org
   - DOMAIN-SUFFIX,0asia2.coinking.io
@@ -4171,9 +4140,7 @@ payload:
   - DOMAIN-SUFFIX,0aur.hashfaster.com
   - DOMAIN-SUFFIX,0aura.abseits.ski
   - DOMAIN-SUFFIX,0aus.hashhot.com
-  - DOMAIN-SUFFIX,0aus.obfuscode.net
   - DOMAIN-SUFFIX,0aus01.abseits.ski
-  - DOMAIN-SUFFIX,0austin.bytecoins.world
   - DOMAIN-SUFFIX,0auth.803mine.com
   - DOMAIN-SUFFIX,0auth.acc-pool.pw
   - DOMAIN-SUFFIX,0auth.altpool.eu
@@ -4224,7 +4191,6 @@ payload:
   - DOMAIN-SUFFIX,0autodiscover.cryptobender.com
   - DOMAIN-SUFFIX,0autodiscover.fb.ru.bitcoin.com
   - DOMAIN-SUFFIX,0autodiscover.gethash.cc
-  - DOMAIN-SUFFIX,0autodiscover.minerpool.net
   - DOMAIN-SUFFIX,0autodiscover.pool.gntl.co.uk
   - DOMAIN-SUFFIX,0autovraky.sigmapool.com
   - DOMAIN-SUFFIX,0av.ccminer.org
@@ -4284,7 +4250,6 @@ payload:
   - DOMAIN-SUFFIX,0b04.bitcoin.com
   - DOMAIN-SUFFIX,0b0b1b48882.bitcoin.com
   - DOMAIN-SUFFIX,0b0c57.binance.com
-  - DOMAIN-SUFFIX,0b1.btcguild.com
   - DOMAIN-SUFFIX,0b1.duckdns.org
   - DOMAIN-SUFFIX,0b17.api.binance.com
   - DOMAIN-SUFFIX,0b2b.cryptonight.net
@@ -4343,7 +4308,6 @@ payload:
   - DOMAIN-SUFFIX,0backend.binance.com
   - DOMAIN-SUFFIX,0backup-explorer.gethash.cc
   - DOMAIN-SUFFIX,0backup.803mine.com
-  - DOMAIN-SUFFIX,0backup.btcguild.com
   - DOMAIN-SUFFIX,0backup.cryptoknight.cc
   - DOMAIN-SUFFIX,0backup.freshpool.org
   - DOMAIN-SUFFIX,0backup.hashfaster.com
@@ -4465,7 +4429,6 @@ payload:
   - DOMAIN-SUFFIX,0be5d81c3eea.bitcoin.com
   - DOMAIN-SUFFIX,0beam-asia.abseits.ski
   - DOMAIN-SUFFIX,0beam.666pool.cn
-  - DOMAIN-SUFFIX,0beam.cool-pool.net
   - DOMAIN-SUFFIX,0beautifulglow.nanopool.org
   - DOMAIN-SUFFIX,0beauty.bitcoin.com
   - DOMAIN-SUFFIX,0beauvais-front.eu.api.binance.com
@@ -4501,7 +4464,6 @@ payload:
   - DOMAIN-SUFFIX,0beta.argoneum.net
   - DOMAIN-SUFFIX,0beta.bitcoin.com
   - DOMAIN-SUFFIX,0beta.bitcoin.cz
-  - DOMAIN-SUFFIX,0beta.btcguild.com
   - DOMAIN-SUFFIX,0beta.ccminer.org
   - DOMAIN-SUFFIX,0beta.crypto-webminer.com
   - DOMAIN-SUFFIX,0beta.cryptonight.net
@@ -4636,7 +4598,6 @@ payload:
   - DOMAIN-SUFFIX,0blog.bitcoin.cz
   - DOMAIN-SUFFIX,0blog.bytecoins.world
   - DOMAIN-SUFFIX,0blog.ccminer.org
-  - DOMAIN-SUFFIX,0blog.chunkypools.com
   - DOMAIN-SUFFIX,0blog.coinking.io
   - DOMAIN-SUFFIX,0blog.extremehash.com
   - DOMAIN-SUFFIX,0blog.gethash.cc
@@ -4778,7 +4739,6 @@ payload:
   - DOMAIN-SUFFIX,0btg.abseits.ski
   - DOMAIN-SUFFIX,0btg.gethash.cc
   - DOMAIN-SUFFIX,0btg.hashcity.org
-  - DOMAIN-SUFFIX,0bth-test.equihub.pro
   - DOMAIN-SUFFIX,0btl.poolerino.com
   - DOMAIN-SUFFIX,0btls.hashhot.com
   - DOMAIN-SUFFIX,0btm.gethash.cc
@@ -4797,7 +4757,6 @@ payload:
   - DOMAIN-SUFFIX,0bugs.ccminer.org
   - DOMAIN-SUFFIX,0bugs.cryptonight.net
   - DOMAIN-SUFFIX,0buntic.ethosdistro.com
-  - DOMAIN-SUFFIX,0bureau-a-distance-1.c-cex.com
   - DOMAIN-SUFFIX,0burgerbot.hashpool.eu
   - DOMAIN-SUFFIX,0burn.hiveon.net
   - DOMAIN-SUFFIX,0burn.nanopool.org
@@ -4869,7 +4828,6 @@ payload:
   - DOMAIN-SUFFIX,0c4nvlibepdtdy5n.sftp12.binance.com
   - DOMAIN-SUFFIX,0c5.nanopool.org
   - DOMAIN-SUFFIX,0c6bdc3ecc.cfabf1ef11.com
-  - DOMAIN-SUFFIX,0c6dd161e9.com
   - DOMAIN-SUFFIX,0c7677.ethosdistro.com
   - DOMAIN-SUFFIX,0c885f9b7fce9d.bitcoin.com
   - DOMAIN-SUFFIX,0c88a6.ethosdistro.com
@@ -4927,7 +4885,6 @@ payload:
   - DOMAIN-SUFFIX,0cash.abseits.ski
   - DOMAIN-SUFFIX,0cash.dedicatedpool.com
   - DOMAIN-SUFFIX,0cash.my-mining-pool.de
-  - DOMAIN-SUFFIX,0cash.org
   - DOMAIN-SUFFIX,0cash2.bitcoin.com
   - DOMAIN-SUFFIX,0cashexplorer.bitcoin.com
   - DOMAIN-SUFFIX,0casitaroja.no-ip.biz
@@ -4998,7 +4955,6 @@ payload:
   - DOMAIN-SUFFIX,0ce.bitcoin.com
   - DOMAIN-SUFFIX,0cef7.bitcoin.com
   - DOMAIN-SUFFIX,0center.nanopool.org
-  - DOMAIN-SUFFIX,0center.veriblockpool.com
   - DOMAIN-SUFFIX,0central.abseits.ski
   - DOMAIN-SUFFIX,0centre-pro.exx.com
   - DOMAIN-SUFFIX,0cepestyle.triplemining.com
@@ -5025,7 +4981,6 @@ payload:
   - DOMAIN-SUFFIX,0cg.bitcoin.com
   - DOMAIN-SUFFIX,0cgb.abseits.ski
   - DOMAIN-SUFFIX,0cge.exx.com
-  - DOMAIN-SUFFIX,0cgminer.btcguild.com
   - DOMAIN-SUFFIX,0ch.abseits.ski
   - DOMAIN-SUFFIX,0ch.api.binance.com
   - DOMAIN-SUFFIX,0ch4x.bitcoin.com
@@ -5040,7 +4995,6 @@ payload:
   - DOMAIN-SUFFIX,0charlie.hiveon.net
   - DOMAIN-SUFFIX,0charlos93.triplemining.com
   - DOMAIN-SUFFIX,0charlotte.binance.com
-  - DOMAIN-SUFFIX,0chart.bytecoins.world
   - DOMAIN-SUFFIX,0charts.gethash.cc
   - DOMAIN-SUFFIX,0chat-0-2.eu.api.binance.com
   - DOMAIN-SUFFIX,0chat-0-26.eu.api.binance.com
@@ -5173,7 +5127,6 @@ payload:
   - DOMAIN-SUFFIX,0checkpoints.italocoin.com
   - DOMAIN-SUFFIX,0chef.binance.com
   - DOMAIN-SUFFIX,0cher.nanopool.org
-  - DOMAIN-SUFFIX,0chicago.btcguild.com
   - DOMAIN-SUFFIX,0chicks.acc-pool.pw
   - DOMAIN-SUFFIX,0chinesepoker.abseits.ski
   - DOMAIN-SUFFIX,0chip.miningpool.cc
@@ -5228,7 +5181,6 @@ payload:
   - DOMAIN-SUFFIX,0cliff44.triplemining.com
   - DOMAIN-SUFFIX,0clo-pplns.cryptodig.ru
   - DOMAIN-SUFFIX,0clo-solo.cryptodig.ru
-  - DOMAIN-SUFFIX,0clo-solo.veriblockpool.com
   - DOMAIN-SUFFIX,0clo.abseits.ski
   - DOMAIN-SUFFIX,0clo.gethash.cc
   - DOMAIN-SUFFIX,0clo.hashcity.org
@@ -5236,7 +5188,6 @@ payload:
   - DOMAIN-SUFFIX,0clot.poolerino.com
   - DOMAIN-SUFFIX,0cloud.abseits.ski
   - DOMAIN-SUFFIX,0cloud.api.crypto.ba
-  - DOMAIN-SUFFIX,0cloud.btcguild.com
   - DOMAIN-SUFFIX,0cloud.ccminer.org
   - DOMAIN-SUFFIX,0cloud.crypto.ba
   - DOMAIN-SUFFIX,0cloud.eu.mine.zpool.ca
@@ -5245,7 +5196,6 @@ payload:
   - DOMAIN-SUFFIX,0cloud.ja.mine.zpool.ca
   - DOMAIN-SUFFIX,0cloud.jp.mine.zpool.ca
   - DOMAIN-SUFFIX,0cloud.mine.zpool.ca
-  - DOMAIN-SUFFIX,0cloud.minerpool.net
   - DOMAIN-SUFFIX,0cloud.pool.gntl.co.uk
   - DOMAIN-SUFFIX,0cloud.us.mine.zpool.ca
   - DOMAIN-SUFFIX,0cloudflare-resolve-to.ccminer.org
@@ -5645,7 +5595,6 @@ payload:
   - DOMAIN-SUFFIX,0d0.eu.api.binance.com
   - DOMAIN-SUFFIX,0d0.us.api.binance.com
   - DOMAIN-SUFFIX,0d09ca.ethosdistro.com
-  - DOMAIN-SUFFIX,0d0kice53fwifxvwbci.btcguild.com
   - DOMAIN-SUFFIX,0d11.api.binance.com
   - DOMAIN-SUFFIX,0d11.dev.api.binance.com
   - DOMAIN-SUFFIX,0d11.eu.api.binance.com
@@ -5671,7 +5620,6 @@ payload:
   - DOMAIN-SUFFIX,0d34.api.binance.com
   - DOMAIN-SUFFIX,0d34.eu.api.binance.com
   - DOMAIN-SUFFIX,0d347c.ethosdistro.com
-  - DOMAIN-SUFFIX,0d356de9ef.com
   - DOMAIN-SUFFIX,0d4.eu.api.binance.com
   - DOMAIN-SUFFIX,0d445ed62.bitcoin.com
   - DOMAIN-SUFFIX,0d4svwc7.xyz
@@ -5689,7 +5637,6 @@ payload:
   - DOMAIN-SUFFIX,0d82.bitcoin.com
   - DOMAIN-SUFFIX,0d835.bitcoin.com
   - DOMAIN-SUFFIX,0d83e4b.bitcoin.com
-  - DOMAIN-SUFFIX,0d8is908gby1.www.terraform.com.ar
   - DOMAIN-SUFFIX,0d9063412c.com
   - DOMAIN-SUFFIX,0d95ba.ethosdistro.com
   - DOMAIN-SUFFIX,0d9a56c5-6a18-4f41-9dcf-1fa0531f9645-00-3s6jlesunorig.riker.replit.dev
@@ -5698,14 +5645,12 @@ payload:
   - DOMAIN-SUFFIX,0da.ccminer.org
   - DOMAIN-SUFFIX,0daedelous.triplemining.com
   - DOMAIN-SUFFIX,0daemon.pool.gntl.co.uk
-  - DOMAIN-SUFFIX,0daemons.cryptopool.space
   - DOMAIN-SUFFIX,0daga.sigmapool.com
   - DOMAIN-SUFFIX,0dailysteals-pledge-shopify-app.us.api.binance.com
   - DOMAIN-SUFFIX,0daima.dev.api.binance.com
   - DOMAIN-SUFFIX,0daima.eu.api.binance.com
   - DOMAIN-SUFFIX,0daima.us.api.binance.com
   - DOMAIN-SUFFIX,0dal.dev.api.binance.com
-  - DOMAIN-SUFFIX,0dallas.btcguild.com
   - DOMAIN-SUFFIX,0damar0.no-ip.org
   - DOMAIN-SUFFIX,0danbuk.triplemining.com
   - DOMAIN-SUFFIX,0danieapp.gethash.cc
@@ -5756,7 +5701,6 @@ payload:
   - DOMAIN-SUFFIX,0dayrock.bitcoin.com
   - DOMAIN-SUFFIX,0db.abseits.ski
   - DOMAIN-SUFFIX,0db.bitcoin.com
-  - DOMAIN-SUFFIX,0db.btcguild.com
   - DOMAIN-SUFFIX,0db.crypto-webminer.com
   - DOMAIN-SUFFIX,0db.cryptonight.net
   - DOMAIN-SUFFIX,0db.cryptopoolmining.com
@@ -5823,9 +5767,7 @@ payload:
   - DOMAIN-SUFFIX,0ddh.eu.api.binance.com
   - DOMAIN-SUFFIX,0ddh.us.api.binance.com
   - DOMAIN-SUFFIX,0ddzp.bitcoin.com
-  - DOMAIN-SUFFIX,0de-cluster.btcguild.com
   - DOMAIN-SUFFIX,0de.50btc.com
-  - DOMAIN-SUFFIX,0de.btcguild.com
   - DOMAIN-SUFFIX,0de.cryptonight.net
   - DOMAIN-SUFFIX,0de.hashcity.org
   - DOMAIN-SUFFIX,0de.minerxmr.com
@@ -5833,8 +5775,6 @@ payload:
   - DOMAIN-SUFFIX,0de01.abseits.ski
   - DOMAIN-SUFFIX,0de01.coinminers.net
   - DOMAIN-SUFFIX,0de02.abseits.ski
-  - DOMAIN-SUFFIX,0de2-old.btcguild.com
-  - DOMAIN-SUFFIX,0de2.btcguild.com
   - DOMAIN-SUFFIX,0de5h.bitcoin.com
   - DOMAIN-SUFFIX,0deadrianf.triplemining.com
   - DOMAIN-SUFFIX,0dec.nanopool.org
@@ -5877,7 +5817,6 @@ payload:
   - DOMAIN-SUFFIX,0dero.abseits.ski
   - DOMAIN-SUFFIX,0dero.bubblemine.com
   - DOMAIN-SUFFIX,0dero.crypto-webminer.com
-  - DOMAIN-SUFFIX,0dero.cryptopool.space
   - DOMAIN-SUFFIX,0dero.fairhash.org
   - DOMAIN-SUFFIX,0dero.omine.org
   - DOMAIN-SUFFIX,0dero.supportcryptonight.com
@@ -5898,11 +5837,9 @@ payload:
   - DOMAIN-SUFFIX,0dev.ar.eu.api.binance.com
   - DOMAIN-SUFFIX,0dev.argoneum.net
   - DOMAIN-SUFFIX,0dev.atomminer.com
-  - DOMAIN-SUFFIX,0dev.bytecoins.world
   - DOMAIN-SUFFIX,0dev.ccminer.org
   - DOMAIN-SUFFIX,0dev.crypto-webminer.com
   - DOMAIN-SUFFIX,0dev.cryptonight.net
-  - DOMAIN-SUFFIX,0dev.equihub.pro
   - DOMAIN-SUFFIX,0dev.gethash.cc
   - DOMAIN-SUFFIX,0dev.hashfaster.com
   - DOMAIN-SUFFIX,0dev.sigmapool.com
@@ -6058,7 +5995,6 @@ payload:
   - DOMAIN-SUFFIX,0dns1.cryptonight.net
   - DOMAIN-SUFFIX,0dns1.gethash.cc
   - DOMAIN-SUFFIX,0dns1.hiveon.net
-  - DOMAIN-SUFFIX,0dns2.asicminer.co
   - DOMAIN-SUFFIX,0dns2.cryptonight.net
   - DOMAIN-SUFFIX,0dns2.gethash.cc
   - DOMAIN-SUFFIX,0dns2.nanopool.org
@@ -6116,7 +6052,6 @@ payload:
   - DOMAIN-SUFFIX,0domains.ccminer.org
   - DOMAIN-SUFFIX,0domangi.triplemining.com
   - DOMAIN-SUFFIX,0don.coincave.nl
-  - DOMAIN-SUFFIX,0donate.bytecoins.world
   - DOMAIN-SUFFIX,0donate.crypto-webminer.com
   - DOMAIN-SUFFIX,0dope.dedicatedpool.com
   - DOMAIN-SUFFIX,0dottydoo.triplemining.com
@@ -6125,7 +6060,6 @@ payload:
   - DOMAIN-SUFFIX,0down.miner-control.de
   - DOMAIN-SUFFIX,0down.veriblockpool.com
   - DOMAIN-SUFFIX,0down2.bitcoin.com
-  - DOMAIN-SUFFIX,0downgrade.veriblockpool.com
   - DOMAIN-SUFFIX,0download.abseits.ski
   - DOMAIN-SUFFIX,0download.api.cryptopool.eu
   - DOMAIN-SUFFIX,0download.bytecoins.world
@@ -6432,14 +6366,12 @@ payload:
   - DOMAIN-SUFFIX,0eeks.bitcoin.com
   - DOMAIN-SUFFIX,0eetheu1.nanopool.org
   - DOMAIN-SUFFIX,0ef292d.wcomhost.com
-  - DOMAIN-SUFFIX,0efchg.btcguild.com
   - DOMAIN-SUFFIX,0efl.coincave.nl
   - DOMAIN-SUFFIX,0efvy88h.bitcoin.com
   - DOMAIN-SUFFIX,0eg.hashcity.org
   - DOMAIN-SUFFIX,0egapi.bitcoin.com
   - DOMAIN-SUFFIX,0egem-solo.cryptodig.ru
   - DOMAIN-SUFFIX,0egem.abseits.ski
-  - DOMAIN-SUFFIX,0egem.europool.me
   - DOMAIN-SUFFIX,0egem.gethash.cc
   - DOMAIN-SUFFIX,0egillauthor.sigmapool.com
   - DOMAIN-SUFFIX,0egistry.cluster.bitfex.trade
@@ -6488,7 +6420,6 @@ payload:
   - DOMAIN-SUFFIX,0elya.my-mining-pool.de
   - DOMAIN-SUFFIX,0em.bitcoin.com
   - DOMAIN-SUFFIX,0email-0.nanopool.org
-  - DOMAIN-SUFFIX,0email-123.angrypool.com
   - DOMAIN-SUFFIX,0email-5.nanopool.org
   - DOMAIN-SUFFIX,0email.altpool.eu
   - DOMAIN-SUFFIX,0email.api.crypto.ba
@@ -6524,7 +6455,6 @@ payload:
   - DOMAIN-SUFFIX,0en.atomminer.com
   - DOMAIN-SUFFIX,0en.binance.com
   - DOMAIN-SUFFIX,0en.bitcoin.com
-  - DOMAIN-SUFFIX,0en.btczpool.com
   - DOMAIN-SUFFIX,0en.ccminer.org
   - DOMAIN-SUFFIX,0en.crypto-webminer.com
   - DOMAIN-SUFFIX,0en.eu.api.binance.com
@@ -6679,7 +6609,6 @@ payload:
   - DOMAIN-SUFFIX,0etho.abseits.ski
   - DOMAIN-SUFFIX,0ethos1.ethosdistro.com
   - DOMAIN-SUFFIX,0ethosd.ethosdistro.com
-  - DOMAIN-SUFFIX,0ethscan.helpico.tech
   - DOMAIN-SUFFIX,0ethsno.ethosdistro.com
   - DOMAIN-SUFFIX,0ethus-east1.nanopool.org
   - DOMAIN-SUFFIX,0etig.gethash.cc
@@ -6712,17 +6641,10 @@ payload:
   - DOMAIN-SUFFIX,0etrx.abseits.ski
   - DOMAIN-SUFFIX,0ets.nanopool.org
   - DOMAIN-SUFFIX,0etx.nanopool.org
-  - DOMAIN-SUFFIX,0eu-haproxy1.btcguild.com
   - DOMAIN-SUFFIX,0eu-mine.abseits.ski
   - DOMAIN-SUFFIX,0eu-pool.give-me-ltc.com
-  - DOMAIN-SUFFIX,0eu-stratum-lb-9ikj2.btcguild.com
-  - DOMAIN-SUFFIX,0eu-stratum-lb192lo.btcguild.com
-  - DOMAIN-SUFFIX,0eu-stratum-lb489kj.btcguild.com
-  - DOMAIN-SUFFIX,0eu-stratum-loadbal489e.btcguild.com
   - DOMAIN-SUFFIX,0eu-stratum.bitcoin.cz
-  - DOMAIN-SUFFIX,0eu-stratum.btcguild.com
   - DOMAIN-SUFFIX,0eu-stratum2.btcguild.com
-  - DOMAIN-SUFFIX,0eu-stratut.btcguild.com
   - DOMAIN-SUFFIX,0eu-xmr-2.viaxmr.com
   - DOMAIN-SUFFIX,0eu-zil.rustpool.xyz
   - DOMAIN-SUFFIX,0eu.adaminers.com
@@ -6730,7 +6652,6 @@ payload:
   - DOMAIN-SUFFIX,0eu.api.crypto.ba
   - DOMAIN-SUFFIX,0eu.bitcoin.cz
   - DOMAIN-SUFFIX,0eu.bohemianpool.com
-  - DOMAIN-SUFFIX,0eu.btcguild.com
   - DOMAIN-SUFFIX,0eu.crypto.ba
   - DOMAIN-SUFFIX,0eu.cryptopoolmining.com
   - DOMAIN-SUFFIX,0eu.eu.api.binance.com
@@ -6739,7 +6660,6 @@ payload:
   - DOMAIN-SUFFIX,0eu.mecrypto.club
   - DOMAIN-SUFFIX,0eu.mine.zpool.ca
   - DOMAIN-SUFFIX,0eu.mining.eligius.st
-  - DOMAIN-SUFFIX,0eu.n-engine.com
   - DOMAIN-SUFFIX,0eu.poolerino.com
   - DOMAIN-SUFFIX,0eu.rapidhash.net
   - DOMAIN-SUFFIX,0eu.sigmapool.com
@@ -6778,7 +6698,6 @@ payload:
   - DOMAIN-SUFFIX,0europe.minexca.com
   - DOMAIN-SUFFIX,0eus.cluster.bitfex.trade
   - DOMAIN-SUFFIX,0eus.cluster.cluster.bitfex.trade
-  - DOMAIN-SUFFIX,0eustratum.btcguild.com
   - DOMAIN-SUFFIX,0euuk.btcguild.com
   - DOMAIN-SUFFIX,0ev.bitcoin.com
   - DOMAIN-SUFFIX,0ev.eu.bitcoin.com
@@ -6926,7 +6845,6 @@ payload:
   - DOMAIN-SUFFIX,0f615.bitcoin.com
   - DOMAIN-SUFFIX,0f662abdd.bitcoin.com
   - DOMAIN-SUFFIX,0f6879.bitcoin.com
-  - DOMAIN-SUFFIX,0f6f763bf7.com
   - DOMAIN-SUFFIX,0f803e.ethosdistro.com
   - DOMAIN-SUFFIX,0f815049a.bitcoin.com
   - DOMAIN-SUFFIX,0f857e584a.com
@@ -7053,7 +6971,6 @@ payload:
   - DOMAIN-SUFFIX,0footer.58coin.com
   - DOMAIN-SUFFIX,0force.abseits.ski
   - DOMAIN-SUFFIX,0forms.cryptonight.net
-  - DOMAIN-SUFFIX,0formsyy.pms.btc.top
   - DOMAIN-SUFFIX,0fornex.api.binance.com
   - DOMAIN-SUFFIX,0foro.cryptonight.net
   - DOMAIN-SUFFIX,0foros.ccminer.org
@@ -7065,7 +6982,6 @@ payload:
   - DOMAIN-SUFFIX,0forum.argoneum.net
   - DOMAIN-SUFFIX,0forum.atomminer.com
   - DOMAIN-SUFFIX,0forum.bitcoin.cz
-  - DOMAIN-SUFFIX,0forum.btcguild.com
   - DOMAIN-SUFFIX,0forum.ccminer.org
   - DOMAIN-SUFFIX,0forum.crypto-webminer.com
   - DOMAIN-SUFFIX,0forum.crypto.ba
@@ -7154,7 +7070,6 @@ payload:
   - DOMAIN-SUFFIX,0ftp.api.cryptopool.eu
   - DOMAIN-SUFFIX,0ftp.atomminer.com
   - DOMAIN-SUFFIX,0ftp.bitcoin.cz
-  - DOMAIN-SUFFIX,0ftp.btcguild.com
   - DOMAIN-SUFFIX,0ftp.bubblemine.com
   - DOMAIN-SUFFIX,0ftp.coincave.nl
   - DOMAIN-SUFFIX,0ftp.coinking.io
@@ -7578,7 +7493,6 @@ payload:
   - DOMAIN-SUFFIX,0get4.ethosdistro.com
   - DOMAIN-SUFFIX,0getbze.abseits.ski
   - DOMAIN-SUFFIX,0gets.bitcoin.com
-  - DOMAIN-SUFFIX,0getwork.btcguild.com
   - DOMAIN-SUFFIX,0getwork.mining.eligius.st
   - DOMAIN-SUFFIX,0gg.binance.com
   - DOMAIN-SUFFIX,0gg.hiveon.net
@@ -7923,7 +7837,6 @@ payload:
   - DOMAIN-SUFFIX,0hermes.cryptonight.net
   - DOMAIN-SUFFIX,0hermes.dark-mine.su
   - DOMAIN-SUFFIX,0hermes.supportaeon.com
-  - DOMAIN-SUFFIX,0hermes.xmr.org.uk
   - DOMAIN-SUFFIX,0hex.abseits.ski
   - DOMAIN-SUFFIX,0hex.eu.mine.mine.mine.zpool.ca
   - DOMAIN-SUFFIX,0hex.eu.mine.zpool.ca
@@ -7986,7 +7899,6 @@ payload:
   - DOMAIN-SUFFIX,0home.api.cryptopool.eu
   - DOMAIN-SUFFIX,0home.bitcoin.com
   - DOMAIN-SUFFIX,0home.ccminer.org
-  - DOMAIN-SUFFIX,0home.chunkypools.com
   - DOMAIN-SUFFIX,0home.crypto-webminer.com
   - DOMAIN-SUFFIX,0home.crypto.ba
   - DOMAIN-SUFFIX,0home.dashminer.com
@@ -8099,7 +8011,6 @@ payload:
   - DOMAIN-SUFFIX,0hostmaster.coinking.io
   - DOMAIN-SUFFIX,0hostmaster.coinpool.net
   - DOMAIN-SUFFIX,0hostmaster.corecenter.triplemining.com
-  - DOMAIN-SUFFIX,0hostmaster.cryptoescrow.eu
   - DOMAIN-SUFFIX,0hostmaster.cryptonotepool.org.uk
   - DOMAIN-SUFFIX,0hostmaster.cryptosales.eu
   - DOMAIN-SUFFIX,0hostmaster.dashminer.com
@@ -8134,7 +8045,6 @@ payload:
   - DOMAIN-SUFFIX,0hostmaster.tydirocks.triplemining.com
   - DOMAIN-SUFFIX,0hostmaster.volt.dedicatedpool.com
   - DOMAIN-SUFFIX,0hostmaster.webmail.bitcoin-pool.de
-  - DOMAIN-SUFFIX,0hostmaster.www.b2g.europool.me
   - DOMAIN-SUFFIX,0hostmaster.www.ltcmine.ru
   - DOMAIN-SUFFIX,0hot.dev.api.binance.com
   - DOMAIN-SUFFIX,0hot.eu.api.binance.com
@@ -8224,10 +8134,8 @@ payload:
   - DOMAIN-SUFFIX,0i.simply-hentai.com
   - DOMAIN-SUFFIX,0i.us.mine.zpool.ca
   - DOMAIN-SUFFIX,0i0.api.binance.com
-  - DOMAIN-SUFFIX,0i0.btcguild.com
   - DOMAIN-SUFFIX,0i0.eu.api.binance.com
   - DOMAIN-SUFFIX,0i0.us.api.binance.com
-  - DOMAIN-SUFFIX,0i0guild.btcguild.com
   - DOMAIN-SUFFIX,0i0i0i0.com
   - DOMAIN-SUFFIX,0i0rr3u5dlkqgpa0uxe13fz7f-q7l93.m.api.binance.com
   - DOMAIN-SUFFIX,0i0rr3u5dlkqgpa0uxe13fz7f-q7l93.m.binance.com
@@ -8302,7 +8210,6 @@ payload:
   - DOMAIN-SUFFIX,0image.cryptonight.net
   - DOMAIN-SUFFIX,0image.nanopool.org
   - DOMAIN-SUFFIX,0images.ccminer.org
-  - DOMAIN-SUFFIX,0images.chunkypools.com
   - DOMAIN-SUFFIX,0images.cryptonight.net
   - DOMAIN-SUFFIX,0images.hiveon.net
   - DOMAIN-SUFFIX,0images.kanpool.com
@@ -8324,7 +8231,6 @@ payload:
   - DOMAIN-SUFFIX,0imap.api.agryt.ru
   - DOMAIN-SUFFIX,0imap.api.cryptopool.eu
   - DOMAIN-SUFFIX,0imap.atomminer.com
-  - DOMAIN-SUFFIX,0imap.btcguild.com
   - DOMAIN-SUFFIX,0imap.ccminer.org
   - DOMAIN-SUFFIX,0imap.coinking.io
   - DOMAIN-SUFFIX,0imap.cryptonight.net
@@ -8348,7 +8254,6 @@ payload:
   - DOMAIN-SUFFIX,0imap1.dashminer.com
   - DOMAIN-SUFFIX,0imap1.emeraldcrypto.de
   - DOMAIN-SUFFIX,0imap1.hashfaster.com
-  - DOMAIN-SUFFIX,0imap1.nexious.com
   - DOMAIN-SUFFIX,0imap1.supportcryptonight.com
   - DOMAIN-SUFFIX,0imap1.teamdoge.com
   - DOMAIN-SUFFIX,0imap1.uralscoin.info
@@ -8463,8 +8368,6 @@ payload:
   - DOMAIN-SUFFIX,0intucoin.my-mining-pool.de
   - DOMAIN-SUFFIX,0invalid.hiveon.net
   - DOMAIN-SUFFIX,0invc.abseits.ski
-  - DOMAIN-SUFFIX,0invc.veriblockpool.com
-  - DOMAIN-SUFFIX,0io.btcguild.com
   - DOMAIN-SUFFIX,0io.hiveon.net
   - DOMAIN-SUFFIX,0ioi.net
   - DOMAIN-SUFFIX,0ios.binance.com
@@ -8572,7 +8475,6 @@ payload:
   - DOMAIN-SUFFIX,0j.eu.api.binance.com
   - DOMAIN-SUFFIX,0j13.atomminer.com
   - DOMAIN-SUFFIX,0j15.atomminer.com
-  - DOMAIN-SUFFIX,0j2wkomsf86842ekzc0.btcguild.com
   - DOMAIN-SUFFIX,0j4.api.binance.com
   - DOMAIN-SUFFIX,0j4.dev.api.binance.com
   - DOMAIN-SUFFIX,0j9.dev.api.binance.com
@@ -8757,7 +8659,6 @@ payload:
   - DOMAIN-SUFFIX,0kend.bitcoin.com
   - DOMAIN-SUFFIX,0kenji0.ethosdistro.com
   - DOMAIN-SUFFIX,0keno.bitcoin.com
-  - DOMAIN-SUFFIX,0kerberos.btcguild.com
   - DOMAIN-SUFFIX,0kerberos.cryptonight.net
   - DOMAIN-SUFFIX,0kets.bitcoin.com
   - DOMAIN-SUFFIX,0kfb.nanopool.org
@@ -8814,7 +8715,6 @@ payload:
   - DOMAIN-SUFFIX,0kr43.api.binance.com
   - DOMAIN-SUFFIX,0kr6-0.binance.com
   - DOMAIN-SUFFIX,0kr60.binance.com
-  - DOMAIN-SUFFIX,0krb.coinminer.space
   - DOMAIN-SUFFIX,0krb.dark-mine.su
   - DOMAIN-SUFFIX,0krb.freshpool.org
   - DOMAIN-SUFFIX,0krn.api.cryptopool.eu
@@ -9084,7 +8984,6 @@ payload:
   - DOMAIN-SUFFIX,0loki.aussie-pools.com
   - DOMAIN-SUFFIX,0loki.blockcruncher.com
   - DOMAIN-SUFFIX,0loki.dark-mine.su
-  - DOMAIN-SUFFIX,0loki.europool.me
   - DOMAIN-SUFFIX,0loki.fairhash.org
   - DOMAIN-SUFFIX,0loki.gethash.cc
   - DOMAIN-SUFFIX,0loki.minercountry.com
@@ -9102,7 +9001,6 @@ payload:
   - DOMAIN-SUFFIX,0lot.coincave.nl
   - DOMAIN-SUFFIX,0lot.dedicatedpool.com
   - DOMAIN-SUFFIX,0lot.hashfaster.com
-  - DOMAIN-SUFFIX,0lottery.bytecoins.world
   - DOMAIN-SUFFIX,0lottery.mecrypto.club
   - DOMAIN-SUFFIX,0lottery2.mecrypto.club
   - DOMAIN-SUFFIX,0lotus.hiveon.net
@@ -9194,7 +9092,6 @@ payload:
   - DOMAIN-SUFFIX,0m.atomminer.com
   - DOMAIN-SUFFIX,0m.bitcoin.com
   - DOMAIN-SUFFIX,0m.bitcoin.cz
-  - DOMAIN-SUFFIX,0m.btcguild.com
   - DOMAIN-SUFFIX,0m.ccminer.org
   - DOMAIN-SUFFIX,0m.cluster.bitfex.trade
   - DOMAIN-SUFFIX,0m.cluster.cluster.bitfex.trade
@@ -9276,10 +9173,7 @@ payload:
   - DOMAIN-SUFFIX,0mail.bitcoin-pool.de
   - DOMAIN-SUFFIX,0mail.bitcoin.com
   - DOMAIN-SUFFIX,0mail.bitcoin.cz
-  - DOMAIN-SUFFIX,0mail.btcguild.com
   - DOMAIN-SUFFIX,0mail.bubblemine.com
-  - DOMAIN-SUFFIX,0mail.burst-team.us
-  - DOMAIN-SUFFIX,0mail.bytecoins.world
   - DOMAIN-SUFFIX,0mail.ccminer.org
   - DOMAIN-SUFFIX,0mail.coin-mining.net
   - DOMAIN-SUFFIX,0mail.coincave.nl
@@ -9307,10 +9201,8 @@ payload:
   - DOMAIN-SUFFIX,0mail.gntl.co.uk
   - DOMAIN-SUFFIX,0mail.hashfaster.com
   - DOMAIN-SUFFIX,0mail.hashpool.eu
-  - DOMAIN-SUFFIX,0mail.helpico.tech
   - DOMAIN-SUFFIX,0mail.hodlpool.com
   - DOMAIN-SUFFIX,0mail.hospitalcoin.net
-  - DOMAIN-SUFFIX,0mail.icash.veriblockpool.com
   - DOMAIN-SUFFIX,0mail.italocoin.com
   - DOMAIN-SUFFIX,0mail.lafuhosting.top
   - DOMAIN-SUFFIX,0mail.masari.net
@@ -9319,7 +9211,6 @@ payload:
   - DOMAIN-SUFFIX,0mail.minerhills.com
   - DOMAIN-SUFFIX,0mail.minersrepublic.com
   - DOMAIN-SUFFIX,0mail.miningcoins.ca
-  - DOMAIN-SUFFIX,0mail.miningpool.ch
   - DOMAIN-SUFFIX,0mail.miningpoolrw.de
   - DOMAIN-SUFFIX,0mail.multiminer.us
   - DOMAIN-SUFFIX,0mail.mupool.com
@@ -9353,7 +9244,6 @@ payload:
   - DOMAIN-SUFFIX,0mail02.zet-tech.eu
   - DOMAIN-SUFFIX,0mail1.altpool.eu
   - DOMAIN-SUFFIX,0mail1.api.cryptopool.eu
-  - DOMAIN-SUFFIX,0mail1.asicminer.co
   - DOMAIN-SUFFIX,0mail1.bitcoin.cz
   - DOMAIN-SUFFIX,0mail1.ccminer.org
   - DOMAIN-SUFFIX,0mail1.cryptonight.net
@@ -9384,7 +9274,6 @@ payload:
   - DOMAIN-SUFFIX,0mail12.api.agryt.ru
   - DOMAIN-SUFFIX,0mail12.api.cryptopool.eu
   - DOMAIN-SUFFIX,0mail12.ccminer.org
-  - DOMAIN-SUFFIX,0mail12.equihub.pro
   - DOMAIN-SUFFIX,0mail12.teamdoge.com
   - DOMAIN-SUFFIX,0mail2.agryt.ru
   - DOMAIN-SUFFIX,0mail2.altpool.eu
@@ -9401,7 +9290,6 @@ payload:
   - DOMAIN-SUFFIX,0mail2.hashfaster.com
   - DOMAIN-SUFFIX,0mail2.hiveon.net
   - DOMAIN-SUFFIX,0mail2.masari.net
-  - DOMAIN-SUFFIX,0mail2.minerpool.net
   - DOMAIN-SUFFIX,0mail2.pool.gntl.co.uk
   - DOMAIN-SUFFIX,0mail2.supportaeon.com
   - DOMAIN-SUFFIX,0mail2.supportcryptonight.com
@@ -9438,11 +9326,9 @@ payload:
   - DOMAIN-SUFFIX,0mail6.api.cryptopool.eu
   - DOMAIN-SUFFIX,0mail6.hiveon.net
   - DOMAIN-SUFFIX,0mail6.hodlpool.com
-  - DOMAIN-SUFFIX,0mail6.xmrminingpro.com
   - DOMAIN-SUFFIX,0mail6.zet-tech.eu
   - DOMAIN-SUFFIX,0mail7.altpool.eu
   - DOMAIN-SUFFIX,0mail7.api.cryptopool.eu
-  - DOMAIN-SUFFIX,0mail7.burst-team.us
   - DOMAIN-SUFFIX,0mail7.emeraldcrypto.de
   - DOMAIN-SUFFIX,0mail7.hashing.com
   - DOMAIN-SUFFIX,0mail7.hodlpool.com
@@ -9521,7 +9407,6 @@ payload:
   - DOMAIN-SUFFIX,0mailin.fixedtradecoin.org
   - DOMAIN-SUFFIX,0mailin.hashfaster.com
   - DOMAIN-SUFFIX,0mailin.hodlpool.com
-  - DOMAIN-SUFFIX,0mailin.n-engine.com
   - DOMAIN-SUFFIX,0mailin.supportaeon.com
   - DOMAIN-SUFFIX,0mailin.uralscoin.info
   - DOMAIN-SUFFIX,0mailin.zet-tech.eu
@@ -9531,7 +9416,6 @@ payload:
   - DOMAIN-SUFFIX,0mailout.fixedtradecoin.org
   - DOMAIN-SUFFIX,0mailout.hashfaster.com
   - DOMAIN-SUFFIX,0mailout.hodlpool.com
-  - DOMAIN-SUFFIX,0mailout.n-engine.com
   - DOMAIN-SUFFIX,0mailout.supportcryptonight.com
   - DOMAIN-SUFFIX,0mailrelay.api.cryptopool.eu
   - DOMAIN-SUFFIX,0mailrelay.emeraldcrypto.de
@@ -9546,7 +9430,6 @@ payload:
   - DOMAIN-SUFFIX,0mails.supportaeon.com
   - DOMAIN-SUFFIX,0mailserver.altpool.eu
   - DOMAIN-SUFFIX,0mailserver.api.cryptopool.eu
-  - DOMAIN-SUFFIX,0mailserver.burst-team.us
   - DOMAIN-SUFFIX,0mailserver.ccminer.org
   - DOMAIN-SUFFIX,0mailserver.cryptopool.eu
   - DOMAIN-SUFFIX,0mailserver.dashminer.com
@@ -9565,7 +9448,6 @@ payload:
   - DOMAIN-SUFFIX,0mailsrv.dashminer.com
   - DOMAIN-SUFFIX,0mailsrv.emeraldcrypto.de
   - DOMAIN-SUFFIX,0mailsrv.hashfaster.com
-  - DOMAIN-SUFFIX,0mailsrv.nexious.com
   - DOMAIN-SUFFIX,0mailx.altpool.eu
   - DOMAIN-SUFFIX,0mailx.api.cryptopool.eu
   - DOMAIN-SUFFIX,0mailx.binance.com
@@ -9591,13 +9473,11 @@ payload:
   - DOMAIN-SUFFIX,0malaysia.bitcoin.com
   - DOMAIN-SUFFIX,0male.bitcoin.com
   - DOMAIN-SUFFIX,0mall.api.cryptopool.eu
-  - DOMAIN-SUFFIX,0manage.btcguild.com
   - DOMAIN-SUFFIX,0manage.crypto-webminer.com
   - DOMAIN-SUFFIX,0manage.cryptonight.net
   - DOMAIN-SUFFIX,0manager.ccminer.org
   - DOMAIN-SUFFIX,0mangacoinlife-test.manga-coin.com
   - DOMAIN-SUFFIX,0mangamining.abseits.ski
-  - DOMAIN-SUFFIX,0mangamining.veriblockpool.com
   - DOMAIN-SUFFIX,0mangarawbk.nanopool.org
   - DOMAIN-SUFFIX,0manicminer.triplemining.com
   - DOMAIN-SUFFIX,0manojjindal.bitcoin.com
@@ -9708,7 +9588,6 @@ payload:
   - DOMAIN-SUFFIX,0media.api.binance.com
   - DOMAIN-SUFFIX,0media.ccminer.org
   - DOMAIN-SUFFIX,0media.gethash.cc
-  - DOMAIN-SUFFIX,0media2.btcguild.com
   - DOMAIN-SUFFIX,0medmail.dev.api.binance.com
   - DOMAIN-SUFFIX,0medmail.eu.api.binance.com
   - DOMAIN-SUFFIX,0medmail.us.api.binance.com
@@ -9739,7 +9618,6 @@ payload:
   - DOMAIN-SUFFIX,0mercury.cryptonight.net
   - DOMAIN-SUFFIX,0mercury.hiveon.net
   - DOMAIN-SUFFIX,0merged.supportcryptonight.com
-  - DOMAIN-SUFFIX,0mergedmining.btcguild.com
   - DOMAIN-SUFFIX,0mestoday.bitcoin.com
   - DOMAIN-SUFFIX,0meta.ccminer.org
   - DOMAIN-SUFFIX,0meta.cryptonight.net
@@ -9792,7 +9670,6 @@ payload:
   - DOMAIN-SUFFIX,0mine-dgc.abseits.ski
   - DOMAIN-SUFFIX,0mine-sup.coinminers.net
   - DOMAIN-SUFFIX,0mine.bitcoin.cz
-  - DOMAIN-SUFFIX,0mine.btcguild.com
   - DOMAIN-SUFFIX,0mine.coinpool.net
   - DOMAIN-SUFFIX,0mine.dbix.abseits.ski
   - DOMAIN-SUFFIX,0mine.eu.mine.zpool.ca
@@ -9803,13 +9680,10 @@ payload:
   - DOMAIN-SUFFIX,0mine.torrent.pw
   - DOMAIN-SUFFIX,0mine.tube.abseits.ski
   - DOMAIN-SUFFIX,0mine.us.mine.zpool.ca
-  - DOMAIN-SUFFIX,0mine1.btcguild.com
-  - DOMAIN-SUFFIX,0mine2.btcguild.com
   - DOMAIN-SUFFIX,0mine2.eu.mine.zpool.ca
   - DOMAIN-SUFFIX,0mine2.ja.mine.zpool.ca
   - DOMAIN-SUFFIX,0mine2.mine.zpool.ca
   - DOMAIN-SUFFIX,0mine2.us.mine.zpool.ca
-  - DOMAIN-SUFFIX,0mine3.btcguild.com
   - DOMAIN-SUFFIX,0mine4.khc.nonce-pool.com
   - DOMAIN-SUFFIX,0mineing.bitcoin.cz
   - DOMAIN-SUFFIX,0miner-2-eu.minexca.com
@@ -9882,7 +9756,6 @@ payload:
   - DOMAIN-SUFFIX,0ml.net
   - DOMAIN-SUFFIX,0mls.hashhot.com
   - DOMAIN-SUFFIX,0mlv.dev.api.binance.com
-  - DOMAIN-SUFFIX,0mm.bytecoins.world
   - DOMAIN-SUFFIX,0mm.supportcryptonight.com
   - DOMAIN-SUFFIX,0mm2.supportcryptonight.com
   - DOMAIN-SUFFIX,0mn.api.crypto.ba
@@ -9939,7 +9812,6 @@ payload:
   - DOMAIN-SUFFIX,0mongo.gethash.cc
   - DOMAIN-SUFFIX,0mongodb.api.binance.com
   - DOMAIN-SUFFIX,0mongodb.gethash.cc
-  - DOMAIN-SUFFIX,0mongodb.minerpool.net
   - DOMAIN-SUFFIX,0monitor.atomminer.com
   - DOMAIN-SUFFIX,0monitor.bitcoin.cz
   - DOMAIN-SUFFIX,0monitor.ccminer.org
@@ -9947,10 +9819,8 @@ payload:
   - DOMAIN-SUFFIX,0monitor.rapidhash.net
   - DOMAIN-SUFFIX,0monitor.veriblock.org
   - DOMAIN-SUFFIX,0monitor.zet-tech.eu
-  - DOMAIN-SUFFIX,0monitoring.bytecoins.world
   - DOMAIN-SUFFIX,0monitoring.cryptonight.net
   - DOMAIN-SUFFIX,0monitoring.webchain.network
-  - DOMAIN-SUFFIX,0monre.chunkypools.com
   - DOMAIN-SUFFIX,0montreal.triplemining.com
   - DOMAIN-SUFFIX,0moodle.api.cryptopool.eu
   - DOMAIN-SUFFIX,0moodle.ccminer.org
@@ -10027,14 +9897,12 @@ payload:
   - DOMAIN-SUFFIX,0mta-sts.crypto.ba
   - DOMAIN-SUFFIX,0mta-sts.gethash.cc
   - DOMAIN-SUFFIX,0mta-sts.macyan.net
-  - DOMAIN-SUFFIX,0mta-sts.mail.miningpool.ch
   - DOMAIN-SUFFIX,0mta-sts.manga-coin.com
   - DOMAIN-SUFFIX,0mta-sts.miner-control.de
   - DOMAIN-SUFFIX,0mta-sts.supportaeon.com
   - DOMAIN-SUFFIX,0mta-sts.supportcryptonight.com
   - DOMAIN-SUFFIX,0mta.altpool.eu
   - DOMAIN-SUFFIX,0mta.api.cryptopool.eu
-  - DOMAIN-SUFFIX,0mta.bytecoins.world
   - DOMAIN-SUFFIX,0mta.dark-mine.su
   - DOMAIN-SUFFIX,0mta.emeraldcrypto.de
   - DOMAIN-SUFFIX,0mta.hashing.com
@@ -10089,7 +9957,6 @@ payload:
   - DOMAIN-SUFFIX,0mx-b.cryptonight.net
   - DOMAIN-SUFFIX,0mx.50btc.com
   - DOMAIN-SUFFIX,0mx.altpool.eu
-  - DOMAIN-SUFFIX,0mx.burst-team.us
   - DOMAIN-SUFFIX,0mx.ccminer.org
   - DOMAIN-SUFFIX,0mx.crypto-webminer.com
   - DOMAIN-SUFFIX,0mx.cryptopool.eu
@@ -10319,17 +10186,13 @@ payload:
   - DOMAIN-SUFFIX,0name.hiveon.net
   - DOMAIN-SUFFIX,0name.nanopool.org
   - DOMAIN-SUFFIX,0namid.sigmapool.com
-  - DOMAIN-SUFFIX,0namsterdam.bytecoins.world
   - DOMAIN-SUFFIX,0nanc.hashfaster.com
   - DOMAIN-SUFFIX,0nanovatkoblogosphere.nanopool.org
-  - DOMAIN-SUFFIX,0napi-dev.veriblockpool.com
   - DOMAIN-SUFFIX,0napi-fno.abseits.ski
-  - DOMAIN-SUFFIX,0napi-fno.easyhash.io
   - DOMAIN-SUFFIX,0napi-itns.abseits.ski
   - DOMAIN-SUFFIX,0napi-krb.abseits.ski
   - DOMAIN-SUFFIX,0napi-mobile.58coin.com
   - DOMAIN-SUFFIX,0napi-stratum.bitcoin.cz
-  - DOMAIN-SUFFIX,0napi-sumo.easyhash.io
   - DOMAIN-SUFFIX,0napi-xmv.abseits.ski
   - DOMAIN-SUFFIX,0napi.abseits.ski
   - DOMAIN-SUFFIX,0napi.bitcoin.cz
@@ -10534,7 +10397,6 @@ payload:
   - DOMAIN-SUFFIX,0ncust97.hiveon.net
   - DOMAIN-SUFFIX,0ncust97.nanopool.org
   - DOMAIN-SUFFIX,0ncustom.crypto-webminer.com
-  - DOMAIN-SUFFIX,0ncvs.bytecoins.world
   - DOMAIN-SUFFIX,0ncwy.cryptopool.eu
   - DOMAIN-SUFFIX,0ndallas.hiveon.net
   - DOMAIN-SUFFIX,0ndark.hashfaster.com
@@ -10734,7 +10596,6 @@ payload:
   - DOMAIN-SUFFIX,0nfiuhduc7637hfdf.omine.org
   - DOMAIN-SUFFIX,0nfj.nanopool.org
   - DOMAIN-SUFFIX,0nfjc.pool.mn
-  - DOMAIN-SUFFIX,0nfl.bytecoins.world
   - DOMAIN-SUFFIX,0nflorida.hiveon.net
   - DOMAIN-SUFFIX,0nflow.hiveon.net
   - DOMAIN-SUFFIX,0ng.bitcoin.com
@@ -10787,7 +10648,6 @@ payload:
   - DOMAIN-SUFFIX,0nhc.hashhot.com
   - DOMAIN-SUFFIX,0nhcalc.hashing.com
   - DOMAIN-SUFFIX,0nhdk.cryptopool.eu
-  - DOMAIN-SUFFIX,0nhenry.bytecoins.world
   - DOMAIN-SUFFIX,0nhermes.hiveon.net
   - DOMAIN-SUFFIX,0nhex.eu.mine.mine.mine.zpool.ca
   - DOMAIN-SUFFIX,0nhex.eu.mine.zpool.ca
@@ -10835,7 +10695,6 @@ payload:
   - DOMAIN-SUFFIX,0nilu.abseits.ski
   - DOMAIN-SUFFIX,0nimap.cryptopool.eu
   - DOMAIN-SUFFIX,0nimg01.hiveon.net
-  - DOMAIN-SUFFIX,0nimg02.bytecoins.world
   - DOMAIN-SUFFIX,0nimg02.hiveon.net
   - DOMAIN-SUFFIX,0nimiq.acc-pool.pw
   - DOMAIN-SUFFIX,0ninbound.hiveon.net
@@ -10905,14 +10764,11 @@ payload:
   - DOMAIN-SUFFIX,0nks.nanopool.org
   - DOMAIN-SUFFIX,0nkwep2fh.com
   - DOMAIN-SUFFIX,0nkz.hiveon.net
-  - DOMAIN-SUFFIX,0nl-stratum.btcguild.com
   - DOMAIN-SUFFIX,0nl.btcguild.com
   - DOMAIN-SUFFIX,0nl.cryptonight.net
   - DOMAIN-SUFFIX,0nl.gethash.cc
   - DOMAIN-SUFFIX,0nl.hashhot.com
-  - DOMAIN-SUFFIX,0nl1.btcguild.com
   - DOMAIN-SUFFIX,0nl2.abseits.ski
-  - DOMAIN-SUFFIX,0nl2.btcguild.com
   - DOMAIN-SUFFIX,0nlabs.hiveon.net
   - DOMAIN-SUFFIX,0nlamp.nanopool.org
   - DOMAIN-SUFFIX,0nlb03.us-west.hashfaster.com
@@ -10938,7 +10794,6 @@ payload:
   - DOMAIN-SUFFIX,0nlira2v2.mine.zpool.ca
   - DOMAIN-SUFFIX,0nlista.nanopool.org
   - DOMAIN-SUFFIX,0nlitecoin.minerpool.de
-  - DOMAIN-SUFFIX,0nlk.bytecoins.world
   - DOMAIN-SUFFIX,0nlk.hiveon.net
   - DOMAIN-SUFFIX,0nllnec0mm0nbiank.weebly.com
   - DOMAIN-SUFFIX,0nllnesecu.weebly.com
@@ -11002,15 +10857,12 @@ payload:
   - DOMAIN-SUFFIX,0nmcr.cryptopool.eu
   - DOMAIN-SUFFIX,0nmember.hiveon.net
   - DOMAIN-SUFFIX,0nmercury.hiveon.net
-  - DOMAIN-SUFFIX,0nmergedmining.btcguild.com
   - DOMAIN-SUFFIX,0nmgmt.sigmapool.com
   - DOMAIN-SUFFIX,0nmgmtr.sigmapool.com
   - DOMAIN-SUFFIX,0nmil.cryptopool.eu
   - DOMAIN-SUFFIX,0nmim.cryptopool.eu
   - DOMAIN-SUFFIX,0nmine.bitcoin.cz
   - DOMAIN-SUFFIX,0nmine.supportaeon.com
-  - DOMAIN-SUFFIX,0nmine2.btcguild.com
-  - DOMAIN-SUFFIX,0nmine3.btcguild.com
   - DOMAIN-SUFFIX,0nmineing.bitcoin.cz
   - DOMAIN-SUFFIX,0nminer.bitcoin.cz
   - DOMAIN-SUFFIX,0nminer.sigmapool.com
@@ -11033,7 +10885,6 @@ payload:
   - DOMAIN-SUFFIX,0nmonero.fairhash.org
   - DOMAIN-SUFFIX,0nmonerov.abseits.ski
   - DOMAIN-SUFFIX,0nmonerov.fairhash.org
-  - DOMAIN-SUFFIX,0nmonitoring.bytecoins.world
   - DOMAIN-SUFFIX,0nmortgageloan.58coin.com
   - DOMAIN-SUFFIX,0nmovies.hiveon.net
   - DOMAIN-SUFFIX,0nmox.fairhash.org
@@ -11074,7 +10925,6 @@ payload:
   - DOMAIN-SUFFIX,0nnetwork.hiveon.net
   - DOMAIN-SUFFIX,0nnevada.hiveon.net
   - DOMAIN-SUFFIX,0nnew.hiveon.net
-  - DOMAIN-SUFFIX,0nnewton.bytecoins.world
   - DOMAIN-SUFFIX,0nnewton.fairhash.org
   - DOMAIN-SUFFIX,0nnf.hiveon.net
   - DOMAIN-SUFFIX,0nng.hiveon.net
@@ -11086,9 +10936,6 @@ payload:
   - DOMAIN-SUFFIX,0nnist5.sea.mine.zpool.ca
   - DOMAIN-SUFFIX,0nnist5.ue.mine.eu.mine.zpool.ca
   - DOMAIN-SUFFIX,0nnist5.ue.mine.zpool.ca
-  - DOMAIN-SUFFIX,0nnl-stratum.btcguild.com
-  - DOMAIN-SUFFIX,0nnl.btcguild.com
-  - DOMAIN-SUFFIX,0nnl2.btcguild.com
   - DOMAIN-SUFFIX,0nnm.hiveon.net
   - DOMAIN-SUFFIX,0nnntp.hiveon.net
   - DOMAIN-SUFFIX,0nnode-1.minercircle.com
@@ -11109,7 +10956,6 @@ payload:
   - DOMAIN-SUFFIX,0nnode-8.minercircle.com
   - DOMAIN-SUFFIX,0nnode-9.minercircle.com
   - DOMAIN-SUFFIX,0nnode.bohemianpool.com
-  - DOMAIN-SUFFIX,0nnode.bytecoins.world
   - DOMAIN-SUFFIX,0nnode.hiveon.net
   - DOMAIN-SUFFIX,0nnode.nanopool.org
   - DOMAIN-SUFFIX,0nnode205.nanopool.org
@@ -11117,9 +10963,7 @@ payload:
   - DOMAIN-SUFFIX,0nnorth.hiveon.net
   - DOMAIN-SUFFIX,0nnr.hiveon.net
   - DOMAIN-SUFFIX,0nns0.hiveon.net
-  - DOMAIN-SUFFIX,0nns1.btcguild.com
   - DOMAIN-SUFFIX,0nns1.minerhills.com
-  - DOMAIN-SUFFIX,0nns2.btcguild.com
   - DOMAIN-SUFFIX,0nns2.minerhills.com
   - DOMAIN-SUFFIX,0no.hiveon.net
   - DOMAIN-SUFFIX,0noahkagan.sigmapool.com
@@ -11127,7 +10971,6 @@ payload:
   - DOMAIN-SUFFIX,0noasic.coinminers.net
   - DOMAIN-SUFFIX,0noasic.gethash.cc
   - DOMAIN-SUFFIX,0nobl.poolerino.com
-  - DOMAIN-SUFFIX,0noc.angrypool.com
   - DOMAIN-SUFFIX,0noc.ccminer.org
   - DOMAIN-SUFFIX,0noc.miningpool.cc
   - DOMAIN-SUFFIX,0nocean.hiveon.net
@@ -11151,7 +10994,6 @@ payload:
   - DOMAIN-SUFFIX,0node-express.fn.luxor.tech
   - DOMAIN-SUFFIX,0node.abseits.ski
   - DOMAIN-SUFFIX,0node.bohemianpool.com
-  - DOMAIN-SUFFIX,0node.bytecoins.world
   - DOMAIN-SUFFIX,0node.fungibly.xyz
   - DOMAIN-SUFFIX,0node1.gethash.cc
   - DOMAIN-SUFFIX,0node1.webchain.network
@@ -11178,7 +11020,6 @@ payload:
   - DOMAIN-SUFFIX,0nokia.hiveon.net
   - DOMAIN-SUFFIX,0nokia.nanopool.org
   - DOMAIN-SUFFIX,0nold.bitcoin.cz
-  - DOMAIN-SUFFIX,0nold.btcguild.com
   - DOMAIN-SUFFIX,0noldbdx.fairhash.org
   - DOMAIN-SUFFIX,0nolddero.fairhash.org
   - DOMAIN-SUFFIX,0noly.cryptopool.eu
@@ -11235,13 +11076,11 @@ payload:
   - DOMAIN-SUFFIX,0ns.api.cryptopool.eu
   - DOMAIN-SUFFIX,0ns.aussie-pools.com
   - DOMAIN-SUFFIX,0ns.bitcoin.com
-  - DOMAIN-SUFFIX,0ns.btcguild.com
   - DOMAIN-SUFFIX,0ns.ccminer.org
   - DOMAIN-SUFFIX,0ns.cryptopool.eu
   - DOMAIN-SUFFIX,0ns.emeraldcrypto.de
   - DOMAIN-SUFFIX,0ns.gethash.cc
   - DOMAIN-SUFFIX,0ns.hiveon.net
-  - DOMAIN-SUFFIX,0ns.n-engine.com
   - DOMAIN-SUFFIX,0ns.supportaeon.com
   - DOMAIN-SUFFIX,0ns.supportcryptonight.com
   - DOMAIN-SUFFIX,0ns0.ccminer.org
@@ -11253,8 +11092,6 @@ payload:
   - DOMAIN-SUFFIX,0ns03.cryptonight.net
   - DOMAIN-SUFFIX,0ns1.altpool.eu
   - DOMAIN-SUFFIX,0ns1.api.cryptopool.eu
-  - DOMAIN-SUFFIX,0ns1.bitpoolmining.com
-  - DOMAIN-SUFFIX,0ns1.btcguild.com
   - DOMAIN-SUFFIX,0ns1.ccminer.org
   - DOMAIN-SUFFIX,0ns1.coinpool.ru
   - DOMAIN-SUFFIX,0ns1.crypto-webminer.com
@@ -11384,7 +11221,6 @@ payload:
   - DOMAIN-SUFFIX,0ny20.ethosdistro.com
   - DOMAIN-SUFFIX,0nyan.abseits.ski
   - DOMAIN-SUFFIX,0nyan.coincave.nl
-  - DOMAIN-SUFFIX,0nyan.mastermining.net
   - DOMAIN-SUFFIX,0nyc.abseits.ski
   - DOMAIN-SUFFIX,0nyc03.abseits.ski
   - DOMAIN-SUFFIX,0nyc04.abseits.ski
@@ -11455,7 +11291,6 @@ payload:
   - DOMAIN-SUFFIX,0old.api.cryptopool.eu
   - DOMAIN-SUFFIX,0old.argoneum.net
   - DOMAIN-SUFFIX,0old.bitcoin.cz
-  - DOMAIN-SUFFIX,0old.btcguild.com
   - DOMAIN-SUFFIX,0old.ccminer.org
   - DOMAIN-SUFFIX,0old.cryptonight.net
   - DOMAIN-SUFFIX,0old.hashpool.eu
@@ -11713,7 +11548,6 @@ payload:
   - DOMAIN-SUFFIX,0payments.ccminer.org
   - DOMAIN-SUFFIX,0payments.cryptonight.net
   - DOMAIN-SUFFIX,0paypay.bitcoin.com
-  - DOMAIN-SUFFIX,0payroll.bytecoins.world
   - DOMAIN-SUFFIX,0pb.bitcoin.com
   - DOMAIN-SUFFIX,0pbrand.api.cryptopool.eu
   - DOMAIN-SUFFIX,0pbrand.cryptopool.eu
@@ -11730,10 +11564,8 @@ payload:
   - DOMAIN-SUFFIX,0pc0916.binance.com
   - DOMAIN-SUFFIX,0pc10.bitcoin.com
   - DOMAIN-SUFFIX,0pc101.hiveon.net
-  - DOMAIN-SUFFIX,0pc13.bytecoins.world
   - DOMAIN-SUFFIX,0pc14.nanopool.org
   - DOMAIN-SUFFIX,0pc15.nanopool.org
-  - DOMAIN-SUFFIX,0pc16.bytecoins.world
   - DOMAIN-SUFFIX,0pc22.hiveon.net
   - DOMAIN-SUFFIX,0pc23.hiveon.net
   - DOMAIN-SUFFIX,0pc2617.binance.com
@@ -11826,7 +11658,6 @@ payload:
   - DOMAIN-SUFFIX,0phi2.na.mine.zpool.ca
   - DOMAIN-SUFFIX,0phi2.sea.mine.zpool.ca
   - DOMAIN-SUFFIX,0phi2.us.mine.zpool.ca
-  - DOMAIN-SUFFIX,0philadelphia.bytecoins.world
   - DOMAIN-SUFFIX,0phl.cato0.easyx.cc
   - DOMAIN-SUFFIX,0phm.nanopool.org
   - DOMAIN-SUFFIX,0phoeniz.hiveon.net
@@ -11862,6 +11693,7 @@ payload:
   - DOMAIN-SUFFIX,0pk.minercountry.com
   - DOMAIN-SUFFIX,0pk.minerhills.com
   - DOMAIN-SUFFIX,0pki.binance.com
+  - DOMAIN-SUFFIX,0pkit2tt.prozhedownload.net
   - DOMAIN-SUFFIX,0pkr.api.cryptopool.eu
   - DOMAIN-SUFFIX,0pkr.cryptopool.eu
   - DOMAIN-SUFFIX,0pl.acc-pool.pw
@@ -11963,8 +11795,6 @@ payload:
   - DOMAIN-SUFFIX,0pool.bitcoin.cz
   - DOMAIN-SUFFIX,0pool.bohemianpool.com
   - DOMAIN-SUFFIX,0pool.btcppool.com
-  - DOMAIN-SUFFIX,0pool.btczpool.com
-  - DOMAIN-SUFFIX,0pool.bytecoins.world
   - DOMAIN-SUFFIX,0pool.cato0.easyx.cc
   - DOMAIN-SUFFIX,0pool.ccminer.org
   - DOMAIN-SUFFIX,0pool.cloudcoins.co
@@ -12003,7 +11833,6 @@ payload:
   - DOMAIN-SUFFIX,0pool01.abseits.ski
   - DOMAIN-SUFFIX,0pool01.ufo.link
   - DOMAIN-SUFFIX,0pool03.ufo.link
-  - DOMAIN-SUFFIX,0pool04.veriblockpool.com
   - DOMAIN-SUFFIX,0pool06.gethash.cc
   - DOMAIN-SUFFIX,0pool08.abseits.ski
   - DOMAIN-SUFFIX,0pool08.gethash.cc
@@ -12033,7 +11862,6 @@ payload:
   - DOMAIN-SUFFIX,0pop.altpool.eu
   - DOMAIN-SUFFIX,0pop.api.cryptopool.eu
   - DOMAIN-SUFFIX,0pop.atomminer.com
-  - DOMAIN-SUFFIX,0pop.btcguild.com
   - DOMAIN-SUFFIX,0pop.ccminer.org
   - DOMAIN-SUFFIX,0pop.coincave.nl
   - DOMAIN-SUFFIX,0pop.cryptonight.net
@@ -12054,7 +11882,6 @@ payload:
   - DOMAIN-SUFFIX,0pop3.api.agryt.ru
   - DOMAIN-SUFFIX,0pop3.api.cryptopool.eu
   - DOMAIN-SUFFIX,0pop3.atomminer.com
-  - DOMAIN-SUFFIX,0pop3.btcguild.com
   - DOMAIN-SUFFIX,0pop3.coincave.nl
   - DOMAIN-SUFFIX,0pop3.cryptonight.net
   - DOMAIN-SUFFIX,0pop3.dashminer.com
@@ -12069,7 +11896,6 @@ payload:
   - DOMAIN-SUFFIX,0pop3.uralscoin.info
   - DOMAIN-SUFFIX,0popa.veriblock.org
   - DOMAIN-SUFFIX,0port443.mining.eligius.st
-  - DOMAIN-SUFFIX,0port80.btcguild.com
   - DOMAIN-SUFFIX,0port80.mining.eligius.st
   - DOMAIN-SUFFIX,0portainer.api.crypto.ba
   - DOMAIN-SUFFIX,0portainer.crypto.ba
@@ -12153,7 +11979,6 @@ payload:
   - DOMAIN-SUFFIX,0ppp9.hiveon.net
   - DOMAIN-SUFFIX,0pps-etc-tr.adaminers.com
   - DOMAIN-SUFFIX,0pps-etc.abseits.ski
-  - DOMAIN-SUFFIX,0pps.btcguild.com
   - DOMAIN-SUFFIX,0pps.gethash.cc
   - DOMAIN-SUFFIX,0pps.nanopool.org
   - DOMAIN-SUFFIX,0ppz.api.binance.com
@@ -12358,7 +12183,6 @@ payload:
   - DOMAIN-SUFFIX,0qwc.abseits.ski
   - DOMAIN-SUFFIX,0qwertycoin.crypto-webminer.com
   - DOMAIN-SUFFIX,0qwertycoin.fairhash.org
-  - DOMAIN-SUFFIX,0qww.btcguild.com
   - DOMAIN-SUFFIX,0qwxi.bitcoin.com
   - DOMAIN-SUFFIX,0qxfxqif0.com
   - DOMAIN-SUFFIX,0qzlx.bitcoin.com
@@ -12867,7 +12691,6 @@ payload:
   - DOMAIN-SUFFIX,0sbs.nanopool.org
   - DOMAIN-SUFFIX,0sc.api.binance.com
   - DOMAIN-SUFFIX,0sc.binance.com
-  - DOMAIN-SUFFIX,0sc.btcguild.com
   - DOMAIN-SUFFIX,0sc.ccminer.org
   - DOMAIN-SUFFIX,0sc.cryptonight.net
   - DOMAIN-SUFFIX,0sc.hashhot.com
@@ -13076,7 +12899,6 @@ payload:
   - DOMAIN-SUFFIX,0sf.dashminer.com
   - DOMAIN-SUFFIX,0sf3.dashminer.com
   - DOMAIN-SUFFIX,0sfb.eu.api.binance.com
-  - DOMAIN-SUFFIX,0sfdc.btcguild.com
   - DOMAIN-SUFFIX,0sfr.api.binance.com
   - DOMAIN-SUFFIX,0sfr.eu.api.binance.com
   - DOMAIN-SUFFIX,0sftp-2-8.binance.com
@@ -13149,7 +12971,6 @@ payload:
   - DOMAIN-SUFFIX,0shop.api.cryptopool.eu
   - DOMAIN-SUFFIX,0shop.atheios.com
   - DOMAIN-SUFFIX,0shop.atomminer.com
-  - DOMAIN-SUFFIX,0shop.btcguild.com
   - DOMAIN-SUFFIX,0shop.crypto-webminer.com
   - DOMAIN-SUFFIX,0shop.cryptonight.net
   - DOMAIN-SUFFIX,0shop.dashminer.com
@@ -13296,7 +13117,6 @@ payload:
   - DOMAIN-SUFFIX,0smtp.atomminer.com
   - DOMAIN-SUFFIX,0smtp.bitcoin.com
   - DOMAIN-SUFFIX,0smtp.bitcoin.cz
-  - DOMAIN-SUFFIX,0smtp.btcguild.com
   - DOMAIN-SUFFIX,0smtp.coincave.nl
   - DOMAIN-SUFFIX,0smtp.comune.api.cryptopool.eu
   - DOMAIN-SUFFIX,0smtp.comune.cryptopool.eu
@@ -13561,7 +13381,6 @@ payload:
   - DOMAIN-SUFFIX,0sslvpn.gethash.cc
   - DOMAIN-SUFFIX,0sso.api.binance.com
   - DOMAIN-SUFFIX,0sss.acc-pool.pw
-  - DOMAIN-SUFFIX,0sss.btcguild.com
   - DOMAIN-SUFFIX,0ssv.hashhot.com
   - DOMAIN-SUFFIX,0ssy1.ethosdistro.com
   - DOMAIN-SUFFIX,0st.ccminer.org
@@ -13595,7 +13414,6 @@ payload:
   - DOMAIN-SUFFIX,0start2.hiveon.net
   - DOMAIN-SUFFIX,0start8.hiveon.net
   - DOMAIN-SUFFIX,0startum.bitcoin.cz
-  - DOMAIN-SUFFIX,0startum.btcguild.com
   - DOMAIN-SUFFIX,0starwels.acc-pool.pw
   - DOMAIN-SUFFIX,0stat.cryptonight.net
   - DOMAIN-SUFFIX,0stat.hiveon.net
@@ -13678,10 +13496,7 @@ payload:
   - DOMAIN-SUFFIX,0stratum-asia.veriblockpool.com
   - DOMAIN-SUFFIX,0stratum-de.abseits.ski
   - DOMAIN-SUFFIX,0stratum-east.hashfaster.com
-  - DOMAIN-SUFFIX,0stratum-eu-privatedns.btcguild.com
   - DOMAIN-SUFFIX,0stratum-eu.hashfaster.com
-  - DOMAIN-SUFFIX,0stratum-lb93xp.btcguild.com
-  - DOMAIN-SUFFIX,0stratum-loadbal431o.btcguild.com
   - DOMAIN-SUFFIX,0stratum-ssl.hashfaster.com
   - DOMAIN-SUFFIX,0stratum-uk.abseits.ski
   - DOMAIN-SUFFIX,0stratum-us-west.coinminers.net
@@ -13693,7 +13508,6 @@ payload:
   - DOMAIN-SUFFIX,0stratum.altpools.com
   - DOMAIN-SUFFIX,0stratum.api.cryptopool.eu
   - DOMAIN-SUFFIX,0stratum.bitcoin.cz
-  - DOMAIN-SUFFIX,0stratum.btcguild.com
   - DOMAIN-SUFFIX,0stratum.cryptopool.eu
   - DOMAIN-SUFFIX,0stratum.dedicatedpool.com
   - DOMAIN-SUFFIX,0stratum.give-me-ltc.com
@@ -13712,7 +13526,6 @@ payload:
   - DOMAIN-SUFFIX,0stratum06.abseits.ski
   - DOMAIN-SUFFIX,0stratum09.abseits.ski
   - DOMAIN-SUFFIX,0stratum1.bitcoin.cz
-  - DOMAIN-SUFFIX,0stratum1.btcguild.com
   - DOMAIN-SUFFIX,0stratum1.coinking.io
   - DOMAIN-SUFFIX,0stratum10.abseits.ski
   - DOMAIN-SUFFIX,0stratum2.bitcoin.cz
@@ -13721,8 +13534,6 @@ payload:
   - DOMAIN-SUFFIX,0stratum2bstratum.mining.eligius.st
   - DOMAIN-SUFFIX,0stratum3.abseits.ski
   - DOMAIN-SUFFIX,0stratum3.bitcoin.cz
-  - DOMAIN-SUFFIX,0stratum3.btcguild.com
-  - DOMAIN-SUFFIX,0stratum4.btcguild.com
   - DOMAIN-SUFFIX,0stratum4.gethash.cc
   - DOMAIN-SUFFIX,0stratum5.abseits.ski
   - DOMAIN-SUFFIX,0stratum5.gethash.cc
@@ -13842,7 +13653,6 @@ payload:
   - DOMAIN-SUFFIX,0support.atomminer.com
   - DOMAIN-SUFFIX,0support.bitcoin.com
   - DOMAIN-SUFFIX,0support.bitcoin.cz
-  - DOMAIN-SUFFIX,0support.btcguild.com
   - DOMAIN-SUFFIX,0support.ccminer.org
   - DOMAIN-SUFFIX,0support.cryptonight.net
   - DOMAIN-SUFFIX,0support.cryptopoolmining.com
@@ -13985,7 +13795,6 @@ payload:
   - DOMAIN-SUFFIX,0telewerk.cryptonight.net
   - DOMAIN-SUFFIX,0telework.cryptonight.net
   - DOMAIN-SUFFIX,0telinga.nanopool.org
-  - DOMAIN-SUFFIX,0telnet.btcguild.com
   - DOMAIN-SUFFIX,0telnet.hiveon.net
   - DOMAIN-SUFFIX,0telus-f.api.binance.com
   - DOMAIN-SUFFIX,0telus-f.eu.api.binance.com
@@ -14393,7 +14202,6 @@ payload:
   - DOMAIN-SUFFIX,0ujw.api.binance.com
   - DOMAIN-SUFFIX,0ujw.eu.api.binance.com
   - DOMAIN-SUFFIX,0uk-eu.cryptopoolmining.com
-  - DOMAIN-SUFFIX,0uk.btcguild.com
   - DOMAIN-SUFFIX,0uk.bubblemine.com
   - DOMAIN-SUFFIX,0uk.ccminer.org
   - DOMAIN-SUFFIX,0uk.cryptonight.net
@@ -14443,7 +14251,6 @@ payload:
   - DOMAIN-SUFFIX,0uneikmine.btcguild.com
   - DOMAIN-SUFFIX,0unify.acc-pool.pw
   - DOMAIN-SUFFIX,0union.hiveon.net
-  - DOMAIN-SUFFIX,0unitedstates.bytecoins.world
   - DOMAIN-SUFFIX,0unix.ccminer.org
   - DOMAIN-SUFFIX,0unix.cryptonight.net
   - DOMAIN-SUFFIX,0unix.hiveon.net
@@ -14507,13 +14314,9 @@ payload:
   - DOMAIN-SUFFIX,0us-east.rapidhash.net
   - DOMAIN-SUFFIX,0us-east1.nanopool.org
   - DOMAIN-SUFFIX,0us-en.atomminer.com
-  - DOMAIN-SUFFIX,0us-haproxy1.btcguild.com
-  - DOMAIN-SUFFIX,0us-haproxy2.btcguild.com
   - DOMAIN-SUFFIX,0us-mine.abseits.ski
   - DOMAIN-SUFFIX,0us-pool.give-me-ltc.com
-  - DOMAIN-SUFFIX,0us-stratum-loadbalancer.btcguild.com
   - DOMAIN-SUFFIX,0us-stratum-vip.btcguild.com
-  - DOMAIN-SUFFIX,0us-vip-stratum.btcguild.com
   - DOMAIN-SUFFIX,0us-west-stratum.803mine.com
   - DOMAIN-SUFFIX,0us-west.abseits.ski
   - DOMAIN-SUFFIX,0us-west.bitcoin.cz
@@ -14525,7 +14328,6 @@ payload:
   - DOMAIN-SUFFIX,0us.api.binance.com
   - DOMAIN-SUFFIX,0us.bitcoin.com
   - DOMAIN-SUFFIX,0us.bitcoin.cz
-  - DOMAIN-SUFFIX,0us.btcguild.com
   - DOMAIN-SUFFIX,0us.cryptonight.net
   - DOMAIN-SUFFIX,0us.cryptopoolmining.com
   - DOMAIN-SUFFIX,0us.dev.api.binance.com
@@ -14536,7 +14338,6 @@ payload:
   - DOMAIN-SUFFIX,0us.mine.zpool.ca
   - DOMAIN-SUFFIX,0us.minerhills.com
   - DOMAIN-SUFFIX,0us.mining.eligius.st
-  - DOMAIN-SUFFIX,0us.phi-phi-pool.com
   - DOMAIN-SUFFIX,0us.stratum.dedicatedpool.com
   - DOMAIN-SUFFIX,0us.stream.api.binance.com
   - DOMAIN-SUFFIX,0us.stream.dev.api.binance.com
@@ -14575,14 +14376,12 @@ payload:
   - DOMAIN-SUFFIX,0usa2.bitcoin.cz
   - DOMAIN-SUFFIX,0usb.hashhot.com
   - DOMAIN-SUFFIX,0uscentral.abseits.ski
-  - DOMAIN-SUFFIX,0uscentral.btcguild.com
   - DOMAIN-SUFFIX,0uscj.api.binance.com
   - DOMAIN-SUFFIX,0uscj.eu.api.binance.com
   - DOMAIN-SUFFIX,0usde.poolerino.com
   - DOMAIN-SUFFIX,0usde2.poolerino.com
   - DOMAIN-SUFFIX,0usdtfuture.58coin.com
   - DOMAIN-SUFFIX,0use.hashhot.com
-  - DOMAIN-SUFFIX,0useast.btcguild.com
   - DOMAIN-SUFFIX,0useast.gethash.cc
   - DOMAIN-SUFFIX,0useast1.abseits.ski
   - DOMAIN-SUFFIX,0useast1.gethash.cc
@@ -14599,7 +14398,6 @@ payload:
   - DOMAIN-SUFFIX,0uspsci.us.api.binance.com
   - DOMAIN-SUFFIX,0usr9.nanopool.org
   - DOMAIN-SUFFIX,0uswest.abseits.ski
-  - DOMAIN-SUFFIX,0uswest.btcguild.com
   - DOMAIN-SUFFIX,0ut.666pool.cn
   - DOMAIN-SUFFIX,0ut3.dev.api.binance.com
   - DOMAIN-SUFFIX,0ut3.us.api.binance.com
@@ -14685,7 +14483,6 @@ payload:
   - DOMAIN-SUFFIX,0vau.eu.api.binance.com
   - DOMAIN-SUFFIX,0vau.us.api.binance.com
   - DOMAIN-SUFFIX,0vault.api.binance.com
-  - DOMAIN-SUFFIX,0vault.eurohash.net
   - DOMAIN-SUFFIX,0vbfi.veriblock.org
   - DOMAIN-SUFFIX,0vbk.666pool.cn
   - DOMAIN-SUFFIX,0vcc.abseits.ski
@@ -15021,7 +14818,6 @@ payload:
   - DOMAIN-SUFFIX,0webmail.dark-mine.su
   - DOMAIN-SUFFIX,0webmail.debutech.de
   - DOMAIN-SUFFIX,0webmail.emeraldcrypto.de
-  - DOMAIN-SUFFIX,0webmail.ethmine.org
   - DOMAIN-SUFFIX,0webmail.fixedtradecoin.org
   - DOMAIN-SUFFIX,0webmail.gamersnest.org
   - DOMAIN-SUFFIX,0webmail.gethash.cc
@@ -15118,7 +14914,6 @@ payload:
   - DOMAIN-SUFFIX,0wikipediapendidikan.dev.api.binance.com
   - DOMAIN-SUFFIX,0wikipediapendidikan.eu.api.binance.com
   - DOMAIN-SUFFIX,0wikipediapendidikan.us.api.binance.com
-  - DOMAIN-SUFFIX,0wildcarddns.btcguild.com
   - DOMAIN-SUFFIX,0win.ccminer.org
   - DOMAIN-SUFFIX,0win.hashhot.com
   - DOMAIN-SUFFIX,0win02.hiveon.net
@@ -15218,7 +15013,6 @@ payload:
   - DOMAIN-SUFFIX,0ws023.abseits.ski
   - DOMAIN-SUFFIX,0ws028.abseits.ski
   - DOMAIN-SUFFIX,0ws03.abseits.ski
-  - DOMAIN-SUFFIX,0ws032.veriblockpool.com
   - DOMAIN-SUFFIX,0ws05.abseits.ski
   - DOMAIN-SUFFIX,0ws1.58coin.com
   - DOMAIN-SUFFIX,0ws1.hiveon.net
@@ -16048,7 +15842,6 @@ payload:
   - DOMAIN-SUFFIX,0xmr-asia.abseits.ski
   - DOMAIN-SUFFIX,0xmr-au1.gethash.cc
   - DOMAIN-SUFFIX,0xmr-classic.abseits.ski
-  - DOMAIN-SUFFIX,0xmr-cn.veriblockpool.com
   - DOMAIN-SUFFIX,0xmr-cz01.bohemianpool.com
   - DOMAIN-SUFFIX,0xmr-eu.abseits.ski
   - DOMAIN-SUFFIX,0xmr-eu.nanopool.org
@@ -16088,7 +15881,6 @@ payload:
   - DOMAIN-SUFFIX,0xmr.minercircle.com
   - DOMAIN-SUFFIX,0xmr.minercountry.com
   - DOMAIN-SUFFIX,0xmr.minerhills.com
-  - DOMAIN-SUFFIX,0xmr.mixpools.org
   - DOMAIN-SUFFIX,0xmr.multipooler.com
   - DOMAIN-SUFFIX,0xmr.omine.org
   - DOMAIN-SUFFIX,0xmr.pool.gntl.co.uk
@@ -16112,7 +15904,6 @@ payload:
   - DOMAIN-SUFFIX,0xmv-eu.gethash.cc
   - DOMAIN-SUFFIX,0xmv-us.gethash.cc
   - DOMAIN-SUFFIX,0xmv-us.minerhills.com
-  - DOMAIN-SUFFIX,0xmv.cryptopool.space
   - DOMAIN-SUFFIX,0xmv.fairhash.org
   - DOMAIN-SUFFIX,0xmv.gethash.cc
   - DOMAIN-SUFFIX,0xmv.minerhills.com
@@ -16124,7 +15915,6 @@ payload:
   - DOMAIN-SUFFIX,0xn.nanopool.org
   - DOMAIN-SUFFIX,0xoa.dark-mine.su
   - DOMAIN-SUFFIX,0xol.pool.gntl.co.uk
-  - DOMAIN-SUFFIX,0xp.bytecoins.world
   - DOMAIN-SUFFIX,0xpd.gethash.cc
   - DOMAIN-SUFFIX,0xpool.803mine.com
   - DOMAIN-SUFFIX,0xpp.abseits.ski
@@ -16165,7 +15955,6 @@ payload:
   - DOMAIN-SUFFIX,0xtoken.io
   - DOMAIN-SUFFIX,0xtri.minercountry.com
   - DOMAIN-SUFFIX,0xtridium.minercountry.com
-  - DOMAIN-SUFFIX,0xun.cryptopool.space
   - DOMAIN-SUFFIX,0xun.minercountry.com
   - DOMAIN-SUFFIX,0xvc.gethash.cc
   - DOMAIN-SUFFIX,0xvg.fairhash.org
@@ -16287,7 +16076,6 @@ payload:
   - DOMAIN-SUFFIX,0ystarn.ethosdistro.com
   - DOMAIN-SUFFIX,0ystarnaud.ethosdistro.com
   - DOMAIN-SUFFIX,0ytn.abseits.ski
-  - DOMAIN-SUFFIX,0ytpdocs.pms.btc.top
   - DOMAIN-SUFFIX,0yu3bxtqv.com
   - DOMAIN-SUFFIX,0yulicv.ethosdistro.com
   - DOMAIN-SUFFIX,0yum.dedicatedpool.com
@@ -16342,7 +16130,6 @@ payload:
   - DOMAIN-SUFFIX,0zcl-api.gethash.cc
   - DOMAIN-SUFFIX,0zcl-test.abseits.ski
   - DOMAIN-SUFFIX,0zcl.altpools.com
-  - DOMAIN-SUFFIX,0zcl.equihub.pro
   - DOMAIN-SUFFIX,0zcl.gethash.cc
   - DOMAIN-SUFFIX,0zcl.mine.zpool.ca
   - DOMAIN-SUFFIX,0zcl.minerpool.org
@@ -16369,7 +16156,6 @@ payload:
   - DOMAIN-SUFFIX,0zec-eu.gethash.cc
   - DOMAIN-SUFFIX,0zec-eu2.nanopool.org
   - DOMAIN-SUFFIX,0zec-hk.abseits.ski
-  - DOMAIN-SUFFIX,0zec-hk.veriblockpool.com
   - DOMAIN-SUFFIX,0zec-hk1.nanopool.org
   - DOMAIN-SUFFIX,0zec-hz.gethash.cc
   - DOMAIN-SUFFIX,0zec-us.gethash.cc
@@ -16382,7 +16168,6 @@ payload:
   - DOMAIN-SUFFIX,0zec8.nanopool.org
   - DOMAIN-SUFFIX,0zeca.nanopool.org
   - DOMAIN-SUFFIX,0zed.abseits.ski
-  - DOMAIN-SUFFIX,0zeit.beeppool.org
   - DOMAIN-SUFFIX,0zeit.dedicatedpool.com
   - DOMAIN-SUFFIX,0zeit.gethash.cc
   - DOMAIN-SUFFIX,0zeit.hashfaster.com
@@ -16416,7 +16201,6 @@ payload:
   - DOMAIN-SUFFIX,0zencommunity6.crypto.ba
   - DOMAIN-SUFFIX,0zenithoptimedia.eu.api.binance.com
   - DOMAIN-SUFFIX,0zenithoptimedia.us.api.binance.com
-  - DOMAIN-SUFFIX,0zennode02.asicminer.co
   - DOMAIN-SUFFIX,0zennode04.abseits.ski
   - DOMAIN-SUFFIX,0zennode1.abseits.ski
   - DOMAIN-SUFFIX,0zennode11.abseits.ski
@@ -16442,7 +16226,6 @@ payload:
   - DOMAIN-SUFFIX,0zeroclassic.abseits.ski
   - DOMAIN-SUFFIX,0zet.gethash.cc
   - DOMAIN-SUFFIX,0zetacoin.abseits.ski
-  - DOMAIN-SUFFIX,0zetacoin.mastermining.net
   - DOMAIN-SUFFIX,0zettel.hashpool.eu
   - DOMAIN-SUFFIX,0zeus.abseits.ski
   - DOMAIN-SUFFIX,0zeus.cryptonight.net
@@ -18247,6 +18030,7 @@ payload:
   - DOMAIN-SUFFIX,108-87.bitcoin.com
   - DOMAIN-SUFFIX,108-89.bitcoin.com
   - DOMAIN-SUFFIX,108.com
+  - DOMAIN-SUFFIX,108.megabigpower.com
   - DOMAIN-SUFFIX,108.sub-70-210-70.myvzw.com
   - DOMAIN-SUFFIX,1080.bitcoin.com
   - DOMAIN-SUFFIX,10800.bitcoin.com
@@ -18418,7 +18202,6 @@ payload:
   - DOMAIN-SUFFIX,109b.bitcoin.com
   - DOMAIN-SUFFIX,109bb.bitcoin.com
   - DOMAIN-SUFFIX,109bf.bitcoin.com
-  - DOMAIN-SUFFIX,109c957fb6.com
   - DOMAIN-SUFFIX,109d2.bitcoin.com
   - DOMAIN-SUFFIX,109e1.bitcoin.com
   - DOMAIN-SUFFIX,109ee.bitcoin.com
@@ -19565,7 +19348,6 @@ payload:
   - DOMAIN-SUFFIX,11390.bitcoin.com
   - DOMAIN-SUFFIX,11395.bitcoin.com
   - DOMAIN-SUFFIX,113999.bitcoin.com
-  - DOMAIN-SUFFIX,113aa22d76.com
   - DOMAIN-SUFFIX,113b.bitcoin.com
   - DOMAIN-SUFFIX,113bbs.kokuden.com
   - DOMAIN-SUFFIX,113fds.proxer.cc
@@ -21349,7 +21131,6 @@ payload:
   - DOMAIN-SUFFIX,128eth-us-east1.nanopool.org
   - DOMAIN-SUFFIX,128tyesy.vercel.app
   - DOMAIN-SUFFIX,129.sub-70-209-5.myvzw.com
-  - DOMAIN-SUFFIX,12915784.care.sanvello.com
   - DOMAIN-SUFFIX,1291823.weebly.com
   - DOMAIN-SUFFIX,12931.weebly.com
   - DOMAIN-SUFFIX,12935.nanopool.org
@@ -21404,7 +21185,6 @@ payload:
   - DOMAIN-SUFFIX,12tails.com
   - DOMAIN-SUFFIX,12thman.sigmapool.com
   - DOMAIN-SUFFIX,12wet.com
-  - DOMAIN-SUFFIX,12xgetsready12.monster
   - DOMAIN-SUFFIX,12xhardcore.com
   - DOMAIN-SUFFIX,12xlwin4m.com
   - DOMAIN-SUFFIX,12ybs41sa.com
@@ -21584,7 +21364,6 @@ payload:
   - DOMAIN-SUFFIX,136136.net
   - DOMAIN-SUFFIX,13615.vip
   - DOMAIN-SUFFIX,136317745924965352.weebly.com
-  - DOMAIN-SUFFIX,13646d7b78.com
   - DOMAIN-SUFFIX,1365122.com
   - DOMAIN-SUFFIX,136888.vip
   - DOMAIN-SUFFIX,136898763782796775.weebly.com
@@ -21856,7 +21635,6 @@ payload:
   - DOMAIN-SUFFIX,14a7vj.close.futureisready.com
   - DOMAIN-SUFFIX,14aa6723056eff.bitcoin.com
   - DOMAIN-SUFFIX,14baad87444b06.bitcoin.com
-  - DOMAIN-SUFFIX,14badb5195.com
   - DOMAIN-SUFFIX,14bit.com
   - DOMAIN-SUFFIX,14cpoff22.de
   - DOMAIN-SUFFIX,14czda0-system.esy.es
@@ -22681,7 +22459,6 @@ payload:
   - DOMAIN-SUFFIX,17ed256d85.com
   - DOMAIN-SUFFIX,17enterprise.com
   - DOMAIN-SUFFIX,17f.bitcoin.com
-  - DOMAIN-SUFFIX,17f0ec344c.com
   - DOMAIN-SUFFIX,17f65.bitcoin.com
   - DOMAIN-SUFFIX,17f65.eu.bitcoin.com
   - DOMAIN-SUFFIX,17f65.ru.bitcoin.com
@@ -23613,7 +23390,6 @@ payload:
   - DOMAIN-SUFFIX,1c82ab.ethosdistro.com
   - DOMAIN-SUFFIX,1c9537.ethosdistro.com
   - DOMAIN-SUFFIX,1ca1d40f745ad308c14831d97ff6a30b.duckdns.org
-  - DOMAIN-SUFFIX,1ca47a451d.com
   - DOMAIN-SUFFIX,1ca6e3e357.a8ca394de0.com
   - DOMAIN-SUFFIX,1cae2.sigmapool.com
   - DOMAIN-SUFFIX,1caigjsl8b2oa0c3lfpxxditfgfrohmk.pages.dev
@@ -23745,7 +23521,6 @@ payload:
   - DOMAIN-SUFFIX,1d473a90d9.com
   - DOMAIN-SUFFIX,1d4dfd.bitcoin.com
   - DOMAIN-SUFFIX,1d4rkb1t.no-ip.biz
-  - DOMAIN-SUFFIX,1d5d7fb584.com
   - DOMAIN-SUFFIX,1d6094.ethosdistro.com
   - DOMAIN-SUFFIX,1d6ef.bitcoin.com
   - DOMAIN-SUFFIX,1d6f5.us-52.binance.com
@@ -24854,6 +24629,7 @@ payload:
   - DOMAIN-SUFFIX,1xchangi.com
   - DOMAIN-SUFFIX,1xfiesta.com
   - DOMAIN-SUFFIX,1xgokil.com
+  - DOMAIN-SUFFIX,1xhk4hau.bet1forward.com
   - DOMAIN-SUFFIX,1xkhmer.com
   - DOMAIN-SUFFIX,1xl.co.uk
   - DOMAIN-SUFFIX,1xlaguna.com
@@ -25497,7 +25273,6 @@ payload:
   - DOMAIN-SUFFIX,21.bitcoin.com
   - DOMAIN-SUFFIX,21.cluster.bitfex.trade
   - DOMAIN-SUFFIX,21.cluster.cluster.bitfex.trade
-  - DOMAIN-SUFFIX,21.co
   - DOMAIN-SUFFIX,21.dev.api.binance.com
   - DOMAIN-SUFFIX,21.eu.api.binance.com
   - DOMAIN-SUFFIX,21.eu.bitcoin.com
@@ -25722,7 +25497,6 @@ payload:
   - DOMAIN-SUFFIX,217.sub-97-11-91.myvzw.com
   - DOMAIN-SUFFIX,2173.bitcoin.com
   - DOMAIN-SUFFIX,21750.tctm.co
-  - DOMAIN-SUFFIX,2175cdb850.com
   - DOMAIN-SUFFIX,217651.8b.io
   - DOMAIN-SUFFIX,217683740147431105.weebly.com
   - DOMAIN-SUFFIX,218.altcoin.farm
@@ -26059,6 +25833,7 @@ payload:
   - DOMAIN-SUFFIX,233dy.com
   - DOMAIN-SUFFIX,233qk.com
   - DOMAIN-SUFFIX,233wo.com
+  - DOMAIN-SUFFIX,234.megabigpower.com
   - DOMAIN-SUFFIX,234.pl
   - DOMAIN-SUFFIX,234.static.ctbctelecom.com.br.icanmining.ru
   - DOMAIN-SUFFIX,234.sub-75-219-26.myvzw.com
@@ -26218,7 +25993,6 @@ payload:
   - DOMAIN-SUFFIX,240574.ethosdistro.com
   - DOMAIN-SUFFIX,2406quann.com
   - DOMAIN-SUFFIX,240702-a2s.pages.dev
-  - DOMAIN-SUFFIX,2408987111.com
   - DOMAIN-SUFFIX,240961985746419283.weebly.com
   - DOMAIN-SUFFIX,241.binance.com
   - DOMAIN-SUFFIX,241.sub-70-198-113.myvzw.com
@@ -27195,7 +26969,6 @@ payload:
   - DOMAIN-SUFFIX,28473939854.click
   - DOMAIN-SUFFIX,28503083ea9b.bitcoin.com
   - DOMAIN-SUFFIX,285440093853523862.weebly.com
-  - DOMAIN-SUFFIX,2859933b6d.com
   - DOMAIN-SUFFIX,286.pages.dev
   - DOMAIN-SUFFIX,286128.duckdns.org
   - DOMAIN-SUFFIX,286972675240605821.weebly.com
@@ -27445,7 +27218,6 @@ payload:
   - DOMAIN-SUFFIX,2b.persol-diverse.co.jp
   - DOMAIN-SUFFIX,2b178ee32a.com
   - DOMAIN-SUFFIX,2b240c37-4333-4a5d-93eb-69bb3f82b2c7.us-east-1.cloud.genez.io
-  - DOMAIN-SUFFIX,2b26a9e96e.com
   - DOMAIN-SUFFIX,2b294985f3.900f3c4717.com
   - DOMAIN-SUFFIX,2b29adb4.liftmyresume.com
   - DOMAIN-SUFFIX,2b2d1.exx.com
@@ -27890,6 +27662,7 @@ payload:
   - DOMAIN-SUFFIX,2i0lliongn.com
   - DOMAIN-SUFFIX,2i182kgf1hqtcpa6puz6itkykis24d0.teredo.nanopool.org
   - DOMAIN-SUFFIX,2i2i4w68dz.s3.ca-central-1.amazonaws.com
+  - DOMAIN-SUFFIX,2i2joe5h.aviatorfly.casino
   - DOMAIN-SUFFIX,2i30i8h6i.de
   - DOMAIN-SUFFIX,2i4.mobi
   - DOMAIN-SUFFIX,2i6b0bxgolqm.top
@@ -28311,6 +28084,7 @@ payload:
   - DOMAIN-SUFFIX,2waytraffic.com
   - DOMAIN-SUFFIX,2webpark.b2bmktg.com
   - DOMAIN-SUFFIX,2whatsappnumber.pages.dev
+  - DOMAIN-SUFFIX,2wij971l.betbazi.net
   - DOMAIN-SUFFIX,2win.com.hk
   - DOMAIN-SUFFIX,2wink.com.au
   - DOMAIN-SUFFIX,2wq9u06jq.com
@@ -28583,7 +28357,6 @@ payload:
   - DOMAIN-SUFFIX,309.bitcoin.com
   - DOMAIN-SUFFIX,30916c459b2.bitcoin.com
   - DOMAIN-SUFFIX,309238h75.shop
-  - DOMAIN-SUFFIX,30929d3de9.com
   - DOMAIN-SUFFIX,30986g8ab.de
   - DOMAIN-SUFFIX,309ahotcookie.binance.com
   - DOMAIN-SUFFIX,309d8d.ethosdistro.com
@@ -28855,7 +28628,6 @@ payload:
   - DOMAIN-SUFFIX,326.ru.bitcoin.com
   - DOMAIN-SUFFIX,326.seeds.bitcoin.com
   - DOMAIN-SUFFIX,326.us.bitcoin.com
-  - DOMAIN-SUFFIX,326517-coinbase.com
   - DOMAIN-SUFFIX,3265cc.ethosdistro.com
   - DOMAIN-SUFFIX,326825.ethosdistro.com
   - DOMAIN-SUFFIX,326880812632.bitcoin.com
@@ -28873,7 +28645,6 @@ payload:
   - DOMAIN-SUFFIX,328b2a.ethosdistro.com
   - DOMAIN-SUFFIX,329329.com
   - DOMAIN-SUFFIX,3297524.ddns.net
-  - DOMAIN-SUFFIX,329a540736.com
   - DOMAIN-SUFFIX,329digital.com
   - DOMAIN-SUFFIX,329ef1.ethosdistro.com
   - DOMAIN-SUFFIX,329f1.ethosdistro.com
@@ -28957,7 +28728,6 @@ payload:
   - DOMAIN-SUFFIX,3300.bitcoin.com
   - DOMAIN-SUFFIX,3307347c72.6e694b79b9.com
   - DOMAIN-SUFFIX,330824.com
-  - DOMAIN-SUFFIX,330e4e8090.com
   - DOMAIN-SUFFIX,331.api.binance.com
   - DOMAIN-SUFFIX,331.dev.api.binance.com
   - DOMAIN-SUFFIX,331.eu.api.binance.com
@@ -29840,7 +29610,6 @@ payload:
   - DOMAIN-SUFFIX,4-t.net
   - DOMAIN-SUFFIX,4-twst-21465-ev6j6.pages.dev
   - DOMAIN-SUFFIX,4-womenshealth.com
-  - DOMAIN-SUFFIX,4.4001075656.com
   - DOMAIN-SUFFIX,4.afs.googleadservices.com
   - DOMAIN-SUFFIX,4.dlevo.com
   - DOMAIN-SUFFIX,4.e-why.net
@@ -30445,6 +30214,7 @@ payload:
   - DOMAIN-SUFFIX,4llan.com
   - DOMAIN-SUFFIX,4love.info
   - DOMAIN-SUFFIX,4loyalman.com
+  - DOMAIN-SUFFIX,4lzp96zzyenhkrqbe.cfd
   - DOMAIN-SUFFIX,4ma0hzvkuhjdicwvx9yy.s3.ap-southeast-2.amazonaws.com
   - DOMAIN-SUFFIX,4mads.com
   - DOMAIN-SUFFIX,4manrush.com
@@ -33513,7 +33283,6 @@ payload:
   - DOMAIN-SUFFIX,853betlturkey.com
   - DOMAIN-SUFFIX,854245074431558306.weebly.com
   - DOMAIN-SUFFIX,8543345.weebly.com
-  - DOMAIN-SUFFIX,854786-coinbase.com
   - DOMAIN-SUFFIX,855454510415454.hyperphp.com
   - DOMAIN-SUFFIX,8567118.com
   - DOMAIN-SUFFIX,8567338.com
@@ -33900,6 +33669,7 @@ payload:
   - DOMAIN-SUFFIX,8gmvynlab.cc.rs6.net
   - DOMAIN-SUFFIX,8gold.com
   - DOMAIN-SUFFIX,8gptk28oag.com
+  - DOMAIN-SUFFIX,8gqtj29a.jetshart.net
   - DOMAIN-SUFFIX,8h6oiw0uo.com
   - DOMAIN-SUFFIX,8h7j79qxm.com
   - DOMAIN-SUFFIX,8h88.com
@@ -34917,7 +34687,6 @@ payload:
   - DOMAIN-SUFFIX,9mdg9cu59.com
   - DOMAIN-SUFFIX,9med.net
   - DOMAIN-SUFFIX,9mmporn.com
-  - DOMAIN-SUFFIX,9mqj60.centim.info
   - DOMAIN-SUFFIX,9ms9n4.close.futureisready.com
   - DOMAIN-SUFFIX,9ninecasino.fr
   - DOMAIN-SUFFIX,9nineso.com
@@ -34967,6 +34736,7 @@ payload:
   - DOMAIN-SUFFIX,9versemedia.com
   - DOMAIN-SUFFIX,9vk6n8.close.futureisready.com
   - DOMAIN-SUFFIX,9vmbje748.com
+  - DOMAIN-SUFFIX,9vxg256z.bazikeno.com
   - DOMAIN-SUFFIX,9wad.com
   - DOMAIN-SUFFIX,9warehouses.com
   - DOMAIN-SUFFIX,9wdjf9va.xyz
@@ -35610,7 +35380,6 @@ payload:
   - DOMAIN-SUFFIX,a460.cell.phone.ringtone.samsung.sms13.de
   - DOMAIN-SUFFIX,a4621041136.cdn.optimizely.com
   - DOMAIN-SUFFIX,a466.weebly.com
-  - DOMAIN-SUFFIX,a46d7a5579.com
   - DOMAIN-SUFFIX,a46e0368.forwarding-request-consent.pages.dev
   - DOMAIN-SUFFIX,a46i3iitisydtukyha384s6d57opf8yotsria46s57od68.teemill.com
   - DOMAIN-SUFFIX,a47b.com
@@ -35958,6 +35727,7 @@ payload:
   - DOMAIN-SUFFIX,aapz.com
   - DOMAIN-SUFFIX,aaqaqk.com
   - DOMAIN-SUFFIX,aaqdyhptis.com
+  - DOMAIN-SUFFIX,aaqftypfngmdf.space
   - DOMAIN-SUFFIX,aaqzvhtajrveg.online
   - DOMAIN-SUFFIX,aaradhyaestates.com
   - DOMAIN-SUFFIX,aarambhband-dev.github.io
@@ -37239,7 +37009,6 @@ payload:
   - DOMAIN-SUFFIX,access-hfb.firebaseapp.com
   - DOMAIN-SUFFIX,access-hfb.web.app
   - DOMAIN-SUFFIX,access-mc.com
-  - DOMAIN-SUFFIX,access-mycenterlink.com
   - DOMAIN-SUFFIX,access-port-ggl0rw3zkononuwgjpgwgsh.vercel.app
   - DOMAIN-SUFFIX,access-prime.fr
   - DOMAIN-SUFFIX,access-prod.apis.anvato.net
@@ -38188,8 +37957,6 @@ payload:
   - DOMAIN-SUFFIX,activenewsalert.pro
   - DOMAIN-SUFFIX,activephanmem.com
   - DOMAIN-SUFFIX,activepr.ru
-  - DOMAIN-SUFFIX,activeprog1.top
-  - DOMAIN-SUFFIX,activeprog3.top
   - DOMAIN-SUFFIX,activeprotec1principal.pages.dev
   - DOMAIN-SUFFIX,activeqq.3g.qq.com
   - DOMAIN-SUFFIX,activerawfoods.co.za
@@ -42860,7 +42627,6 @@ payload:
   - DOMAIN-SUFFIX,ads.eu.msn.com
   - DOMAIN-SUFFIX,ads.everquote.com
   - DOMAIN-SUFFIX,ads.evidon.com
-  - DOMAIN-SUFFIX,ads.expatinbulgaria.com
   - DOMAIN-SUFFIX,ads.expekt.com
   - DOMAIN-SUFFIX,ads.expotv.com
   - DOMAIN-SUFFIX,ads.expressindia.com
@@ -43293,7 +43059,6 @@ payload:
   - DOMAIN-SUFFIX,ads.oneplace.com
   - DOMAIN-SUFFIX,ads.onetouchtv.me
   - DOMAIN-SUFFIX,ads.onlineathens.com
-  - DOMAIN-SUFFIX,ads.onmedia.bg
   - DOMAIN-SUFFIX,ads.open.pl
   - DOMAIN-SUFFIX,ads.opensubtitles.org
   - DOMAIN-SUFFIX,ads.opera.com
@@ -45360,7 +45125,6 @@ payload:
   - DOMAIN-SUFFIX,af.opera.com
   - DOMAIN-SUFFIX,af.to.123games.club
   - DOMAIN-SUFFIX,af1tsjdta.com
-  - DOMAIN-SUFFIX,af305e6c77.com
   - DOMAIN-SUFFIX,af30ee9e36.com
   - DOMAIN-SUFFIX,af33c9fc.liftmyresume.com
   - DOMAIN-SUFFIX,af9550f443.c1db3bcb4b.com
@@ -45398,7 +45162,6 @@ payload:
   - DOMAIN-SUFFIX,afeare.irish
   - DOMAIN-SUFFIX,afectadoscoronaviruscovid-19.com
   - DOMAIN-SUFFIX,afectadoscoronaviruscovid19.com
-  - DOMAIN-SUFFIX,afectats.org
   - DOMAIN-SUFFIX,afederalhomeinspection.com
   - DOMAIN-SUFFIX,afeez.leatherforgay.co.uk
   - DOMAIN-SUFFIX,afetuosacasa.com
@@ -45448,6 +45211,7 @@ payload:
   - DOMAIN-SUFFIX,affforce.com
   - DOMAIN-SUFFIX,affiaantif.rest
   - DOMAIN-SUFFIX,affidavitheadfirstonward.com
+  - DOMAIN-SUFFIX,affidforce.cyou
   - DOMAIN-SUFFIX,affil.top4football.com
   - DOMAIN-SUFFIX,affilate.hh.ru
   - DOMAIN-SUFFIX,affilcrtopcolle.112.2o7.net
@@ -46394,6 +46158,7 @@ payload:
   - DOMAIN-SUFFIX,agn.aty.snmsohu.aisee.tv
   - DOMAIN-SUFFIX,agnabcarroll.pages.dev
   - DOMAIN-SUFFIX,agnaw.com
+  - DOMAIN-SUFFIX,agnbpfw.arbetwinner.com
   - DOMAIN-SUFFIX,agneduklopdo.com
   - DOMAIN-SUFFIX,agnes.scloud.lfengmobile.com
   - DOMAIN-SUFFIX,agnesblurette.pages.dev
@@ -51033,7 +50798,6 @@ payload:
   - DOMAIN-SUFFIX,amazon-el9.pages.dev
   - DOMAIN-SUFFIX,amazon-empty-star-3f7d.hsym45sco.workers.dev
   - DOMAIN-SUFFIX,amazon-france.fr
-  - DOMAIN-SUFFIX,amazon-id-safety-center-signin-openid-pape-max-auth-age-return.tc779.com
   - DOMAIN-SUFFIX,amazon-id-safety-center-signin-openid-pape-max-auth-mpm-return.devicore.com
   - DOMAIN-SUFFIX,amazon-it.deal2couponamazon.workers.dev
   - DOMAIN-SUFFIX,amazon-leo.fr
@@ -53687,7 +53451,6 @@ payload:
   - DOMAIN-SUFFIX,anonymousvoices.org
   - DOMAIN-SUFFIX,anonymsb.com
   - DOMAIN-SUFFIX,anoopkarumanchi.com
-  - DOMAIN-SUFFIX,anopiasd.irish
   - DOMAIN-SUFFIX,anorereon.weebly.com
   - DOMAIN-SUFFIX,another.pro
   - DOMAIN-SUFFIX,another2020.net
@@ -54122,7 +53885,6 @@ payload:
   - DOMAIN-SUFFIX,anysize.pro
   - DOMAIN-SUFFIX,anythingselect.com
   - DOMAIN-SUFFIX,anythinktech.com
-  - DOMAIN-SUFFIX,anytimeastrology.com
   - DOMAIN-SUFFIX,anytimebananarecoil.com
   - DOMAIN-SUFFIX,anytimecrystals.com
   - DOMAIN-SUFFIX,anytimespurt.com
@@ -54412,7 +54174,6 @@ payload:
   - DOMAIN-SUFFIX,apag.co.th
   - DOMAIN-SUFFIX,apai9hs2rgs2-pages-dev.translate.goog
   - DOMAIN-SUFFIX,apaiksookoomihi.net
-  - DOMAIN-SUFFIX,apaiseco.irish
   - DOMAIN-SUFFIX,apaitoun-enkrisi.firebaseapp.com
   - DOMAIN-SUFFIX,apaitoun-enkrisi.web.app
   - DOMAIN-SUFFIX,apajku.icu
@@ -57926,7 +57687,6 @@ payload:
   - DOMAIN-SUFFIX,arthemisia16.weebly.com
   - DOMAIN-SUFFIX,arthom.shop
   - DOMAIN-SUFFIX,arthouse76.ru
-  - DOMAIN-SUFFIX,arthritis-relief-choices.live
   - DOMAIN-SUFFIX,arthritis.atspace.com
   - DOMAIN-SUFFIX,arthroplus.shop
   - DOMAIN-SUFFIX,arthrovia-it.com
@@ -58569,7 +58329,6 @@ payload:
   - DOMAIN-SUFFIX,ashoria.com
   - DOMAIN-SUFFIX,ashoupsu.com
   - DOMAIN-SUFFIX,ashquarry.eu
-  - DOMAIN-SUFFIX,ashramac.irish
   - DOMAIN-SUFFIX,ashrivetgulped.com
   - DOMAIN-SUFFIX,ashschuhe.de
   - DOMAIN-SUFFIX,ashtonfrancis.com
@@ -60815,6 +60574,7 @@ payload:
   - DOMAIN-SUFFIX,aubreylenox.shop
   - DOMAIN-SUFFIX,aubreymanning.com
   - DOMAIN-SUFFIX,aubryasemarcelia.pages.dev
+  - DOMAIN-SUFFIX,aubsaysnbrvsp.space
   - DOMAIN-SUFFIX,aubuelyn-marjorie.com
   - DOMAIN-SUFFIX,auburn-unicu-acc-sc.weebly.com
   - DOMAIN-SUFFIX,auburn9819.com
@@ -61106,6 +60866,7 @@ payload:
   - DOMAIN-SUFFIX,aulakich.com
   - DOMAIN-SUFFIX,auligey.vip
   - DOMAIN-SUFFIX,aulingenglishschool.com
+  - DOMAIN-SUFFIX,aulossyllab.qpon
   - DOMAIN-SUFFIX,aulsingirga.net
   - DOMAIN-SUFFIX,aulsoonaimperd.net
   - DOMAIN-SUFFIX,auluxe.com
@@ -62988,6 +62749,7 @@ payload:
   - DOMAIN-SUFFIX,ayinkahvesi.com
   - DOMAIN-SUFFIX,ayintothefre.org
   - DOMAIN-SUFFIX,ayitkkxrctkia.online
+  - DOMAIN-SUFFIX,ayivynqlnxdvv.site
   - DOMAIN-SUFFIX,ayiwap.net
   - DOMAIN-SUFFIX,ayjvwlrbjamyv.top
   - DOMAIN-SUFFIX,ayjvwlrymoalr.top
@@ -63009,6 +62771,7 @@ payload:
   - DOMAIN-SUFFIX,aynhnrgxjxfv.com
   - DOMAIN-SUFFIX,ayniplast.pe
   - DOMAIN-SUFFIX,ayo788c.com
+  - DOMAIN-SUFFIX,ayoddsw.acbet.casino
   - DOMAIN-SUFFIX,ayodhyaguesthouse.com
   - DOMAIN-SUFFIX,ayodhyainterior.com
   - DOMAIN-SUFFIX,ayoforex.com
@@ -63834,6 +63597,7 @@ payload:
   - DOMAIN-SUFFIX,backend.safecampus.live
   - DOMAIN-SUFFIX,backendservice.pages.dev
   - DOMAIN-SUFFIX,backendtutor.store
+  - DOMAIN-SUFFIX,backeraxones.shop
   - DOMAIN-SUFFIX,backeroot.grcalign.com
   - DOMAIN-SUFFIX,backetmusic.com
   - DOMAIN-SUFFIX,backfiremountslippery.com
@@ -64807,6 +64571,7 @@ payload:
   - DOMAIN-SUFFIX,bafkreigkzjqufmrx7dkj5q3hxw3ozb745atgd6c7ylobiqhir4xlua7lr4.ipfs.dweb.link
   - DOMAIN-SUFFIX,bafkreigl52a7ldzbdb7v65aihwnbjgugxh72ij72jqaxp5hcvlmp3inhfy.ipfs.dweb.link
   - DOMAIN-SUFFIX,bafkreiglic53vb6la5h7zesx5o7pppr2dittisdarjzmsaegzeu6zhokhe.ipfs.dweb.link
+  - DOMAIN-SUFFIX,bafkreiglpn3437jljvdrwhq3veggfvmsiejrdaaz7m2c2s5tqmhbdcwnl4.ipfs.inbrowser.link
   - DOMAIN-SUFFIX,bafkreiglx3hlsvrx3s2ft6h5dye3knmlxecwwvvuayp2tas4didyij7jna.ipfs.dweb.link
   - DOMAIN-SUFFIX,bafkreigmg7ghnrblmtiy7usj3mymxgadg5dh3w7cgzxjzxm6rkecyhpczm.ipfs.dweb.link
   - DOMAIN-SUFFIX,bafkreigmnj6sqyx4wem4xsf4p57e2svbc6agqe5qpyde6knrmyg7s2zmie.ipfs.dweb.link
@@ -65264,7 +65029,6 @@ payload:
   - DOMAIN-SUFFIX,bajzz.com
   - DOMAIN-SUFFIX,bak.have8000.com
   - DOMAIN-SUFFIX,bakaa.online
-  - DOMAIN-SUFFIX,bakaevzrmcqdo.global
   - DOMAIN-SUFFIX,bakbendenevar.com
   - DOMAIN-SUFFIX,bakbudaburada.com
   - DOMAIN-SUFFIX,bake-with-alina.com
@@ -66271,7 +66035,6 @@ payload:
   - DOMAIN-SUFFIX,barakatpetro.com
   - DOMAIN-SUFFIX,barandych.com
   - DOMAIN-SUFFIX,barantercume.com
-  - DOMAIN-SUFFIX,barantisway.com
   - DOMAIN-SUFFIX,barato7vez.xyz
   - DOMAIN-SUFFIX,baratohoy.com
   - DOMAIN-SUFFIX,baratotop.com
@@ -66315,6 +66078,7 @@ payload:
   - DOMAIN-SUFFIX,barboycreme.com
   - DOMAIN-SUFFIX,barbsrescue.com
   - DOMAIN-SUFFIX,barbudafarms.com
+  - DOMAIN-SUFFIX,barbulasnippet.qpon
   - DOMAIN-SUFFIX,barbwiresocial.com
   - DOMAIN-SUFFIX,barcaacademyistanbul.com
   - DOMAIN-SUFFIX,barcelona-backlinks.es
@@ -68019,7 +67783,6 @@ payload:
   - DOMAIN-SUFFIX,beddingfetched.com
   - DOMAIN-SUFFIX,beddiscreetworkshop.com
   - DOMAIN-SUFFIX,beddme.com
-  - DOMAIN-SUFFIX,beddy-guest.com
   - DOMAIN-SUFFIX,bedebestan.com
   - DOMAIN-SUFFIX,bedenvelopeease.com
   - DOMAIN-SUFFIX,bedersharst.com
@@ -68028,6 +67791,7 @@ payload:
   - DOMAIN-SUFFIX,bedfordparkhouse.co.uk
   - DOMAIN-SUFFIX,bedguests-housestay8562.com
   - DOMAIN-SUFFIX,bedhome.com
+  - DOMAIN-SUFFIX,bedintsatleecaptate.cfd
   - DOMAIN-SUFFIX,bedioger.com
   - DOMAIN-SUFFIX,bedont.xyz
   - DOMAIN-SUFFIX,bedparameters.com
@@ -68042,6 +67806,7 @@ payload:
   - DOMAIN-SUFFIX,bedsidetray.com
   - DOMAIN-SUFFIX,bedskiiirtbiting.info
   - DOMAIN-SUFFIX,bedsolewood.pages.dev
+  - DOMAIN-SUFFIX,bedungingestaleaf.cyou
   - DOMAIN-SUFFIX,bedviojcrllpi.space
   - DOMAIN-SUFFIX,bedwipro987.ddns.net
   - DOMAIN-SUFFIX,bedwyn1914.weebly.com
@@ -68887,7 +68652,6 @@ payload:
   - DOMAIN-SUFFIX,beqofui.com
   - DOMAIN-SUFFIX,bequestrians.com
   - DOMAIN-SUFFIX,bequestrians.us
-  - DOMAIN-SUFFIX,bequitsmokingok.com
   - DOMAIN-SUFFIX,ber-me.store
   - DOMAIN-SUFFIX,beradrome-claim.pages.dev
   - DOMAIN-SUFFIX,beranibuat.com
@@ -70603,7 +70367,6 @@ payload:
   - DOMAIN-SUFFIX,bhnlhczkjctyer.top
   - DOMAIN-SUFFIX,bhobmdtjc.com
   - DOMAIN-SUFFIX,bhojendra.com.np
-  - DOMAIN-SUFFIX,bholashop.com
   - DOMAIN-SUFFIX,bhomed.com
   - DOMAIN-SUFFIX,bhoomi.com
   - DOMAIN-SUFFIX,bhpprfk.cn
@@ -70889,6 +70652,7 @@ payload:
   - DOMAIN-SUFFIX,biedronkawmeksq.shop
   - DOMAIN-SUFFIX,biedronkka.shop
   - DOMAIN-SUFFIX,biedsale.shop
+  - DOMAIN-SUFFIX,biegafundenza.sbs
   - DOMAIN-SUFFIX,biegla-fundenza.com
   - DOMAIN-SUFFIX,biegla-fundenza.net
   - DOMAIN-SUFFIX,biegladigitownia.net
@@ -72501,7 +72265,6 @@ payload:
   - DOMAIN-SUFFIX,bizcombd.com
   - DOMAIN-SUFFIX,bizcwuhi.in
   - DOMAIN-SUFFIX,bizdez.net
-  - DOMAIN-SUFFIX,bizehou.com
   - DOMAIN-SUFFIX,bizerba-dot-azure-projectfiles.uk.r.appspot.com
   - DOMAIN-SUFFIX,bizertanet.tn
   - DOMAIN-SUFFIX,bizfeednet.com
@@ -72596,7 +72359,6 @@ payload:
   - DOMAIN-SUFFIX,bjdenon.com
   - DOMAIN-SUFFIX,bjdgzffnutlqs.site
   - DOMAIN-SUFFIX,bjdnqdbmktbhm.website
-  - DOMAIN-SUFFIX,bjdsmnjybmjdl.site
   - DOMAIN-SUFFIX,bjdy123.com
   - DOMAIN-SUFFIX,bjeai.com
   - DOMAIN-SUFFIX,bjedpt.com
@@ -74183,7 +73945,6 @@ payload:
   - DOMAIN-SUFFIX,bmnhbrjuekejj.site
   - DOMAIN-SUFFIX,bmnuledgpd.com
   - DOMAIN-SUFFIX,bmnwmfvjmltrl.space
-  - DOMAIN-SUFFIX,bmo-enhancedsecurity.com
   - DOMAIN-SUFFIX,bmo-mobile.cfd
   - DOMAIN-SUFFIX,bmobank-9020920.pages.dev
   - DOMAIN-SUFFIX,bmogruisjnfdn.site
@@ -75107,7 +74868,6 @@ payload:
   - DOMAIN-SUFFIX,boofeh.com
   - DOMAIN-SUFFIX,boogiedownsynch.com
   - DOMAIN-SUFFIX,boohoi.com
-  - DOMAIN-SUFFIX,booingd.info
   - DOMAIN-SUFFIX,booinh.com
   - DOMAIN-SUFFIX,book-broker.ru
   - DOMAIN-SUFFIX,book-lights.com
@@ -75521,7 +75281,6 @@ payload:
   - DOMAIN-SUFFIX,bopa5.weebly.com
   - DOMAIN-SUFFIX,bopa6.weebly.com
   - DOMAIN-SUFFIX,bopitu.com
-  - DOMAIN-SUFFIX,bopmsxjwjuwjj.click
   - DOMAIN-SUFFIX,boprize123.weebly.com
   - DOMAIN-SUFFIX,boqlwbntl.net
   - DOMAIN-SUFFIX,boqqmbaxprocumbent.info
@@ -75767,7 +75526,6 @@ payload:
   - DOMAIN-SUFFIX,botbanhtrang.com
   - DOMAIN-SUFFIX,botboys.xyz
   - DOMAIN-SUFFIX,botcaptcha.com
-  - DOMAIN-SUFFIX,botdefender-on.xyz
   - DOMAIN-SUFFIX,botdefender.xyz
   - DOMAIN-SUFFIX,botdefenderonline.xyz
   - DOMAIN-SUFFIX,botdefendersauth.xyz
@@ -75800,7 +75558,6 @@ payload:
   - DOMAIN-SUFFIX,botinadeseguranca.com
   - DOMAIN-SUFFIX,botkano.info
   - DOMAIN-SUFFIX,botkdllphxivv.space
-  - DOMAIN-SUFFIX,botlook-up.xyz
   - DOMAIN-SUFFIX,botlookup.xyz
   - DOMAIN-SUFFIX,botmafia.com
   - DOMAIN-SUFFIX,botnet.fizra.biz.id
@@ -76120,6 +75877,7 @@ payload:
   - DOMAIN-SUFFIX,boyfrienddill.com
   - DOMAIN-SUFFIX,boyfriendmeaningless.com
   - DOMAIN-SUFFIX,boygues.fr
+  - DOMAIN-SUFFIX,boyguwsiukyag.space
   - DOMAIN-SUFFIX,boyidianqi.com.cn
   - DOMAIN-SUFFIX,boyka.co
   - DOMAIN-SUFFIX,boylestutoring.com
@@ -76517,7 +76275,6 @@ payload:
   - DOMAIN-SUFFIX,bradseek.top
   - DOMAIN-SUFFIX,bradsports.com
   - DOMAIN-SUFFIX,bradwilliamsart.com
-  - DOMAIN-SUFFIX,bradwins08.esy.es
   - DOMAIN-SUFFIX,bradx2.com
   - DOMAIN-SUFFIX,brady45.weebly.com
   - DOMAIN-SUFFIX,bradyeve.shop
@@ -76791,7 +76548,6 @@ payload:
   - DOMAIN-SUFFIX,brave-instruct.com
   - DOMAIN-SUFFIX,brave-mentor.com
   - DOMAIN-SUFFIX,brave-motor.com
-  - DOMAIN-SUFFIX,brave-passage.pro
   - DOMAIN-SUFFIX,brave-plane.pro
   - DOMAIN-SUFFIX,brave-predict-879228.framer.app
   - DOMAIN-SUFFIX,brave-rope.pro
@@ -77647,6 +77403,7 @@ payload:
   - DOMAIN-SUFFIX,briqalbdr.com
   - DOMAIN-SUFFIX,briqon.qpon
   - DOMAIN-SUFFIX,briquettwasome.qpon
+  - DOMAIN-SUFFIX,briqustira.cyou
   - DOMAIN-SUFFIX,brisa-clarity.com
   - DOMAIN-SUFFIX,brisanocturna.com
   - DOMAIN-SUFFIX,brisbanehog.com.au
@@ -79640,7 +79397,7 @@ payload:
   - DOMAIN-SUFFIX,bursaopel.com
   - DOMAIN-SUFFIX,bursatemlak.com
   - DOMAIN-SUFFIX,bursatmgd.com
-  - DOMAIN-SUFFIX,bursonglobals-hr.com
+  - DOMAIN-SUFFIX,bursesinlands.cyou
   - DOMAIN-SUFFIX,burspiak.in
   - DOMAIN-SUFFIX,burstbeacon.com
   - DOMAIN-SUFFIX,burstingsteed.com
@@ -80503,7 +80260,6 @@ payload:
   - DOMAIN-SUFFIX,byryqaysgfpwz.website
   - DOMAIN-SUFFIX,bysavia.cl
   - DOMAIN-SUFFIX,byscy.cn
-  - DOMAIN-SUFFIX,byseniscon.top
   - DOMAIN-SUFFIX,bysensy.com
   - DOMAIN-SUFFIX,bysheratonmaras.com
   - DOMAIN-SUFFIX,bysogie.com
@@ -83095,9 +82851,7 @@ payload:
   - DOMAIN-SUFFIX,careerinpayments.com
   - DOMAIN-SUFFIX,careerjournalonline.com
   - DOMAIN-SUFFIX,careermoovz.net
-  - DOMAIN-SUFFIX,careers-edelman.com
   - DOMAIN-SUFFIX,careers-fedex.com
-  - DOMAIN-SUFFIX,careers-portal.org
   - DOMAIN-SUFFIX,careers.112.2o7.net
   - DOMAIN-SUFFIX,careers.hotjar.com
   - DOMAIN-SUFFIX,careers.tdconnex.sg
@@ -85293,7 +85047,6 @@ payload:
   - DOMAIN-SUFFIX,ccu-consumerccue993.weebly.com
   - DOMAIN-SUFFIX,ccudl.com
   - DOMAIN-SUFFIX,ccunf.com
-  - DOMAIN-SUFFIX,ccuoqedyqvttq.tech
   - DOMAIN-SUFFIX,ccupdatedata.authorizeddns.net
   - DOMAIN-SUFFIX,ccurently1.weebly.com
   - DOMAIN-SUFFIX,ccurenttly2.weebly.com
@@ -87041,6 +86794,7 @@ payload:
   - DOMAIN-SUFFIX,cesop.org
   - DOMAIN-SUFFIX,cesosfultrbriol.com
   - DOMAIN-SUFFIX,cesoug.com
+  - DOMAIN-SUFFIX,cespieiacu.cyou
   - DOMAIN-SUFFIX,cespu.com.ar
   - DOMAIN-SUFFIX,cessatiogroup.com
   - DOMAIN-SUFFIX,cessatioholdings.com
@@ -88954,7 +88708,6 @@ payload:
   - DOMAIN-SUFFIX,chiefunity.org
   - DOMAIN-SUFFIX,chiefwahoo.com
   - DOMAIN-SUFFIX,chientranh.com
-  - DOMAIN-SUFFIX,chiglees.com
   - DOMAIN-SUFFIX,chigogloaweth.net
   - DOMAIN-SUFFIX,chihuahuadoorstoppond.com
   - DOMAIN-SUFFIX,chihuahuasbivvlleters.info
@@ -89129,7 +88882,6 @@ payload:
   - DOMAIN-SUFFIX,chipnex.com
   - DOMAIN-SUFFIX,chipoats.com
   - DOMAIN-SUFFIX,chipolinoturkiye.com
-  - DOMAIN-SUFFIX,chipotlemenuhub.com
   - DOMAIN-SUFFIX,chipperisle.com
   - DOMAIN-SUFFIX,chippewavalleysportsmedicine.com
   - DOMAIN-SUFFIX,chips-casino.fr
@@ -90113,6 +89865,7 @@ payload:
   - DOMAIN-SUFFIX,cineworld.fr
   - DOMAIN-SUFFIX,cingo.sbs
   - DOMAIN-SUFFIX,cinierifinances.fr
+  - DOMAIN-SUFFIX,cinimryi.com
   - DOMAIN-SUFFIX,cinnafact.com
   - DOMAIN-SUFFIX,cinnamon-travels.com
   - DOMAIN-SUFFIX,cinnamonchambers.com
@@ -91183,6 +90936,7 @@ payload:
   - DOMAIN-SUFFIX,cleanqcranberry.owltrap.com
   - DOMAIN-SUFFIX,cleanrefund.com
   - DOMAIN-SUFFIX,cleanservices.store
+  - DOMAIN-SUFFIX,cleansetabsmontjoy.cfd
   - DOMAIN-SUFFIX,cleanshare.net
   - DOMAIN-SUFFIX,cleanshot.ink
   - DOMAIN-SUFFIX,cleansite.biz
@@ -92996,6 +92750,7 @@ payload:
   - DOMAIN-SUFFIX,cmr-meta.com
   - DOMAIN-SUFFIX,cmrdr.com
   - DOMAIN-SUFFIX,cmrlasergraphics.com
+  - DOMAIN-SUFFIX,cmrmzexgezgkt.site
   - DOMAIN-SUFFIX,cmrs2k.com
   - DOMAIN-SUFFIX,cmrwealth.com
   - DOMAIN-SUFFIX,cms-covid19.com
@@ -93100,7 +92855,6 @@ payload:
   - DOMAIN-SUFFIX,cnbole.net
   - DOMAIN-SUFFIX,cnbp.net
   - DOMAIN-SUFFIX,cnbvn.carrd.co
-  - DOMAIN-SUFFIX,cnc.xenema.vip
   - DOMAIN-SUFFIX,cncdevelopment.org
   - DOMAIN-SUFFIX,cncfcanada.com
   - DOMAIN-SUFFIX,cncglasscutting.com
@@ -95987,7 +95741,6 @@ payload:
   - DOMAIN-SUFFIX,confirmation-id1765.com
   - DOMAIN-SUFFIX,confirmation-id1783.com
   - DOMAIN-SUFFIX,confirmation-id1786.com
-  - DOMAIN-SUFFIX,confirmation-id180273.com
   - DOMAIN-SUFFIX,confirmation-id18394.com
   - DOMAIN-SUFFIX,confirmation-id19173.com
   - DOMAIN-SUFFIX,confirmation-id19285.com
@@ -96046,7 +95799,6 @@ payload:
   - DOMAIN-SUFFIX,confirmation-id61534533.com
   - DOMAIN-SUFFIX,confirmation-id61552.com
   - DOMAIN-SUFFIX,confirmation-id62079.com
-  - DOMAIN-SUFFIX,confirmation-id621354.com
   - DOMAIN-SUFFIX,confirmation-id6259.com
   - DOMAIN-SUFFIX,confirmation-id63744.com
   - DOMAIN-SUFFIX,confirmation-id64217.com
@@ -97504,7 +97256,6 @@ payload:
   - DOMAIN-SUFFIX,coolbytesgrill.com
   - DOMAIN-SUFFIX,coolcams.duckdns.org
   - DOMAIN-SUFFIX,coolcatlogin.fr
-  - DOMAIN-SUFFIX,coolcatsavatar.xyz
   - DOMAIN-SUFFIX,coolcfile156.weebly.com
   - DOMAIN-SUFFIX,coolcfile310.weebly.com
   - DOMAIN-SUFFIX,coolclocks.net
@@ -99119,7 +98870,6 @@ payload:
   - DOMAIN-SUFFIX,countly.mail.163.com
   - DOMAIN-SUFFIX,countly.teb.com.tr
   - DOMAIN-SUFFIX,countly.vakifbank.com.tr
-  - DOMAIN-SUFFIX,countpage.sznews.com
   - DOMAIN-SUFFIX,countpvn.light.fang.com
   - DOMAIN-SUFFIX,countreg.com
   - DOMAIN-SUFFIX,country.bocaratongoldmine.info
@@ -102512,6 +102262,7 @@ payload:
   - DOMAIN-SUFFIX,csvps.my
   - DOMAIN-SUFFIX,cswilliamsburg.com
   - DOMAIN-SUFFIX,cswjpyurbaiap.online
+  - DOMAIN-SUFFIX,cswnawh.accbartar.com
   - DOMAIN-SUFFIX,cswoodworks64.weebly.com
   - DOMAIN-SUFFIX,csww.org
   - DOMAIN-SUFFIX,cswzdujrpvyra.site
@@ -103903,7 +103654,6 @@ payload:
   - DOMAIN-SUFFIX,cvwgltvuviniv.space
   - DOMAIN-SUFFIX,cvwnpvbtezqvk.site
   - DOMAIN-SUFFIX,cvxbbrcunmulw.site
-  - DOMAIN-SUFFIX,cvzabj.centim.info
   - DOMAIN-SUFFIX,cvzbchlxyuzzd.site
   - DOMAIN-SUFFIX,cvzpdnpqgk.com
   - DOMAIN-SUFFIX,cvzrqzanffkxy.site
@@ -104455,6 +104205,7 @@ payload:
   - DOMAIN-SUFFIX,czcijctga.firebaseapp.com
   - DOMAIN-SUFFIX,czcijctga.web.app
   - DOMAIN-SUFFIX,czcmgagjthwgu.site
+  - DOMAIN-SUFFIX,czcymhx.enfejar-site.bet
   - DOMAIN-SUFFIX,czdaks.com
   - DOMAIN-SUFFIX,czdclraxaacmq.online
   - DOMAIN-SUFFIX,czech-power.4fan.cz
@@ -106785,7 +106536,6 @@ payload:
   - DOMAIN-SUFFIX,danarahbord.com
   - DOMAIN-SUFFIX,danaralover.store
   - DOMAIN-SUFFIX,danareese.com
-  - DOMAIN-SUFFIX,danassdkfiebot.pages.dev
   - DOMAIN-SUFFIX,danatamanagement.com
   - DOMAIN-SUFFIX,danatunaicepat.com
   - DOMAIN-SUFFIX,danbao333.com
@@ -108260,6 +108010,7 @@ payload:
   - DOMAIN-SUFFIX,dazardbet-casino.fr
   - DOMAIN-SUFFIX,dazardbet.fr
   - DOMAIN-SUFFIX,dazardbetcasino.fr
+  - DOMAIN-SUFFIX,dazayse.hi-lo.bet
   - DOMAIN-SUFFIX,dazedarticulate.com
   - DOMAIN-SUFFIX,dazedengage.com
   - DOMAIN-SUFFIX,dazhantai.com
@@ -109560,7 +109311,6 @@ payload:
   - DOMAIN-SUFFIX,defieth.pages.dev
   - DOMAIN-SUFFIX,defifo.fun
   - DOMAIN-SUFFIX,defifofun.com
-  - DOMAIN-SUFFIX,defigroups.com
   - DOMAIN-SUFFIX,defihubs.pages.dev
   - DOMAIN-SUFFIX,defihuo.com
   - DOMAIN-SUFFIX,defil-1.gitbook.io
@@ -110535,7 +110285,6 @@ payload:
   - DOMAIN-SUFFIX,depoxtra.com
   - DOMAIN-SUFFIX,depozituldegeneratoare.ro
   - DOMAIN-SUFFIX,depraveadvance.com
-  - DOMAIN-SUFFIX,depreciatorybollocksupkitchen.com
   - DOMAIN-SUFFIX,depressedpenguin.com
   - DOMAIN-SUFFIX,depressingadapted.com
   - DOMAIN-SUFFIX,depressingchanginggraduated.com
@@ -111722,7 +111471,6 @@ payload:
   - DOMAIN-SUFFIX,dfecss.pages.dev
   - DOMAIN-SUFFIX,dferyrdsii.weebly.com
   - DOMAIN-SUFFIX,dfevpkzy6u.com
-  - DOMAIN-SUFFIX,dffeg.pages.dev
   - DOMAIN-SUFFIX,dffffffffffffffffffffff.pages.dev
   - DOMAIN-SUFFIX,dfg66.weebly.com
   - DOMAIN-SUFFIX,dfgbdsfr.pages.dev
@@ -112202,7 +111950,6 @@ payload:
   - DOMAIN-SUFFIX,dhwanbtq.com
   - DOMAIN-SUFFIX,dhwd.it.nf
   - DOMAIN-SUFFIX,dhwusndjyxipsw.com
-  - DOMAIN-SUFFIX,dhx85b.centim.info
   - DOMAIN-SUFFIX,dhxbrqtpallzi.site
   - DOMAIN-SUFFIX,dhxnhvawducul.site
   - DOMAIN-SUFFIX,dhymidigital.com
@@ -117423,6 +117170,7 @@ payload:
   - DOMAIN-SUFFIX,doz-pl.top
   - DOMAIN-SUFFIX,doz-store.sbs
   - DOMAIN-SUFFIX,doz.efarmadeal.shop
+  - DOMAIN-SUFFIX,doz.europris-no.help
   - DOMAIN-SUFFIX,doz.life
   - DOMAIN-SUFFIX,doz.sell-pl.shop
   - DOMAIN-SUFFIX,dozdeal.shop
@@ -117436,6 +117184,7 @@ payload:
   - DOMAIN-SUFFIX,dozory.goodoo.ru
   - DOMAIN-SUFFIX,dozoutlet.com
   - DOMAIN-SUFFIX,dozpl.help
+  - DOMAIN-SUFFIX,dozs.modnakieckasale.sbs
   - DOMAIN-SUFFIX,dozubatan.com
   - DOMAIN-SUFFIX,dp1-2zx.pages.dev
   - DOMAIN-SUFFIX,dp1fzft1fdb84.cloudfront.net
@@ -119305,6 +119054,7 @@ payload:
   - DOMAIN-SUFFIX,duffandassociates.co.za
   - DOMAIN-SUFFIX,dufflebag.click
   - DOMAIN-SUFFIX,dufixen.com
+  - DOMAIN-SUFFIX,duflij.com
   - DOMAIN-SUFFIX,dufonmobilya.com
   - DOMAIN-SUFFIX,dugamb.to
   - DOMAIN-SUFFIX,dugesheying.com
@@ -119815,6 +119565,7 @@ payload:
   - DOMAIN-SUFFIX,dwarfscriptsfurnished.com
   - DOMAIN-SUFFIX,dwarfstar.net
   - DOMAIN-SUFFIX,dwarkesh.me
+  - DOMAIN-SUFFIX,dwashhxhmzhjs.space
   - DOMAIN-SUFFIX,dwavamtujydry.store
   - DOMAIN-SUFFIX,dwayne-johnson.com
   - DOMAIN-SUFFIX,dwazhv.com
@@ -120667,6 +120418,7 @@ payload:
   - DOMAIN-SUFFIX,e4iwtfza99.com
   - DOMAIN-SUFFIX,e4jdb7k8j.com
   - DOMAIN-SUFFIX,e4ohcdslvjnr.com
+  - DOMAIN-SUFFIX,e50386fc45.com
   - DOMAIN-SUFFIX,e52sdt.close.futureisready.com
   - DOMAIN-SUFFIX,e53d4be454.52cd1a4545.com
   - DOMAIN-SUFFIX,e548899712.com
@@ -124732,6 +124484,7 @@ payload:
   - DOMAIN-SUFFIX,emeraldtube.com
   - DOMAIN-SUFFIX,emercionavarro.com
   - DOMAIN-SUFFIX,emerge.imstore.pl
+  - DOMAIN-SUFFIX,emergedcom.cyou
   - DOMAIN-SUFFIX,emergeddoleful.com
   - DOMAIN-SUFFIX,emergeiidgrainer.info
   - DOMAIN-SUFFIX,emergenciascomfye.com
@@ -124845,7 +124598,6 @@ payload:
   - DOMAIN-SUFFIX,emkod.ru
   - DOMAIN-SUFFIX,emkstollen.pro
   - DOMAIN-SUFFIX,eml-pro.com
-  - DOMAIN-SUFFIX,emlakspace.com
   - DOMAIN-SUFFIX,emlakvegaleri.com
   - DOMAIN-SUFFIX,emlakzip.com
   - DOMAIN-SUFFIX,emlifok.info
@@ -124866,6 +124618,7 @@ payload:
   - DOMAIN-SUFFIX,emmarifles.com
   - DOMAIN-SUFFIX,emmenegger.owncube.com
   - DOMAIN-SUFFIX,emmenlemon.com
+  - DOMAIN-SUFFIX,emmettdossman.qpon
   - DOMAIN-SUFFIX,emmettgroupconsulting.com
   - DOMAIN-SUFFIX,emmex.duckdns.org
   - DOMAIN-SUFFIX,emmeyyolane.pages.dev
@@ -126935,6 +126688,7 @@ payload:
   - DOMAIN-SUFFIX,erikavchryste.pages.dev
   - DOMAIN-SUFFIX,erikaystephine.pages.dev
   - DOMAIN-SUFFIX,erikazaputovich.com
+  - DOMAIN-SUFFIX,erikengager.shop
   - DOMAIN-SUFFIX,erikklingman.com
   - DOMAIN-SUFFIX,eriklyseggen.com
   - DOMAIN-SUFFIX,erikpanov.online
@@ -128446,7 +128200,6 @@ payload:
   - DOMAIN-SUFFIX,ethye.xyz
   - DOMAIN-SUFFIX,ethylyvirgie.pages.dev
   - DOMAIN-SUFFIX,etiamholdings.com
-  - DOMAIN-SUFFIX,eticketshop.fr
   - DOMAIN-SUFFIX,eticketswap.fr
   - DOMAIN-SUFFIX,etide.click
   - DOMAIN-SUFFIX,etihadtownpk.com
@@ -129711,6 +129464,7 @@ payload:
   - DOMAIN-SUFFIX,evyla-veynon.com
   - DOMAIN-SUFFIX,evylputjibynd.website
   - DOMAIN-SUFFIX,evynujgbglxzi.space
+  - DOMAIN-SUFFIX,evypenr.winnerbahis-tr.com
   - DOMAIN-SUFFIX,evzhzppj5kel.com
   - DOMAIN-SUFFIX,ew.colimaunmoral.cyou
   - DOMAIN-SUFFIX,ew2025.online
@@ -131146,6 +130900,7 @@ payload:
   - DOMAIN-SUFFIX,f38928832547723658948-1ypmqufho6c-h4.vercel.app
   - DOMAIN-SUFFIX,f39939f3.weebly.com
   - DOMAIN-SUFFIX,f3a2020.weebly.com
+  - DOMAIN-SUFFIX,f3a95oy5m.com
   - DOMAIN-SUFFIX,f3i5-0g49bgn-3h95-1324992141.cos.ap-jakarta.myqcloud.com
   - DOMAIN-SUFFIX,f3ield.info
   - DOMAIN-SUFFIX,f3jxoio03eoe.top
@@ -133542,7 +133297,6 @@ payload:
   - DOMAIN-SUFFIX,fbfynmnq.dermals.org
   - DOMAIN-SUFFIX,fbgamescheats.net
   - DOMAIN-SUFFIX,fbgamez.com
-  - DOMAIN-SUFFIX,fbgg.xyz
   - DOMAIN-SUFFIX,fbgroupslikes.2fh.co
   - DOMAIN-SUFFIX,fbguide-bizhelp.pages.dev
   - DOMAIN-SUFFIX,fbhackz.com
@@ -133748,6 +133502,7 @@ payload:
   - DOMAIN-SUFFIX,fctuibv.pages.dev
   - DOMAIN-SUFFIX,fctuxsuitasid.website
   - DOMAIN-SUFFIX,fcubeindia.com
+  - DOMAIN-SUFFIX,fcvqvetrmo.com
   - DOMAIN-SUFFIX,fcvxmhtpvpuld.space
   - DOMAIN-SUFFIX,fcwdsidinixoz.website
   - DOMAIN-SUFFIX,fcxxffvjrztgz.space
@@ -138341,6 +138096,7 @@ payload:
   - DOMAIN-SUFFIX,fmfrht.icu
   - DOMAIN-SUFFIX,fmgkibaktcxdlj.com
   - DOMAIN-SUFFIX,fmgxqcxzpfbel.click
+  - DOMAIN-SUFFIX,fmh7rrc8ec8nj4.rest
   - DOMAIN-SUFFIX,fmhijab.com
   - DOMAIN-SUFFIX,fmhy-it-com.s3.amazonaws.com
   - DOMAIN-SUFFIX,fmhy-net.s3.amazonaws.com
@@ -138424,6 +138180,7 @@ payload:
   - DOMAIN-SUFFIX,fnespostle.firebaseapp.com
   - DOMAIN-SUFFIX,fnespostle.web.app
   - DOMAIN-SUFFIX,fnfbjhfwumxnmg.com
+  - DOMAIN-SUFFIX,fnfprkylegylz.online
   - DOMAIN-SUFFIX,fnfstorebd.com
   - DOMAIN-SUFFIX,fngjuhuiommfv.online
   - DOMAIN-SUFFIX,fngvepnjonsdl.online
@@ -141938,6 +141695,7 @@ payload:
   - DOMAIN-SUFFIX,fu68.com
   - DOMAIN-SUFFIX,fu783659724y3.weebly.com
   - DOMAIN-SUFFIX,fu7lkenvost.pro
+  - DOMAIN-SUFFIX,fualgeronik.info
   - DOMAIN-SUFFIX,fuanfu.com
   - DOMAIN-SUFFIX,fubadie.com
   - DOMAIN-SUFFIX,fublue.com
@@ -142736,6 +142494,7 @@ payload:
   - DOMAIN-SUFFIX,fusionstrive.info
   - DOMAIN-SUFFIX,fusiontemporalfulfilled.com
   - DOMAIN-SUFFIX,fusionwellnessconsulting.com
+  - DOMAIN-SUFFIX,fuskphti.shop
   - DOMAIN-SUFFIX,fusoidactuate.com
   - DOMAIN-SUFFIX,fusrv.com
   - DOMAIN-SUFFIX,fusscupcakes.com
@@ -146210,6 +145969,7 @@ payload:
   - DOMAIN-SUFFIX,gest-reservashiongate.com
   - DOMAIN-SUFFIX,gestaltistees.info
   - DOMAIN-SUFFIX,gestapostanza.shop
+  - DOMAIN-SUFFIX,gestapozulu.qpon
   - DOMAIN-SUFFIX,gestas.xyz
   - DOMAIN-SUFFIX,gestd483.weebly.com
   - DOMAIN-SUFFIX,gestimad.com
@@ -147570,6 +147330,7 @@ payload:
   - DOMAIN-SUFFIX,giroes.store
   - DOMAIN-SUFFIX,giroma.info
   - DOMAIN-SUFFIX,giromamas.mk
+  - DOMAIN-SUFFIX,girosjugermausole.cyou
   - DOMAIN-SUFFIX,girqerovpriyp.online
   - DOMAIN-SUFFIX,girslepilots.qpon
   - DOMAIN-SUFFIX,girydei7.com
@@ -149498,6 +149259,7 @@ payload:
   - DOMAIN-SUFFIX,gobetweenleague.com
   - DOMAIN-SUFFIX,gobetweenlenient.com
   - DOMAIN-SUFFIX,gobetweenperiodssledge.com
+  - DOMAIN-SUFFIX,gobfmmh.casino888.promo
   - DOMAIN-SUFFIX,gobib.top
   - DOMAIN-SUFFIX,gobik-fff.shop
   - DOMAIN-SUFFIX,gobikes.net
@@ -151256,6 +151018,7 @@ payload:
   - DOMAIN-SUFFIX,gpxxbyf.cn
   - DOMAIN-SUFFIX,gpxzp.com
   - DOMAIN-SUFFIX,gpyuljehcsmeu.space
+  - DOMAIN-SUFFIX,gpzoplviptmsx.online
   - DOMAIN-SUFFIX,gpzxduotqouau.store
   - DOMAIN-SUFFIX,gq.kalingacurvant.com
   - DOMAIN-SUFFIX,gq36h6nz916j8hyp3v5n.s3.eu-west-3.amazonaws.com
@@ -152369,6 +152132,7 @@ payload:
   - DOMAIN-SUFFIX,gritt2flow.pro
   - DOMAIN-SUFFIX,grittylegs.com
   - DOMAIN-SUFFIX,griupama.fr
+  - DOMAIN-SUFFIX,grivok.shop
   - DOMAIN-SUFFIX,grivonexel-velthorix.pages.dev
   - DOMAIN-SUFFIX,grivonexel-xynpharix.pages.dev
   - DOMAIN-SUFFIX,grivoro.shop
@@ -153092,6 +152856,7 @@ payload:
   - DOMAIN-SUFFIX,gse1stop.com
   - DOMAIN-SUFFIX,gsedkytitvtsp.space
   - DOMAIN-SUFFIX,gsenur.club
+  - DOMAIN-SUFFIX,gsewatdv.shop
   - DOMAIN-SUFFIX,gsfcloud.com
   - DOMAIN-SUFFIX,gsfdfdg.weebly.com
   - DOMAIN-SUFFIX,gsfpdvjkpishb.website
@@ -156658,6 +156423,7 @@ payload:
   - DOMAIN-SUFFIX,hbqhtkclltke.com
   - DOMAIN-SUFFIX,hbr2czm7pfy994i.rest
   - DOMAIN-SUFFIX,hbrcv.adobe.com
+  - DOMAIN-SUFFIX,hbrqvvaapvvju.online
   - DOMAIN-SUFFIX,hbrt.adobe.com
   - DOMAIN-SUFFIX,hbrts.com
   - DOMAIN-SUFFIX,hbsbfstpks.com
@@ -158046,6 +157812,7 @@ payload:
   - DOMAIN-SUFFIX,henimejiguq.org
   - DOMAIN-SUFFIX,henkwpol.nl
   - DOMAIN-SUFFIX,henleyonline.com
+  - DOMAIN-SUFFIX,hennaedredeyes.qpon
   - DOMAIN-SUFFIX,hennapryor.com
   - DOMAIN-SUFFIX,henneanooqh.com
   - DOMAIN-SUFFIX,henning-kober.de
@@ -158727,6 +158494,7 @@ payload:
   - DOMAIN-SUFFIX,hgcuvolqqolld.site
   - DOMAIN-SUFFIX,hgdfgh6780.weebly.com
   - DOMAIN-SUFFIX,hgdfghjh78.weebly.com
+  - DOMAIN-SUFFIX,hgdiucl.iranwp.ai
   - DOMAIN-SUFFIX,hgdsrt78ioknbder456.weebly.com
   - DOMAIN-SUFFIX,hgeepechncyte.space
   - DOMAIN-SUFFIX,hgesqwfqw.online
@@ -162494,6 +162262,7 @@ payload:
   - DOMAIN-SUFFIX,hrixo.shop
   - DOMAIN-SUFFIX,hriybnmi.com
   - DOMAIN-SUFFIX,hrjg.com.cn
+  - DOMAIN-SUFFIX,hrjjo6as.prozhe.shopping
   - DOMAIN-SUFFIX,hrjkgrtghghkjk85.weebly.com
   - DOMAIN-SUFFIX,hrjsgi.com
   - DOMAIN-SUFFIX,hrjy888.com
@@ -162617,7 +162386,6 @@ payload:
   - DOMAIN-SUFFIX,hslautomart.com
   - DOMAIN-SUFFIX,hslfwaivfolvz.site
   - DOMAIN-SUFFIX,hslibrary.com
-  - DOMAIN-SUFFIX,hslyqs.com
   - DOMAIN-SUFFIX,hsmanagementltd.com
   - DOMAIN-SUFFIX,hsmasw.net
   - DOMAIN-SUFFIX,hsmehkdosatlz.space
@@ -163553,6 +163321,7 @@ payload:
   - DOMAIN-SUFFIX,hvhhfftfe55.weebly.com
   - DOMAIN-SUFFIX,hvhpwafhvwrk.com
   - DOMAIN-SUFFIX,hvi25o1wciyxq4el8hn59biuip9.cfd
+  - DOMAIN-SUFFIX,hvid2q0h.bet24bet.bet
   - DOMAIN-SUFFIX,hvivah.net
   - DOMAIN-SUFFIX,hvjfp.com
   - DOMAIN-SUFFIX,hvjhvjhvhjbj.weebly.com
@@ -167402,6 +167171,7 @@ payload:
   - DOMAIN-SUFFIX,impoil-cad.com
   - DOMAIN-SUFFIX,impolite-film.pro
   - DOMAIN-SUFFIX,imponestvional.com
+  - DOMAIN-SUFFIX,imporaselg.cyou
   - DOMAIN-SUFFIX,import-ai.com
   - DOMAIN-SUFFIX,import-ledger.com
   - DOMAIN-SUFFIX,import-recovery-metamask.com
@@ -171298,6 +171068,7 @@ payload:
   - DOMAIN-SUFFIX,ioio.mom
   - DOMAIN-SUFFIX,ioita.com
   - DOMAIN-SUFFIX,iojfoijeofjewoijfowiejfowjefwefijwefiowejf.pages.dev
+  - DOMAIN-SUFFIX,iojpwiynonzxj.online
   - DOMAIN-SUFFIX,iojrv4ecdos.com
   - DOMAIN-SUFFIX,iojzzlodyluyl.online
   - DOMAIN-SUFFIX,iokmey.icu
@@ -172223,6 +171994,7 @@ payload:
   - DOMAIN-SUFFIX,ishlo-4372.pages.dev
   - DOMAIN-SUFFIX,ishly.ru
   - DOMAIN-SUFFIX,ishmaelfibreglass.com
+  - DOMAIN-SUFFIX,ishmaelturtle.shop
   - DOMAIN-SUFFIX,ishopk.com
   - DOMAIN-SUFFIX,ishopshanks.com
   - DOMAIN-SUFFIX,ishortc.rigtroll.com
@@ -174663,7 +174435,6 @@ payload:
   - DOMAIN-SUFFIX,jdknsghqwbrki.com
   - DOMAIN-SUFFIX,jdkwtwtbiv.com
   - DOMAIN-SUFFIX,jdlasopa321.weebly.com
-  - DOMAIN-SUFFIX,jdlhg.com
   - DOMAIN-SUFFIX,jdlog.uu.cc
   - DOMAIN-SUFFIX,jdlqivqfhiyjz.site
   - DOMAIN-SUFFIX,jdlwj.com
@@ -175212,6 +174983,7 @@ payload:
   - DOMAIN-SUFFIX,jexe6.weebly.com
   - DOMAIN-SUFFIX,jexliberty.wixstudio.com
   - DOMAIN-SUFFIX,jexneeuil.com
+  - DOMAIN-SUFFIX,jexocsgi.com
   - DOMAIN-SUFFIX,jexoro.com
   - DOMAIN-SUFFIX,jexq.xyz
   - DOMAIN-SUFFIX,jexqari.shop
@@ -177885,6 +177657,7 @@ payload:
   - DOMAIN-SUFFIX,jtfsrnmxdcwtx.site
   - DOMAIN-SUFFIX,jtg4.weebly.com
   - DOMAIN-SUFFIX,jtg5v1.close.futureisready.com
+  - DOMAIN-SUFFIX,jthevya.22beet.vip
   - DOMAIN-SUFFIX,jthkegumzcwkz.site
   - DOMAIN-SUFFIX,jthomas.us
   - DOMAIN-SUFFIX,jthotb.icu
@@ -185418,7 +185191,6 @@ payload:
   - DOMAIN-SUFFIX,kuaizitech.com
   - DOMAIN-SUFFIX,kuakatabarta.com
   - DOMAIN-SUFFIX,kuakuawenjian.oss-cn-hangzhou.aliyuncs.com
-  - DOMAIN-SUFFIX,kual11.duckdns.org
   - DOMAIN-SUFFIX,kuangxianchang.com
   - DOMAIN-SUFFIX,kuangyuantrade.com
   - DOMAIN-SUFFIX,kuanysh.kz
@@ -192177,6 +191949,7 @@ payload:
   - DOMAIN-SUFFIX,liquiformdesigns.wixstudio.com
   - DOMAIN-SUFFIX,liqulya.com
   - DOMAIN-SUFFIX,liquornh.com
+  - DOMAIN-SUFFIX,liquoryinearth.cfd
   - DOMAIN-SUFFIX,lir-fa.fit
   - DOMAIN-SUFFIX,lira-luck.fr
   - DOMAIN-SUFFIX,lira-spincasino.fr
@@ -192349,6 +192122,7 @@ payload:
   - DOMAIN-SUFFIX,lit.connatix.com
   - DOMAIN-SUFFIX,litaal.digital
   - DOMAIN-SUFFIX,litags.feedblitz.com
+  - DOMAIN-SUFFIX,litaidrawl.cfd
   - DOMAIN-SUFFIX,litatamayosoriano.aba.ae
   - DOMAIN-SUFFIX,litaudrootsa.net
   - DOMAIN-SUFFIX,litava-group.ru
@@ -194819,7 +194593,6 @@ payload:
   - DOMAIN-SUFFIX,log.ohou.se
   - DOMAIN-SUFFIX,log.olark.com
   - DOMAIN-SUFFIX,log.opentracker.net
-  - DOMAIN-SUFFIX,log.optimizely.com
   - DOMAIN-SUFFIX,log.oto.com.vn
   - DOMAIN-SUFFIX,log.outbrain.com
   - DOMAIN-SUFFIX,log.particlenews.com
@@ -196060,7 +195833,6 @@ payload:
   - DOMAIN-SUFFIX,lok-tert.myvnc.com
   - DOMAIN-SUFFIX,loka-73u.pages.dev
   - DOMAIN-SUFFIX,lokal-schedule-demo.com
-  - DOMAIN-SUFFIX,lokalna-2809.sbs
   - DOMAIN-SUFFIX,lokalna-884456.sbs
   - DOMAIN-SUFFIX,lokalna-9253.sbs
   - DOMAIN-SUFFIX,lokalna-ofera0120120292.shop
@@ -196070,7 +195842,6 @@ payload:
   - DOMAIN-SUFFIX,lokalna-ofera978889237.sbs
   - DOMAIN-SUFFIX,lokalna-ofera995488801.shop
   - DOMAIN-SUFFIX,lokalna-oferta04265992.sbs
-  - DOMAIN-SUFFIX,lokalna-oferta1924729122.sbs
   - DOMAIN-SUFFIX,lokalna-oferta587645.shop
   - DOMAIN-SUFFIX,lokalna-ofeta592054.shop
   - DOMAIN-SUFFIX,lokalna-ofeta904488884.shop
@@ -199365,6 +199136,7 @@ payload:
   - DOMAIN-SUFFIX,m5uiy5gd1.com
   - DOMAIN-SUFFIX,m62q3s.jrik.perforationmachinery.co.uk
   - DOMAIN-SUFFIX,m69tvg6wqd.com
+  - DOMAIN-SUFFIX,m6cx48b0e.com
   - DOMAIN-SUFFIX,m6d3h9vc3z.com
   - DOMAIN-SUFFIX,m6groupee.fr
   - DOMAIN-SUFFIX,m6m9.com
@@ -201880,7 +201652,6 @@ payload:
   - DOMAIN-SUFFIX,marcseelinger.com
   - DOMAIN-SUFFIX,marcsevigny.com
   - DOMAIN-SUFFIX,marcsmiller.com
-  - DOMAIN-SUFFIX,marcukesh.top
   - DOMAIN-SUFFIX,marcuscash.one
   - DOMAIN-SUFFIX,marcuscravens.com
   - DOMAIN-SUFFIX,marcushumanities12.weebly.com
@@ -208790,6 +208561,7 @@ payload:
   - DOMAIN-SUFFIX,mis.g.mi.com
   - DOMAIN-SUFFIX,misaglam.com
   - DOMAIN-SUFFIX,misalena.com
+  - DOMAIN-SUFFIX,misalmayfl.cyou
   - DOMAIN-SUFFIX,misapor.ch
   - DOMAIN-SUFFIX,misav.sbs
   - DOMAIN-SUFFIX,misazharsbk.xyz
@@ -209590,6 +209362,7 @@ payload:
   - DOMAIN-SUFFIX,mmgzxnkwgjpnx.space
   - DOMAIN-SUFFIX,mmi.bemobile.ua
   - DOMAIN-SUFFIX,mmi.izo.temporary.site
+  - DOMAIN-SUFFIX,mmihucdry.in
   - DOMAIN-SUFFIX,mmika41.weebly.com
   - DOMAIN-SUFFIX,mmika42.weebly.com
   - DOMAIN-SUFFIX,mmika43.weebly.com
@@ -210622,6 +210395,7 @@ payload:
   - DOMAIN-SUFFIX,molotvedmgop.online
   - DOMAIN-SUFFIX,molphynex-optrivon.pages.dev
   - DOMAIN-SUFFIX,molted.work
+  - DOMAIN-SUFFIX,molteruvver.cfd
   - DOMAIN-SUFFIX,moltiindir.pro
   - DOMAIN-SUFFIX,moltoclix.com
   - DOMAIN-SUFFIX,moltrivex-krythonex.pages.dev
@@ -212245,6 +212019,7 @@ payload:
   - DOMAIN-SUFFIX,mperutyy.web.app
   - DOMAIN-SUFFIX,mpfashionstar.com
   - DOMAIN-SUFFIX,mpferzoapbajb.online
+  - DOMAIN-SUFFIX,mpfmdjf.ace90.games
   - DOMAIN-SUFFIX,mpgames.org
   - DOMAIN-SUFFIX,mpgassistant.com
   - DOMAIN-SUFFIX,mpgeikkqoyyha.site
@@ -212290,6 +212065,7 @@ payload:
   - DOMAIN-SUFFIX,mpmusic.store
   - DOMAIN-SUFFIX,mpniplgzpqmlx.website
   - DOMAIN-SUFFIX,mpnjigsicbtas.site
+  - DOMAIN-SUFFIX,mpnkuwbbdqcvt.online
   - DOMAIN-SUFFIX,mpnoyjbqtyfht.love
   - DOMAIN-SUFFIX,mpnrs.com
   - DOMAIN-SUFFIX,mpo-situs-slot-gacor-terbaru-2022.weebly.com
@@ -214504,6 +214280,7 @@ payload:
   - DOMAIN-SUFFIX,mycayman345.weebly.com
   - DOMAIN-SUFFIX,mycbcbank.weebly.com
   - DOMAIN-SUFFIX,mycciservicemail.weebly.com
+  - DOMAIN-SUFFIX,myccmgypsjhgr.com
   - DOMAIN-SUFFIX,mycdn.co
   - DOMAIN-SUFFIX,mycelesterno.com
   - DOMAIN-SUFFIX,mycentierbank-certify.firebaseapp.com
@@ -215948,6 +215725,7 @@ payload:
   - DOMAIN-SUFFIX,myzterybox.vercel.app
   - DOMAIN-SUFFIX,myzwceogchcvo.site
   - DOMAIN-SUFFIX,mz-db.com
+  - DOMAIN-SUFFIX,mz2qs1j6.1xforward.live
   - DOMAIN-SUFFIX,mz2v.com
   - DOMAIN-SUFFIX,mz9215.angell.vantagetennis.com
   - DOMAIN-SUFFIX,mzaecupkjfnxx.online
@@ -216055,7 +215833,6 @@ payload:
   - DOMAIN-SUFFIX,n10.xyz
   - DOMAIN-SUFFIX,n10411.com
   - DOMAIN-SUFFIX,n11premium.com
-  - DOMAIN-SUFFIX,n1272adserv.xyz
   - DOMAIN-SUFFIX,n1272serv.xyz
   - DOMAIN-SUFFIX,n12empresa.net
   - DOMAIN-SUFFIX,n12qga4ld3zk.com
@@ -216425,6 +216202,7 @@ payload:
   - DOMAIN-SUFFIX,nagevintha.shop
   - DOMAIN-SUFFIX,naggingdocumentationgrow.com
   - DOMAIN-SUFFIX,naghshab.com
+  - DOMAIN-SUFFIX,nagingfinns.shop
   - DOMAIN-SUFFIX,naglewbialymstoku.top
   - DOMAIN-SUFFIX,naglewkatowicach.top
   - DOMAIN-SUFFIX,naglewkrakowie.top
@@ -218709,7 +218487,6 @@ payload:
   - DOMAIN-SUFFIX,netbet-casino.online
   - DOMAIN-SUFFIX,netbilgiagi.com
   - DOMAIN-SUFFIX,netbina.com
-  - DOMAIN-SUFFIX,netbios-wait.com
   - DOMAIN-SUFFIX,netbot.fun
   - DOMAIN-SUFFIX,netbusiness.pro
   - DOMAIN-SUFFIX,netcare-healthos.vercel.app
@@ -226226,6 +226003,7 @@ payload:
   - DOMAIN-SUFFIX,oconner.link
   - DOMAIN-SUFFIX,ocop-defender.pro
   - DOMAIN-SUFFIX,ocopressurecontrol.com
+  - DOMAIN-SUFFIX,ocoteagagmannoncom.qpon
   - DOMAIN-SUFFIX,ocoupaigipteejo.net
   - DOMAIN-SUFFIX,ocpgroup.me
   - DOMAIN-SUFFIX,ocph.org
@@ -226619,7 +226397,6 @@ payload:
   - DOMAIN-SUFFIX,oferta-lokalna49104.click
   - DOMAIN-SUFFIX,oferta-na-lato-2026-34egfg.sbs
   - DOMAIN-SUFFIX,oferta-na-lato-2026-34gevncwd.sbs
-  - DOMAIN-SUFFIX,oferta-na-lato-2026-34rgj.sbs
   - DOMAIN-SUFFIX,oferta-na-lato-2026-3e4kgvk.sbs
   - DOMAIN-SUFFIX,oferta-na-lato-2026-3n4fvsnve.sbs
   - DOMAIN-SUFFIX,oferta-na-lato-2026-4rgjvfw.sbs
@@ -226708,8 +226485,6 @@ payload:
   - DOMAIN-SUFFIX,ofertoria.shop
   - DOMAIN-SUFFIX,ofertysfera.shop
   - DOMAIN-SUFFIX,ofertyzone.shop
-  - DOMAIN-SUFFIX,ofeta-1413.sbs
-  - DOMAIN-SUFFIX,ofeta-14212333.sbs
   - DOMAIN-SUFFIX,ofeta-142233.sbs
   - DOMAIN-SUFFIX,ofeta-19733.sbs
   - DOMAIN-SUFFIX,ofeta-30503333.sbs
@@ -227157,6 +226932,7 @@ payload:
   - DOMAIN-SUFFIX,ofseedotom.com
   - DOMAIN-SUFFIX,ofsnoveran.com
   - DOMAIN-SUFFIX,ofssdevriar.com
+  - DOMAIN-SUFFIX,ofstzxglzjffs.space
   - DOMAIN-SUFFIX,oftacoa.dtdns.org
   - DOMAIN-SUFFIX,oftalmologiahigienopolis.com.br
   - DOMAIN-SUFFIX,oftheownouncillo.com
@@ -231977,6 +231753,7 @@ payload:
   - DOMAIN-SUFFIX,otloychbcul.com
   - DOMAIN-SUFFIX,otlpac.com
   - DOMAIN-SUFFIX,otlprhzsyoblp.online
+  - DOMAIN-SUFFIX,otlqkiy.betmiz.bet
   - DOMAIN-SUFFIX,otlxlpltst-kara6.s8qusb.qpon
   - DOMAIN-SUFFIX,otm-r.com
   - DOMAIN-SUFFIX,otme.cn
@@ -232789,6 +232566,7 @@ payload:
   - DOMAIN-SUFFIX,ovhh-0.web.app
   - DOMAIN-SUFFIX,ovhh-19f4a.web.app
   - DOMAIN-SUFFIX,ovhtelecomfr.aniconplastic.com.ph
+  - DOMAIN-SUFFIX,oviciprofi.cyou
   - DOMAIN-SUFFIX,ovidio2000.weebly.com
   - DOMAIN-SUFFIX,oviigi.net
   - DOMAIN-SUFFIX,ovinkerhulst.info
@@ -232816,6 +232594,7 @@ payload:
   - DOMAIN-SUFFIX,ovr71357.diabetes-sport.de
   - DOMAIN-SUFFIX,ovret.com
   - DOMAIN-SUFFIX,ovrpdezykwmf.com
+  - DOMAIN-SUFFIX,ovrrdtl.ace90.casino
   - DOMAIN-SUFFIX,ovrrerinflates.info
   - DOMAIN-SUFFIX,ovsaopbvoajdn.website
   - DOMAIN-SUFFIX,ovsfr.fr
@@ -233122,6 +232901,7 @@ payload:
   - DOMAIN-SUFFIX,oyil.cn
   - DOMAIN-SUFFIX,oyinsurance.top
   - DOMAIN-SUFFIX,oyiojxumanrvr.online
+  - DOMAIN-SUFFIX,oyixaslghuqky.space
   - DOMAIN-SUFFIX,oyjdfcmxrudoo.space
   - DOMAIN-SUFFIX,oyjtu.com
   - DOMAIN-SUFFIX,oyk689gg.weebly.com
@@ -244155,6 +243935,7 @@ payload:
   - DOMAIN-SUFFIX,polyfill.top
   - DOMAIN-SUFFIX,polyglotcoding.com
   - DOMAIN-SUFFIX,polygon3.com
+  - DOMAIN-SUFFIX,polygon58.top
   - DOMAIN-SUFFIX,polygonautism.cfd
   - DOMAIN-SUFFIX,polygraphfrigilityfrigility.com
   - DOMAIN-SUFFIX,polyguard.live
@@ -245906,6 +245687,7 @@ payload:
   - DOMAIN-SUFFIX,ppsfojtitmnux.website
   - DOMAIN-SUFFIX,ppshopspkis.vip
   - DOMAIN-SUFFIX,ppsj.pptv.com
+  - DOMAIN-SUFFIX,ppskaiwnwtg.com
   - DOMAIN-SUFFIX,ppslsa.com
   - DOMAIN-SUFFIX,ppslywixsqohh.space
   - DOMAIN-SUFFIX,ppsnooker.com
@@ -247486,7 +247268,6 @@ payload:
   - DOMAIN-SUFFIX,privatedefensesoft.com
   - DOMAIN-SUFFIX,privatedtingliv3.pages.dev
   - DOMAIN-SUFFIX,privateequityreporting.com
-  - DOMAIN-SUFFIX,privatefile.host
   - DOMAIN-SUFFIX,privategame.xyz
   - DOMAIN-SUFFIX,privatehalongtours.com
   - DOMAIN-SUFFIX,privatelabelextensions.co.uk
@@ -255887,6 +255668,7 @@ payload:
   - DOMAIN-SUFFIX,pzbxnlourkdrv.site
   - DOMAIN-SUFFIX,pzckypp.beer
   - DOMAIN-SUFFIX,pzcndidfhcoyu.site
+  - DOMAIN-SUFFIX,pzczhnl.yek.autos
   - DOMAIN-SUFFIX,pzd.rakuten.co.jp
   - DOMAIN-SUFFIX,pzemzwvodejwz.website
   - DOMAIN-SUFFIX,pzgignprvvgvn.space
@@ -256950,6 +256732,7 @@ payload:
   - DOMAIN-SUFFIX,qneshqafreref.site
   - DOMAIN-SUFFIX,qnfgivvw.shop
   - DOMAIN-SUFFIX,qnfhrgxttmget.site
+  - DOMAIN-SUFFIX,qnfqfmh.ace90bet.bet
   - DOMAIN-SUFFIX,qngkhauwklhv.com
   - DOMAIN-SUFFIX,qnhi.cn
   - DOMAIN-SUFFIX,qnidgbhwml.com
@@ -257377,6 +257160,7 @@ payload:
   - DOMAIN-SUFFIX,qtlhij.com
   - DOMAIN-SUFFIX,qtluqhjqyxyogc.com
   - DOMAIN-SUFFIX,qtlxx.com
+  - DOMAIN-SUFFIX,qtlyyxodifpuy.space
   - DOMAIN-SUFFIX,qtmags.com
   - DOMAIN-SUFFIX,qtmcctlezxmvt.online
   - DOMAIN-SUFFIX,qtmdzsj.cn
@@ -258302,6 +258086,7 @@ payload:
   - DOMAIN-SUFFIX,quirkybliss.com
   - DOMAIN-SUFFIX,quirkybodega.com
   - DOMAIN-SUFFIX,quirkysugar.com
+  - DOMAIN-SUFFIX,quirkytop.pro
   - DOMAIN-SUFFIX,quiro-energy.com
   - DOMAIN-SUFFIX,quirostega.pro
   - DOMAIN-SUFFIX,quiscdvothbdc.com
@@ -258659,6 +258444,7 @@ payload:
   - DOMAIN-SUFFIX,qxawczrzwjrfg.space
   - DOMAIN-SUFFIX,qxbkmxojrqwkb.online
   - DOMAIN-SUFFIX,qxbroker.com
+  - DOMAIN-SUFFIX,qxbunoqpmxnhl.online
   - DOMAIN-SUFFIX,qxci293rn4qsxjwcbu2jci32ce3rvt4.weebly.com
   - DOMAIN-SUFFIX,qxcqurvolreou.space
   - DOMAIN-SUFFIX,qxdownload.com
@@ -269630,6 +269416,7 @@ payload:
   - DOMAIN-SUFFIX,rucolabetcasino.fr
   - DOMAIN-SUFFIX,rucomef.org
   - DOMAIN-SUFFIX,rucstpoymfnpp.site
+  - DOMAIN-SUFFIX,rucuxpv.acbet.poker
   - DOMAIN-SUFFIX,rud-ka.work
   - DOMAIN-SUFFIX,ruda-agency.store
   - DOMAIN-SUFFIX,rudder-server-prd.arena.im
@@ -273296,6 +273083,7 @@ payload:
   - DOMAIN-SUFFIX,saucefish.com
   - DOMAIN-SUFFIX,saucer.science
   - DOMAIN-SUFFIX,saucer.top
+  - DOMAIN-SUFFIX,saucersfiltre.shop
   - DOMAIN-SUFFIX,saucerswap-rpcdebug.pages.dev
   - DOMAIN-SUFFIX,saucewonderdaytime.com
   - DOMAIN-SUFFIX,sauchaiglujohih.com
@@ -281726,6 +281514,7 @@ payload:
   - DOMAIN-SUFFIX,silkyspite.com
   - DOMAIN-SUFFIX,sillageag.info
   - DOMAIN-SUFFIX,sillageg.info
+  - DOMAIN-SUFFIX,sillaltica.cyou
   - DOMAIN-SUFFIX,sillee.com
   - DOMAIN-SUFFIX,sillegarden.se
   - DOMAIN-SUFFIX,sillerconsulting.com
@@ -286598,6 +286387,7 @@ payload:
   - DOMAIN-SUFFIX,snatcher.xyz
   - DOMAIN-SUFFIX,snauper-lordfilm.ru
   - DOMAIN-SUFFIX,snav.fr
+  - DOMAIN-SUFFIX,snavik.shop
   - DOMAIN-SUFFIX,snaxynuo.space
   - DOMAIN-SUFFIX,snayper-lordfilm.ru
   - DOMAIN-SUFFIX,snaypery-lordfilm.ru
@@ -286736,6 +286526,7 @@ payload:
   - DOMAIN-SUFFIX,snlyplsoli.com
   - DOMAIN-SUFFIX,snm-bonway.com
   - DOMAIN-SUFFIX,snmi.cn
+  - DOMAIN-SUFFIX,snmytvt.com
   - DOMAIN-SUFFIX,snnbc-bnki.com
   - DOMAIN-SUFFIX,snnbc-bnkk.com
   - DOMAIN-SUFFIX,snnubserving.info
@@ -292019,6 +291810,7 @@ payload:
   - DOMAIN-SUFFIX,stalcom-pl.shop
   - DOMAIN-SUFFIX,stalcomall.club
   - DOMAIN-SUFFIX,stalcomens.club
+  - DOMAIN-SUFFIX,stalconar.club
   - DOMAIN-SUFFIX,stalcookazje24.club
   - DOMAIN-SUFFIX,stalcopl.club
   - DOMAIN-SUFFIX,stalcopl.shop
@@ -297345,6 +297137,7 @@ payload:
   - DOMAIN-SUFFIX,sunnyfasr266.weebly.com
   - DOMAIN-SUFFIX,sunnyfasr390.weebly.com
   - DOMAIN-SUFFIX,sunnyhyperijox.info
+  - DOMAIN-SUFFIX,sunnyindication.com
   - DOMAIN-SUFFIX,sunnymoveglobalbt.info
   - DOMAIN-SUFFIX,sunnyplayer.com
   - DOMAIN-SUFFIX,sunnyprize.com
@@ -302277,6 +302070,7 @@ payload:
   - DOMAIN-SUFFIX,tbsone.imtt.qq.com
   - DOMAIN-SUFFIX,tbstv.112.2o7.net
   - DOMAIN-SUFFIX,tbsveryfunnyads.112.2o7.net
+  - DOMAIN-SUFFIX,tbthrfrgkqltpw.com
   - DOMAIN-SUFFIX,tbufussball.bplaced.net
   - DOMAIN-SUFFIX,tburleyjukes211.weebly.com
   - DOMAIN-SUFFIX,tburybrcvclih.online
@@ -308512,6 +308306,7 @@ payload:
   - DOMAIN-SUFFIX,tigasaudaratour.com
   - DOMAIN-SUFFIX,tigasekawantranstourtravel.com
   - DOMAIN-SUFFIX,tigawani.com
+  - DOMAIN-SUFFIX,tigepuffier.cyou
   - DOMAIN-SUFFIX,tiger-102.weebly.com
   - DOMAIN-SUFFIX,tiger-casino.fr
   - DOMAIN-SUFFIX,tiger-id.com
@@ -309340,6 +309135,7 @@ payload:
   - DOMAIN-SUFFIX,tjowniapgjlklmk.com
   - DOMAIN-SUFFIX,tjparis-justice.fr
   - DOMAIN-SUFFIX,tjq.com
+  - DOMAIN-SUFFIX,tjqwbnhnazllz.online
   - DOMAIN-SUFFIX,tjrksciow.pro
   - DOMAIN-SUFFIX,tjrobtak.com
   - DOMAIN-SUFFIX,tjrsf.com
@@ -309358,6 +309154,7 @@ payload:
   - DOMAIN-SUFFIX,tjv251109ads.com
   - DOMAIN-SUFFIX,tjv260529xxx.com
   - DOMAIN-SUFFIX,tjvpnh.icu
+  - DOMAIN-SUFFIX,tjwrqljqcawjj.online
   - DOMAIN-SUFFIX,tjwsg.com
   - DOMAIN-SUFFIX,tjwuxkxgan.net
   - DOMAIN-SUFFIX,tjwveazohmjzd.online
@@ -311562,6 +311359,7 @@ payload:
   - DOMAIN-SUFFIX,tpddata.com
   - DOMAIN-SUFFIX,tpdetjpxyqyap.com
   - DOMAIN-SUFFIX,tpdhwgmoelkzh.space
+  - DOMAIN-SUFFIX,tpdilgpbcgriq.space
   - DOMAIN-SUFFIX,tpdpoituqwhqb.space
   - DOMAIN-SUFFIX,tpdwm.com
   - DOMAIN-SUFFIX,tpe163.com
@@ -321372,6 +321170,7 @@ payload:
   - DOMAIN-SUFFIX,urpindia.in
   - DOMAIN-SUFFIX,urps-santepublique.fr
   - DOMAIN-SUFFIX,urqpvwovevlni.site
+  - DOMAIN-SUFFIX,urqvdqc.dreambet.casino
   - DOMAIN-SUFFIX,urrzeegpcpfbs.rocks
   - DOMAIN-SUFFIX,ursaasekathryne.pages.dev
   - DOMAIN-SUFFIX,ursaff.com
@@ -323413,7 +323212,6 @@ payload:
   - DOMAIN-SUFFIX,valueclick.cc
   - DOMAIN-SUFFIX,valueclick.com
   - DOMAIN-SUFFIX,valueclick.jp
-  - DOMAIN-SUFFIX,valueclick.net
   - DOMAIN-SUFFIX,valueclickmedia.com
   - DOMAIN-SUFFIX,valuecommerce.com
   - DOMAIN-SUFFIX,valuedfingerdrive.com
@@ -326106,6 +325904,7 @@ payload:
   - DOMAIN-SUFFIX,vhltqzhcuoobq.website
   - DOMAIN-SUFFIX,vhnhtrsswypzj.site
   - DOMAIN-SUFFIX,vhnmfrkruzdqg.space
+  - DOMAIN-SUFFIX,vhnp4ovl.1xcart.xyz
   - DOMAIN-SUFFIX,vhnuaatydmqeg.site
   - DOMAIN-SUFFIX,vhojdkvcadavb.space
   - DOMAIN-SUFFIX,vhqdzoxpepcem.store
@@ -329639,6 +329438,7 @@ payload:
   - DOMAIN-SUFFIX,vrpfhdne.net
   - DOMAIN-SUFFIX,vrpharmacist.com
   - DOMAIN-SUFFIX,vrpnfrtnemmbb.space
+  - DOMAIN-SUFFIX,vrqhkwopnzvpv.website
   - DOMAIN-SUFFIX,vrr.name
   - DOMAIN-SUFFIX,vrrm.cn
   - DOMAIN-SUFFIX,vrs.cz
@@ -330125,6 +329925,7 @@ payload:
   - DOMAIN-SUFFIX,vvmschoirs.com
   - DOMAIN-SUFFIX,vvn66.com
   - DOMAIN-SUFFIX,vvnna.com
+  - DOMAIN-SUFFIX,vvnwnyxsuzbah.space
   - DOMAIN-SUFFIX,vvolnzdglprvf.store
   - DOMAIN-SUFFIX,vvpfsda.pasoor11.bet
   - DOMAIN-SUFFIX,vvps.ws
@@ -330407,6 +330208,7 @@ payload:
   - DOMAIN-SUFFIX,vzn.com
   - DOMAIN-SUFFIX,vzo6cs.shet.eveshamairporttransfers.co.uk
   - DOMAIN-SUFFIX,vzqg.com
+  - DOMAIN-SUFFIX,vzqodjb.fidoubet.com
   - DOMAIN-SUFFIX,vzrhwmsj.icu
   - DOMAIN-SUFFIX,vzrodnoe.ru
   - DOMAIN-SUFFIX,vzrodnoe.store
@@ -333406,6 +333208,7 @@ payload:
   - DOMAIN-SUFFIX,weednearme.ca
   - DOMAIN-SUFFIX,weeecool.com
   - DOMAIN-SUFFIX,weeeeebbbbbbdegg.weebly.com
+  - DOMAIN-SUFFIX,weeeeeeebsuppoort495858686969939484854.s3.eu-central-3.ionoscloud.com
   - DOMAIN-SUFFIX,weeeshooa.com
   - DOMAIN-SUFFIX,weeewow.com
   - DOMAIN-SUFFIX,weegoplay.com
@@ -339089,6 +338892,7 @@ payload:
   - DOMAIN-SUFFIX,wwgldtvwiryqb.website
   - DOMAIN-SUFFIX,wwgrrqrnphfdg.online
   - DOMAIN-SUFFIX,wwh-club.org
+  - DOMAIN-SUFFIX,wwhaorr.shop
   - DOMAIN-SUFFIX,wwhgy.com
   - DOMAIN-SUFFIX,wwhsquzfatqzr.space
   - DOMAIN-SUFFIX,wwija.com
@@ -343179,6 +342983,7 @@ payload:
   - DOMAIN-SUFFIX,xpjkulvq.com
   - DOMAIN-SUFFIX,xpjtjsfbnxorq.site
   - DOMAIN-SUFFIX,xpkdjoxirfcm.com
+  - DOMAIN-SUFFIX,xplanrdtnryol.space
   - DOMAIN-SUFFIX,xplatapps.com
   - DOMAIN-SUFFIX,xplay-fortuna.online
   - DOMAIN-SUFFIX,xplfnxefkrhxp.space
@@ -345921,6 +345726,7 @@ payload:
   - DOMAIN-SUFFIX,ynvtepiimtshs.store
   - DOMAIN-SUFFIX,ynwqls.com
   - DOMAIN-SUFFIX,ynwshm.com
+  - DOMAIN-SUFFIX,ynxarohfavycj.site
   - DOMAIN-SUFFIX,ynycyk.com
   - DOMAIN-SUFFIX,ynysf.com
   - DOMAIN-SUFFIX,ynysyj.com
@@ -348361,6 +348167,7 @@ payload:
   - DOMAIN-SUFFIX,zdh.ru.com
   - DOMAIN-SUFFIX,zdhac.com
   - DOMAIN-SUFFIX,zdicbpujzjps.com
+  - DOMAIN-SUFFIX,zditzhefjchxk.online
   - DOMAIN-SUFFIX,zdiykdcxbwsvn.site
   - DOMAIN-SUFFIX,zdjby.cn
   - DOMAIN-SUFFIX,zdjecienago2.c.pl
@@ -349285,6 +349092,7 @@ payload:
   - DOMAIN-SUFFIX,zhownsplpphyu.online
   - DOMAIN-SUFFIX,zhoyyibwywgev.one
   - DOMAIN-SUFFIX,zhoz.com
+  - DOMAIN-SUFFIX,zhqhczzmtgaur.website
   - DOMAIN-SUFFIX,zhqrceorwfmqd.site
   - DOMAIN-SUFFIX,zhqzy.com
   - DOMAIN-SUFFIX,zhrqbrvoyfcuw.store
@@ -349734,7 +349542,6 @@ payload:
   - DOMAIN-SUFFIX,zizza.co.uk
   - DOMAIN-SUFFIX,zj1997.eu.cc
   - DOMAIN-SUFFIX,zj2x5.codesandbox.io
-  - DOMAIN-SUFFIX,zj66.net
   - DOMAIN-SUFFIX,zj7coeb5i.com
   - DOMAIN-SUFFIX,zj9puq8ycu.com
   - DOMAIN-SUFFIX,zjaof.com
@@ -350559,6 +350366,7 @@ payload:
   - DOMAIN-SUFFIX,zqrctmpxxagnb.website
   - DOMAIN-SUFFIX,zqswaomjynrud.online
   - DOMAIN-SUFFIX,zqtifedwdeyqu.online
+  - DOMAIN-SUFFIX,zqtjqik.betiran.vip
   - DOMAIN-SUFFIX,zqtk.net
   - DOMAIN-SUFFIX,zqtxtnrlxyliz.site
   - DOMAIN-SUFFIX,zqvee2re50mr.com
