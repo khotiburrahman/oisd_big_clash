@@ -1,7 +1,7 @@
 # OISD Big & LoyalSoldier Reject Combined for Clash
 
 ### 📊 Statistik Pembaruan Terakhir
-* **Waktu Pembaruan:** 2026-07-07 21:21:02 UTC
-* **Total Domain Mentah Diunduh:** 327435 domain
+* **Waktu Pembaruan:** 2026-07-07 22:58:00 UTC
+* **Total Domain Mentah Diunduh:** 327469 domain
 * **Total Domain Duplikat Identik Dibuang:** 0 domain
-* **Total Aturan Unik Akhir di YAML:** **327435 domain**
+* **Total Aturan Unik Akhir di YAML:** **327469 domain**
