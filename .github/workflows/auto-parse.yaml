@@ -20,15 +20,12 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Setup Go (Required for Geosite Compiler)
-      uses: actions/setup-go@v5
-      with:
-        go-version: 'stable'
-
-    - name: Install v2ray-geo-assets Compiler
+    - name: Install v2s Compiler Binary
       run: |
-        go install github.com/v2fly/v2ray-geo-assets/cmd/v2s@latest
-        echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
+        # Mengunduh binary v2s siap pakai yang stabil untuk Linux AMD64
+        curl -sSL -o v2s https://github.com/orandor/v2s-compiled/releases/download/v1.0.0/v2s-linux-amd64
+        chmod +x v2s
+        sudo mv v2s /usr/local/bin/
 
     - name: Download, Clean, and Generate Formats
       run: |
@@ -91,7 +88,6 @@ jobs:
         os.makedirs("geosite_data", exist_ok=True)
         with open("geosite_data/category-ads", "w", encoding="utf-8") as f:
             for d in sorted_domains:
-                # Menulis domain polos. Di geosite, domain polos otomatis dianggap sebagai subdomain/suffix matching
                 f.write(f"{d}\n")
 
         # --- README ---
@@ -111,8 +107,8 @@ jobs:
 
     - name: Compile to geosite.dat
       run: |
+        # Mengompilasi folder geosite_data menjadi file tunggal geosite.dat
         v2s compile --target=geosite --dir=geosite_data --output=geosite.dat
-        # Hapus folder temporary data setelah compile agar tidak ikut ter-push
         rm -rf geosite_data
 
     - name: Commit and Push changes
@@ -127,7 +123,7 @@ jobs:
           git add keepalive.txt
           git commit -m "Keepalive: Perpanjang masa tenggang"
         else
-          git commit -m "Update rules: YAML formats dan geosite.dat"
+          git commit -m "Update rules: YAML formats dan geosite.dat kustom"
         fi
 
         git push origin HEAD
