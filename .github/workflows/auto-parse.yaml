@@ -1,4 +1,4 @@
-name: Combine OISD and LoyalSoldier Reject to Clash YAML
+name: Combine OISD and LoyalSoldier Reject to Clash YAML & Geosite
 
 on:
   schedule:
@@ -20,11 +20,22 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Download and Clean Adblock Syntax with Python
+    - name: Setup Go (Required for Geosite Compiler)
+      uses: actions/setup-go@v5
+      with:
+        go-version: 'stable'
+
+    - name: Install v2ray-geo-assets Compiler
+      run: |
+        go install github.com/v2fly/v2ray-geo-assets/cmd/v2s@latest
+        echo "$(go env GOPATH)/bin" >> $GITHUB_PATH
+
+    - name: Download, Clean, and Generate Formats
       run: |
         cat << 'EOF' > run.py
         import urllib.request
         import re
+        import os
         from datetime import datetime
 
         print("Mengunduh data...")
@@ -76,26 +87,39 @@ jobs:
             for d in sorted_domains:
                 f.write(f"  - DOMAIN-SUFFIX,{d}\n")
 
+        # --- File Kustom untuk Geosite (Teks Polos sesuai standar v2fly) ---
+        os.makedirs("geosite_data", exist_ok=True)
+        with open("geosite_data/category-ads", "w", encoding="utf-8") as f:
+            for d in sorted_domains:
+                # Menulis domain polos. Di geosite, domain polos otomatis dianggap sebagai subdomain/suffix matching
+                f.write(f"{d}\n")
+
         # --- README ---
         waktu_sekarang = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
         with open("README.md", "w", encoding="utf-8") as f:
-            f.write("# OISD Big & LoyalSoldier Reject Combined for Clash\n\n")
+            f.write("# OISD Big & LoyalSoldier Reject Combined\n\n")
             f.write("### 📊 Statistik Pembaruan Terakhir\n")
             f.write(f"* **Waktu Pembaruan:** {waktu_sekarang} UTC\n")
             f.write(f"* **Total Domain Mentah Diunduh:** {total_input} domain\n")
             f.write(f"* **Total Domain Duplikat Identik Dibuang:** {total_duplikat} domain\n")
-            f.write(f"* **Total Aturan Unik Akhir di YAML:** **{total_unik} domain**\n")
+            f.write(f"* **Total Aturan Unik Akhir:** **{total_unik} domain**\n")
 
-        print("Proses selesai!")
+        print("Proses pembuatan file teks selesai!")
         EOF
         python run.py
         rm run.py
+
+    - name: Compile to geosite.dat
+      run: |
+        v2s compile --target=geosite --dir=geosite_data --output=geosite.dat
+        # Hapus folder temporary data setelah compile agar tidak ikut ter-push
+        rm -rf geosite_data
 
     - name: Commit and Push changes
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add oisd_big.yaml oisd_big_old.yaml README.md
+        git add oisd_big.yaml oisd_big_old.yaml geosite.dat README.md
 
         if git diff --staged --quiet; then
           echo "Tidak ada perubahan. Memicu keepalive..."
@@ -103,7 +127,7 @@ jobs:
           git add keepalive.txt
           git commit -m "Keepalive: Perpanjang masa tenggang"
         else
-          git commit -m "Update oisd_big.yaml dan oisd_big_old.yaml (format DOMAIN-SUFFIX)"
+          git commit -m "Update rules: YAML formats dan geosite.dat"
         fi
 
         git push origin HEAD
