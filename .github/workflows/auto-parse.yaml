@@ -20,19 +20,12 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Install v2s Compiler Binary
-      run: |
-        # Mengunduh binary v2s siap pakai yang stabil untuk Linux AMD64
-        curl -sSL -o v2s https://github.com/orandor/v2s-compiled/releases/download/v1.0.0/v2s-linux-amd64
-        chmod +x v2s
-        sudo mv v2s /usr/local/bin/
-
-    - name: Download, Clean, and Generate Formats
+    - name: Download, Clean, and Generate Formats (including geosite.dat)
       run: |
         cat << 'EOF' > run.py
         import urllib.request
         import re
-        import os
+        import struct
         from datetime import datetime
 
         print("Mengunduh data...")
@@ -84,11 +77,50 @@ jobs:
             for d in sorted_domains:
                 f.write(f"  - DOMAIN-SUFFIX,{d}\n")
 
-        # --- File Kustom untuk Geosite (Teks Polos sesuai standar v2fly) ---
-        os.makedirs("geosite_data", exist_ok=True)
-        with open("geosite_data/category-ads", "w", encoding="utf-8") as f:
-            for d in sorted_domains:
-                f.write(f"{d}\n")
+        # --- File 3: geosite.dat (Dibuat lewat generator Python internal) ---
+        print("Mengompilasi geosite.dat murni dengan Python...")
+        
+        def encode_varint(value):
+            """Mengodekan integer ke format Protocol Buffers Varint"""
+            bits = value & 0x7f
+            value >>= 7
+            ret = bytearray()
+            while value:
+                ret.append(bits | 0x80)
+                bits = value & 0x7f
+                value >>= 7
+            ret.append(bits)
+            return bytes(ret)
+
+        def make_string_field(field_number, string_value):
+            """Membuat field protobuf string bertipe length-delimited"""
+            encoded_str = string_value.encode('utf-8')
+            header = (field_number << 3) | 2
+            return encode_varint(header) + encode_varint(len(encoded_str)) + encoded_str
+
+        def make_submsg_field(field_number, submsg_bytes):
+            """Membuat field protobuf sub-message bertipe length-delimited"""
+            header = (field_number << 3) | 2
+            return encode_varint(header) + encode_varint(len(submsg_bytes)) + submsg_bytes
+
+        # Menyusun daftar domain ke dalam struktur format data Site (Protobuf v2fly)
+        # Type 1 di V2ray Geosite artinya "Subdomain / Domain Suffix Matching"
+        site_entries_bytes = bytearray()
+        for d in sorted_domains:
+            # Domain Entry: type (field 1, varint, value 1) + value (field 2, string)
+            domain_entry = b'\x08\x01' + make_string_field(2, d)
+            site_entries_bytes += make_submsg_field(2, domain_entry)
+
+        # Bungkus semuanya ke dalam SiteList dengan tag/kategori "category-ads"
+        # SiteList: country (field 1, string) + list (field 2, repeated submsg)
+        site_list_bytes = make_string_field(1, "category-ads") + site_entries_bytes
+
+        # Bungkus terakhir ke dalam struktur utama GeoSite container
+        # GeoSite: entry (field 1, repeated submsg)
+        geosite_file_bytes = make_submsg_field(1, site_list_bytes)
+
+        with open("geosite.dat", "wb") as f:
+            f.write(geosite_file_bytes)
 
         # --- README ---
         waktu_sekarang = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
@@ -100,16 +132,10 @@ jobs:
             f.write(f"* **Total Domain Duplikat Identik Dibuang:** {total_duplikat} domain\n")
             f.write(f"* **Total Aturan Unik Akhir:** **{total_unik} domain**\n")
 
-        print("Proses pembuatan file teks selesai!")
+        print("Proses kompilasi dan pembuatan file selesai!")
         EOF
         python run.py
         rm run.py
-
-    - name: Compile to geosite.dat
-      run: |
-        # Mengompilasi folder geosite_data menjadi file tunggal geosite.dat
-        v2s compile --target=geosite --dir=geosite_data --output=geosite.dat
-        rm -rf geosite_data
 
     - name: Commit and Push changes
       run: |
@@ -123,7 +149,7 @@ jobs:
           git add keepalive.txt
           git commit -m "Keepalive: Perpanjang masa tenggang"
         else
-          git commit -m "Update rules: YAML formats dan geosite.dat kustom"
+          git commit -m "Update rules: YAML formats dan geosite.dat murni via Python"
         fi
 
         git push origin HEAD
