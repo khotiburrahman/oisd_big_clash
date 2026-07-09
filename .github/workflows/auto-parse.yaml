@@ -1,4 +1,4 @@
-name: Combine OISD and LoyalSoldier Reject to Clash YAML & Geosite
+name: Combine OISD and LoyalSoldier Reject to V2RayNG Geosite & YAML
 
 on:
   schedule:
@@ -20,12 +20,11 @@ jobs:
       with:
         python-version: '3.x'
 
-    - name: Download, Clean, and Generate Formats (including geosite.dat)
+    - name: Download, Clean, and Generate V2RayNG Compatible Formats
       run: |
         cat << 'EOF' > run.py
         import urllib.request
         import re
-        import struct
         from datetime import datetime
 
         print("Mengunduh data...")
@@ -64,63 +63,88 @@ jobs:
         sorted_domains = sorted(list(unique_domains))
         total_unik = len(sorted_domains)
 
-        # --- File 1: oisd_big.yaml (format '+.domain') ---
+        # --- File 1: oisd_big.yaml (format '+.domain' untuk Clash) ---
         q = chr(39)
         with open("oisd_big.yaml", "w", encoding="utf-8") as f:
             f.write("payload:\n")
             for d in sorted_domains:
                 f.write(f"  - {q}+.{d}{q}\n")
 
-        # --- File 2: oisd_big_old.yaml (format DOMAIN-SUFFIX) ---
+        # --- File 2: oisd_big_old.yaml (format DOMAIN-SUFFIX untuk Clash) ---
         with open("oisd_big_old.yaml", "w", encoding="utf-8") as f:
             f.write("payload:\n")
             for d in sorted_domains:
                 f.write(f"  - DOMAIN-SUFFIX,{d}\n")
 
-        # --- File 3: geosite.dat (Dibuat lewat generator Python internal) ---
-        print("Mengompilasi geosite.dat murni dengan Python...")
+        # --- File 3: geosite.dat (V2FLY FORMAT - Compatible dengan V2RayNG) ---
+        print("Mengompilasi geosite.dat format v2fly untuk V2RayNG...")
         
         def encode_varint(value):
             """Mengodekan integer ke format Protocol Buffers Varint"""
-            bits = value & 0x7f
-            value >>= 7
+            if value == 0:
+                return b'\x00'
+            
             ret = bytearray()
-            while value:
-                ret.append(bits | 0x80)
-                bits = value & 0x7f
+            while value > 0:
+                to_encode = value & 0x7f
                 value >>= 7
-            ret.append(bits)
+                if value != 0:
+                    to_encode |= 0x80
+                ret.append(to_encode)
             return bytes(ret)
 
         def make_string_field(field_number, string_value):
-            """Membuat field protobuf string bertipe length-delimited"""
+            """Membuat field protobuf string (wire type 2)"""
             encoded_str = string_value.encode('utf-8')
             header = (field_number << 3) | 2
             return encode_varint(header) + encode_varint(len(encoded_str)) + encoded_str
 
-        def make_submsg_field(field_number, submsg_bytes):
-            """Membuat field protobuf sub-message bertipe length-delimited"""
+        def make_int_field(field_number, value):
+            """Membuat field protobuf integer (wire type 0)"""
+            header = (field_number << 3) | 0
+            return encode_varint(header) + encode_varint(value)
+
+        def make_message_field(field_number, message_bytes):
+            """Membuat field protobuf message (wire type 2)"""
             header = (field_number << 3) | 2
-            return encode_varint(header) + encode_varint(len(submsg_bytes)) + submsg_bytes
+            return encode_varint(header) + encode_varint(len(message_bytes)) + message_bytes
 
-        # Menyusun daftar domain ke dalam struktur format data Site (Protobuf v2fly)
-        # Type 1 di V2ray Geosite artinya "Subdomain / Domain Suffix Matching"
-        site_entries_bytes = bytearray()
-        for d in sorted_domains:
-            # Domain Entry: type (field 1, varint, value 1) + value (field 2, string)
-            domain_entry = b'\x08\x01' + make_string_field(2, d)
-            site_entries_bytes += make_submsg_field(2, domain_entry)
+        # V2FLY GEOSITE FORMAT
+        # GeoSite {
+        #   repeated GeoLocation entries = 1;
+        # }
+        # GeoLocation {
+        #   required string country_code = 1;
+        #   repeated Domain domains = 2;
+        # }
+        # Domain {
+        #   required Type type = 1;     // 1 = Domain (suffix match)
+        #   required string value = 2;
+        # }
 
-        # Bungkus semuanya ke dalam SiteList dengan tag/kategori "category-ads"
-        # SiteList: country (field 1, string) + list (field 2, repeated submsg)
-        site_list_bytes = make_string_field(1, "category-ads") + site_entries_bytes
+        # Buat list domain entries
+        domains_data = bytearray()
+        for domain in sorted_domains:
+            # Domain message: type=1 (field 1) + value (field 2)
+            domain_msg = make_int_field(1, 1) + make_string_field(2, domain)
+            # Wrap sebagai repeated field 2 (domains)
+            domains_data += make_message_field(2, domain_msg)
 
-        # Bungkus terakhir ke dalam struktur utama GeoSite container
-        # GeoSite: entry (field 1, repeated submsg)
-        geosite_file_bytes = make_submsg_field(1, site_list_bytes)
+        # Buat GeoLocation message untuk kategori "ads"
+        geo_location = make_string_field(1, "ads") + domains_data
+
+        # Wrap sebagai repeated field 1 (entries) dalam GeoSite
+        geosite_data = make_message_field(1, geo_location)
 
         with open("geosite.dat", "wb") as f:
-            f.write(geosite_file_bytes)
+            f.write(geosite_data)
+
+        # --- File 4: rules.txt (format text untuk manual rules di V2RayNG) ---
+        with open("rules.txt", "w", encoding="utf-8") as f:
+            f.write("# V2RayNG Rules - Domain List\n")
+            f.write("# Gunakan dengan rule: DOMAIN,example.com,REJECT\n\n")
+            for d in sorted_domains:
+                f.write(f"{d}\n")
 
         # --- README ---
         waktu_sekarang = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
@@ -129,10 +153,23 @@ jobs:
             f.write("### 📊 Statistik Pembaruan Terakhir\n")
             f.write(f"* **Waktu Pembaruan:** {waktu_sekarang} UTC\n")
             f.write(f"* **Total Domain Mentah Diunduh:** {total_input} domain\n")
-            f.write(f"* **Total Domain Duplikat Identik Dibuang:** {total_duplikat} domain\n")
-            f.write(f"* **Total Aturan Unik Akhir:** **{total_unik} domain**\n")
+            f.write(f"* **Total Domain Duplikat Dibuang:** {total_duplikat} domain\n")
+            f.write(f"* **Total Aturan Unik Akhir:** **{total_unik} domain**\n\n")
+            f.write("### 📁 File yang Dihasilkan\n\n")
+            f.write("#### V2RayNG / Xray / sing-box\n")
+            f.write("* **geosite.dat** - Format v2fly (binary protobuf)\n")
+            f.write("  - Letakkan di: `/data/data/com.v2rayng.pro/app_profiler/`\n")
+            f.write("  - Rule: `GEOSITE,ads,REJECT`\n\n")
+            f.write("#### Clash / OpenClash\n")
+            f.write("* **oisd_big.yaml** - Format modern ('+.domain')\n")
+            f.write("* **oisd_big_old.yaml** - Format legacy (DOMAIN-SUFFIX)\n\n")
+            f.write("#### Backup / Manual\n")
+            f.write("* **rules.txt** - Daftar domain plain text\n\n")
 
-        print("Proses kompilasi dan pembuatan file selesai!")
+        print("✅ Semua file berhasil dibuat!")
+        print(f"   - geosite.dat (v2fly format) untuk V2RayNG: {len(geosite_data)} bytes")
+        print(f"   - oisd_big.yaml & oisd_big_old.yaml untuk Clash")
+        print(f"   - {total_unik} domain unik")
         EOF
         python run.py
         rm run.py
@@ -141,15 +178,15 @@ jobs:
       run: |
         git config --local user.email "github-actions[bot]@users.noreply.github.com"
         git config --local user.name "github-actions[bot]"
-        git add oisd_big.yaml oisd_big_old.yaml geosite.dat README.md
+        git add oisd_big.yaml oisd_big_old.yaml geosite.dat rules.txt README.md
 
         if git diff --staged --quiet; then
           echo "Tidak ada perubahan. Memicu keepalive..."
           date +%s > keepalive.txt
           git add keepalive.txt
-          git commit -m "Keepalive: Perpanjang masa tenggang"
+          git commit -m "Keepalive: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
         else
-          git commit -m "Update rules: YAML formats dan geosite.dat murni via Python"
+          git commit -m "Update rules: V2RayNG geosite.dat & Clash YAML - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
         fi
 
         git push origin HEAD
