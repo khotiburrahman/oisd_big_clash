@@ -61643,7 +61643,6 @@ cdn-ketchapp.akamaized.net
 cdn-media.brightline.tv
 cdn-netmeraprod.turktelekom.com.tr
 cdn-new-ad.wtzw.com
-cdn-otf-cas.prfct.cc
 cdn-partners-references.lesoir.be
 cdn-plugin-sync-upgrade-juui.hismarttv.com
 cdn-prod.kampyle.com
