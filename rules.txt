@@ -86,7 +86,6 @@
 001.gamecc.workers.dev
 001.xorehdm3.workers.dev
 0010-8y95-a36x.11alia-tiffincrane-com-s-account.workers.dev
-0011.s3.cubbit.eu
 001107018.studentserver.com.au
 001122102120.duckdns.org
 0013.cc
@@ -1904,7 +1903,6 @@
 15.sub-75-222-33.myvzw.com
 15.taboola.com
 15.weebly.com
-150.co.il
 150.sub-75-201-82.myvzw.com
 150.sub-75-218-203.myvzw.com
 1500020991.vodplayer.wxamedia.com
@@ -70610,7 +70608,6 @@ businesscreditcardmall.com
 businessdigcore.com
 businessdigitalist.com
 businessdocs.org
-businesseconomics.in
 businessessities.com
 businessfixnow.com
 businessfreedom1.weebly.com
@@ -72565,9 +72562,11 @@ cadigitalgazette.com
 cadigitalinsider.com
 cadigitalobserver.com
 cadigitalprime.com
+cadigitalpulse.com
 cadigitalsphere.com
 cadigitalupdate.com
 cadigitalvector.com
+cadigitalworld.com
 cadigitwazh.com
 cadirlitech.com
 cadisjoyas.cl
@@ -73827,6 +73826,7 @@ canewsmatrix.com
 canewsnavigator.com
 canewsnetwork.com
 canewstechwatch.com
+canewsvision.com
 canextbulletin.com
 canextfrontier.com
 canextheadline.com
@@ -87830,7 +87830,6 @@ clubbussang.fr
 clubbytentory.qpon
 clubcabourg.fr
 clubcalais.fr
-clubcampestrededurango.com
 clubcayeuxsurmer.fr
 clubchatelaillonplage.fr
 clubcherbourg.fr
@@ -111485,6 +111484,7 @@ depoxtra.com
 depozitai.click
 depozituldegeneratoare.ro
 depraveadvance.com
+depredisfe.autos
 depressedpenguin.com
 depressingadapted.com
 depressingchanginggraduated.com
@@ -128457,6 +128457,7 @@ elitewebsitecreators.com
 elitewestfinance.online
 eliteworldgrandsapanca.com
 eliteworldmarmaris.com
+eliteworldnest.ru
 elitexpertstrade.live
 elitgaz.su
 elitiorecfreetoo.cc
@@ -145621,8 +145622,6 @@ finkulrontix.net
 finkulrontix.org
 finkurs.digital
 finlab5-eveniet49.sbs
-finlab6-laborum22.com
-finlab6-voluptas21.com
 finland.nport.link
 finlandpalm.com
 finldab.digital
@@ -178627,7 +178626,6 @@ host-185-193-126-85.njalla.net
 host-195-103-203-106.business.telecomitalia.it
 host-507901.world
 host-95-230-215-65.business.telecomitalia.it
-host-95-255-114-11.business.telecomitalia.it
 host-cuin-base-pages.pages.dev
 host-cuin-base.pages.dev
 host-desktop.wixstudio.com
@@ -188698,6 +188696,7 @@ insightadz.com
 insightbuddhist.com
 insightbulletinonline.com
 insightbullletinpro.com
+insightbureaualert.pro
 insightconsultingservices.com.au
 insightdailya.info
 insightdebatable.com
@@ -198566,6 +198565,7 @@ jreamworks.com
 jreanjvuvpmy.in
 jredkiremasok.com
 jrekcyl.pasoor11.bet
+jrelvanoxo.shop
 jremaskeiloajare.com
 jrenox-filda-d5c471-shrr-vhrr.pages.dev
 jresomyinvypqi.com
@@ -263975,6 +263975,7 @@ novitrk8.com
 noviydenca.com
 novkaro.shop
 novkilo.shop
+novmeb.shop
 novoacesso.ru.com
 novoacorde.com
 novocapitalconsultoria.com
@@ -328207,7 +328208,6 @@ sdlmhb.com
 sdltlxroqbizj.website
 sdlwzz.com
 sdlx777.cn
-sdlxmetal.com
 sdmentor.store
 sdmlgt.com
 sdmsg.onmypc.org
@@ -330125,6 +330125,7 @@ sedoyufi.com
 sedres.net
 sedriton.net
 sedrtfyuhikoiugigygyguhiu.weebly.com
+sedsdisdoadisweerrmd.site
 seduce-fjhtcxulyk.edgeone.app
 seduceboozeblackmail.com
 seducemover.com
@@ -337142,7 +337143,6 @@ simonenogueira.com.br
 simongiftcard.org
 simongiftcardbalance.com
 simongulliver.com
-simonizauto.com
 simonkentonleescreek1960.weebly.com
 simonliuyinan.pages.dev
 simonlocksmith.com
@@ -366267,6 +366267,7 @@ tecnologiaprofesional.com
 tecnomatic.net.br
 tecnomundoglobal.com
 tecnone.com
+tecnopanorama.com
 tecnoshop10.com
 tecnovisionnews.com
 tecorportas.com
@@ -417349,7 +417350,6 @@ www12.0zz0.com
 www1tunesapp1e.servehttp.com
 www2--mlcauerard--co--jp--mlaocredd-caidrams68592-workers-dev.translate.goog
 www2-loja.webcindario.com
-www2.0zz0.com
 www2.7yw95el.eu.org
 www2.doubleclick.com
 www2.doubleclick.net
