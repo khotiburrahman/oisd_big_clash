@@ -21,32 +21,45 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: pip install pyyaml
+        run: |
+          pip install pyyaml
+          sudo apt-get install -y jq
 
       - name: Download rules.txt from your repo
         run: |
           curl -L -o rules.txt \
             "https://raw.githubusercontent.com/khotiburrahman/oisd_big_clash/refs/heads/main/rules.txt"
-          echo "Jumlah baris rules.txt: $(wc -l < rules.txt)"
+          echo "📊 Jumlah baris rules.txt: $(wc -l < rules.txt)"
+          echo "--- 5 baris pertama ---"
+          head -n 5 rules.txt
 
       - name: Generate rules.yaml from rules.txt
         run: |
           python3 << 'EOF'
           import yaml
+          import sys
           with open("rules.txt", "r", encoding="utf-8") as f:
               lines = [line.strip() for line in f if line.strip() and not line.startswith('#')]
           if not lines:
               print("❌ rules.txt kosong")
-              exit(1)
+              sys.exit(1)
           print(f"✅ {len(lines)} domain unik")
           yaml_data = {"rules": [{"domain_suffix": d} for d in lines]}
           with open("rules.yaml", "w", encoding="utf-8") as f:
-              yaml.dump(yaml_data, f, default_flow_style=False)
+              yaml.dump(yaml_data, f, default_flow_style=False, allow_unicode=True)
+          print("✅ rules.yaml berhasil dibuat")
           EOF
+
+      - name: Validate rules.yaml
+        run: |
+          echo "=== 10 baris pertama rules.yaml ==="
+          head -n 10 rules.yaml
+          echo "=== Validasi YAML ==="
+          python3 -c "import yaml; yaml.safe_load(open('rules.yaml'))" && echo "✅ YAML valid"
+          echo "Jumlah aturan: $(grep -c 'domain_suffix' rules.yaml)"
 
       - name: Download sing-box binary
         run: |
-          # Ambil URL asset dari rilis terbaru menggunakan API GitHub + jq
           API_URL="https://api.github.com/repos/SagerNet/sing-box/releases/latest"
           DOWNLOAD_URL=$(curl -s $API_URL | jq -r '.assets[] | select(.name | test("linux-amd64\\.tar\\.gz$")) | .browser_download_url')
           if [ -z "$DOWNLOAD_URL" ]; then
@@ -56,9 +69,10 @@ jobs:
           echo "📥 Mengunduh dari: $DOWNLOAD_URL"
           curl -L -o sing-box.tar.gz "$DOWNLOAD_URL"
           tar -xzf sing-box.tar.gz
-          # Cari binary di dalam folder hasil ekstrak dan pindahkan ke root
+          # Cari binary di dalam folder hasil ekstrak
           find . -name "sing-box" -type f -executable | head -1 | xargs -I {} mv {} ./sing-box
           chmod +x ./sing-box
+          echo "🔍 Versi sing-box:"
           ./sing-box version
 
       - name: Compile rule set to .srs
