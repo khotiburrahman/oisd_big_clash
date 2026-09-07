@@ -44,19 +44,22 @@ jobs:
               yaml.dump(yaml_data, f, default_flow_style=False)
           EOF
 
-      - name: Download sing-box binary using gh
+      - name: Download sing-box binary
         run: |
-          # Unduh asset terbaru untuk linux-amd64
-          gh release download -R SagerNet/sing-box latest \
-            -p "sing-box-*-linux-amd64.tar.gz" \
-            -O sing-box.tar.gz
+          # Ambil URL asset dari rilis terbaru menggunakan API GitHub + jq
+          API_URL="https://api.github.com/repos/SagerNet/sing-box/releases/latest"
+          DOWNLOAD_URL=$(curl -s $API_URL | jq -r '.assets[] | select(.name | test("linux-amd64\\.tar\\.gz$")) | .browser_download_url')
+          if [ -z "$DOWNLOAD_URL" ]; then
+            echo "❌ Gagal mendapatkan URL download"
+            exit 1
+          fi
+          echo "📥 Mengunduh dari: $DOWNLOAD_URL"
+          curl -L -o sing-box.tar.gz "$DOWNLOAD_URL"
           tar -xzf sing-box.tar.gz
           # Cari binary di dalam folder hasil ekstrak dan pindahkan ke root
           find . -name "sing-box" -type f -executable | head -1 | xargs -I {} mv {} ./sing-box
           chmod +x ./sing-box
           ./sing-box version
-        env:
-          GH_TOKEN: ${{ github.token }}
 
       - name: Compile rule set to .srs
         run: |
