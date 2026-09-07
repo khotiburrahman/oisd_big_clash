@@ -1,8 +1,8 @@
-name: Build Sing-box Rule Set
+name: Build Sing-box Rule Set (.srs)
 
 on:
   schedule:
-    - cron: '0 */6 * * *'  # setiap 6 jam
+    - cron: '0 */6 * * *'   # setiap 6 jam
   workflow_dispatch:
 
 jobs:
@@ -12,8 +12,10 @@ jobs:
       contents: write
 
     steps:
-      - uses: actions/checkout@v4
-      - name: Setup Python
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.x'
@@ -21,14 +23,113 @@ jobs:
       - name: Install dependencies
         run: pip install pyyaml
 
-      - name: Generate .srs from rules.txt
+      - name: Download rules.txt from your repo
         run: |
-          # (sama seperti kode di atas, tetapi mengambil rules.txt dari repo)
-          # ...
+          curl -L -o rules.txt \
+            "https://raw.githubusercontent.com/khotiburrahman/oisd_big_clash/refs/heads/main/rules.txt"
+          echo "Jumlah baris rules.txt: $(wc -l < rules.txt)"
+
+      - name: Build .srs from rules.txt
+        run: |
+          cat << 'EOF' > build_srs.py
+          import yaml
+          import subprocess
+          import os
+          import platform
+          import urllib.request
+          import tarfile
+          import sys
+          import shutil
+
+          # Baca rules.txt
+          with open("rules.txt", "r", encoding="utf-8") as f:
+              lines = [line.strip() for line in f if line.strip() and not line.startswith('#')]
+
+          if not lines:
+              print("❌ rules.txt kosong, tidak ada domain")
+              sys.exit(1)
+
+          print(f"✅ Total domain unik: {len(lines)}")
+
+          # Buat file YAML untuk sing-box rule-set
+          yaml_data = {"rules": [{"domain_suffix": d} for d in lines]}
+          with open("rules.yaml", "w", encoding="utf-8") as f:
+              yaml.dump(yaml_data, f, default_flow_style=False)
+
+          # Download sing-box binary
+          system = platform.system().lower()
+          arch = platform.machine().lower()
+          if system == "linux":
+              if arch in ("x86_64", "amd64"):
+                  url = "https://github.com/SagerNet/sing-box/releases/latest/download/sing-box-linux-amd64.tar.gz"
+              elif arch == "aarch64":
+                  url = "https://github.com/SagerNet/sing-box/releases/latest/download/sing-box-linux-arm64.tar.gz"
+              else:
+                  print(f"Arsitektur tidak didukung: {arch}")
+                  sys.exit(1)
+          else:
+              print(f"Sistem operasi tidak didukung: {system}")
+              sys.exit(1)
+
+          print(f"📥 Mengunduh sing-box dari {url}")
+          urllib.request.urlretrieve(url, "sing-box.tar.gz")
+
+          # Ekstrak
+          with tarfile.open("sing-box.tar.gz", "r:gz") as tar:
+              tar.extractall()
+
+          # Cari binary dan pindahkan ke current directory
+          binary_found = False
+          for root, dirs, files in os.walk("."):
+              if "sing-box" in files:
+                  src = os.path.join(root, "sing-box")
+                  shutil.move(src, "./sing-box")
+                  binary_found = True
+                  break
+          if not binary_found:
+              print("❌ Binary sing-box tidak ditemukan setelah ekstrak")
+              sys.exit(1)
+
+          os.chmod("./sing-box", 0o755)
+
+          # Kompilasi rule set
+          print("🛠️ Mengompilasi rule set...")
+          result = subprocess.run(
+              ["./sing-box", "rule-set", "compile", "--output", "geosite-ads-all.srs", "rules.yaml"],
+              capture_output=True,
+              text=True
+          )
+          if result.returncode != 0:
+              print("❌ Kompilasi gagal:")
+              print(result.stderr)
+              sys.exit(1)
+
+          print("✅ geosite-ads-all.srs berhasil dibuat")
+          print(f"📦 Ukuran file: {os.path.getsize('geosite-ads-all.srs')} bytes")
+
+          # Bersihkan file sementara
+          os.remove("rules.yaml")
+          os.remove("sing-box.tar.gz")
+          os.remove("./sing-box")
+          EOF
+
+          python3 build_srs.py
+
+      - name: Verify generated files
+        run: |
+          ls -la geosite-ads-all.srs || (echo "❌ File .srs tidak ditemukan!" && exit 1)
+
       - name: Commit and Push
         run: |
-          git config user.email "actions@github.com"
-          git config user.name "GitHub Actions"
+          git config --local user.email "actions@github.com"
+          git config --local user.name "GitHub Actions"
           git add geosite-ads-all.srs
-          git commit -m "Update Sing-box rule set" || echo "No changes"
-          git push
+          if git diff --staged --quiet; then
+            echo "Tidak ada perubahan pada .srs, membuat keepalive..."
+            date +%s > keepalive.txt
+            git add keepalive.txt
+            git commit -m "Keepalive: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "No changes to commit"
+          else
+            git commit -m "Update Sing-box rule set - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          fi
+          git push origin HEAD
