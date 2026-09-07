@@ -21,22 +21,20 @@ jobs:
           python-version: '3.x'
 
       - name: Install dependencies
-        run: |
-          pip install pyyaml
-          sudo apt-get install -y jq
+        run: sudo apt-get install -y jq
 
-      - name: Download rules.txt from your repo
+      - name: Download rules.txt
         run: |
           curl -L -o rules.txt \
             "https://raw.githubusercontent.com/khotiburrahman/oisd_big_clash/refs/heads/main/rules.txt"
-          echo "📊 Jumlah baris rules.txt: $(wc -l < rules.txt)"
+          echo "📊 Jumlah baris: $(wc -l < rules.txt)"
           echo "--- 5 baris pertama ---"
           head -n 5 rules.txt
 
-      - name: Generate rules.yaml from rules.txt
+      - name: Generate rules.json
         run: |
-          python3 << 'EOF'
-          import yaml
+          python3 << 'PYTHON_SCRIPT'
+          import json
           import sys
           with open("rules.txt", "r", encoding="utf-8") as f:
               lines = [line.strip() for line in f if line.strip() and not line.startswith('#')]
@@ -44,32 +42,28 @@ jobs:
               print("❌ rules.txt kosong")
               sys.exit(1)
           print(f"✅ {len(lines)} domain unik")
-          yaml_data = {"rules": [{"domain_suffix": d} for d in lines]}
-          with open("rules.yaml", "w", encoding="utf-8") as f:
-              yaml.dump(yaml_data, f, default_flow_style=False, allow_unicode=True)
-          print("✅ rules.yaml berhasil dibuat")
-          EOF
+          data = {"rules": [{"domain_suffix": d} for d in lines]}
+          with open("rules.json", "w", encoding="utf-8") as f:
+              json.dump(data, f, indent=2)
+          print("✅ rules.json berhasil dibuat")
+          PYTHON_SCRIPT
 
-      - name: Validate rules.yaml
+      - name: Validate JSON
         run: |
-          echo "=== 10 baris pertama rules.yaml ==="
-          head -n 10 rules.yaml
-          echo "=== Validasi YAML ==="
-          python3 -c "import yaml; yaml.safe_load(open('rules.yaml'))" && echo "✅ YAML valid"
-          echo "Jumlah aturan: $(grep -c 'domain_suffix' rules.yaml)"
+          jq . rules.json > /dev/null && echo "✅ JSON valid"
+          echo "Jumlah aturan: $(jq '.rules | length' rules.json)"
 
       - name: Download sing-box binary
         run: |
           API_URL="https://api.github.com/repos/SagerNet/sing-box/releases/latest"
           DOWNLOAD_URL=$(curl -s $API_URL | jq -r '.assets[] | select(.name | test("linux-amd64\\.tar\\.gz$")) | .browser_download_url')
           if [ -z "$DOWNLOAD_URL" ]; then
-            echo "❌ Gagal mendapatkan URL download"
+            echo "❌ Gagal mendapatkan URL"
             exit 1
           fi
-          echo "📥 Mengunduh dari: $DOWNLOAD_URL"
+          echo "📥 Mengunduh dari $DOWNLOAD_URL"
           curl -L -o sing-box.tar.gz "$DOWNLOAD_URL"
           tar -xzf sing-box.tar.gz
-          # Cari binary di dalam folder hasil ekstrak
           find . -name "sing-box" -type f -executable | head -1 | xargs -I {} mv {} ./sing-box
           chmod +x ./sing-box
           echo "🔍 Versi sing-box:"
@@ -77,7 +71,7 @@ jobs:
 
       - name: Compile rule set to .srs
         run: |
-          ./sing-box rule-set compile --output geosite-ads-all.srs rules.yaml
+          ./sing-box rule-set compile --output geosite-ads-all.srs rules.json
           ls -la geosite-ads-all.srs
 
       - name: Commit and Push
@@ -86,7 +80,7 @@ jobs:
           git config --local user.name "GitHub Actions"
           git add geosite-ads-all.srs
           if git diff --staged --quiet; then
-            echo "Tidak ada perubahan .srs, membuat keepalive..."
+            echo "Tidak ada perubahan, keepalive..."
             date +%s > keepalive.txt
             git add keepalive.txt
             git commit -m "Keepalive: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" || echo "No changes"
