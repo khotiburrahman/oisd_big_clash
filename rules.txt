@@ -17343,7 +17343,6 @@ aldi.sanvexo.shop
 aldi.selvito.shop
 aldi.solvito.shop
 aldi.stockcorner.shop
-aldi.stockgrocer.shop
 aldi.storvento.shop
 aldi.synsuda.shop
 aldi.torqora.shop
@@ -17360,7 +17359,6 @@ aldideals.isvymart.shop
 aldideals.ivristore.shop
 aldideals.jarlomart.shop
 aldideals.jaxlomart.shop
-aldideals.jedimart.shop
 aldideals.sylqor.shop
 aldideals.xelqon.shop
 aldidiscountsonline.com
@@ -17371,7 +17369,6 @@ aldieu.amberquoniceday.shop
 aldieu.anterahub.shop
 aldieu.arcongastiger.shop
 aldieu.ardelvixniceday.shop
-aldieu.babetabuild.shop
 aldieu.belanoricart.shop
 aldieu.beralvonniceday.shop
 aldieu.canterahub.shop
@@ -17384,17 +17381,12 @@ aldieu.corlunixniceday.shop
 aldieu.crystalice.shop
 aldieu.daelquorniceday.shop
 aldieu.dreamingmoon.shop
-aldieu.fcpaddlecraft.shop
 aldieu.fenopicks.shop
-aldieu.haropicks.shop
-aldieu.meropicks.shop
 aldieu.mirathvel.shop
 aldieu.olterahub.shop
 aldieu.omberahub.shop
 aldieu.pravianhub.shop
 aldieu.qelunoselect.shop
-aldieu.uveriselect.shop
-aldieu.valunoselect.shop
 aldieu.xervaniselect.shop
 aldifactory.co
 aldihome.com
@@ -17404,10 +17396,6 @@ aldimall-uk.com
 aldimalluk.world
 aldimart.keldostore.shop
 aldimart.kelromart.shop
-aldimart.lorvemart.shop
-aldimart.lorvistore.shop
-aldimart.mavdomart.shop
-aldimart.mavrostore.shop
 aldimart.merlomart.shop
 aldimart.nivdomart.shop
 aldimart.novymart.shop
@@ -17468,8 +17456,6 @@ aldiuk.briarfordmarket.shop
 aldiuk.carrickpantry.shop
 aldiuk.cinderbybasket.shop
 aldiuk.dalmerebasket.shop
-aldiuk.foxmeremart.shop
-aldiuk.ironmerebasket.shop
 aldiuk.ironmeregrocer.shop
 aldiuk.muscledistricto.com
 aldiuk.tinyfuntoys.com
@@ -18190,6 +18176,7 @@ allegrolokalinie.pl-428541.me
 allegrolokalinie.pl-432783.click
 allegrolokalinie.pl-4812042.click
 allegrolokalinie.pl-984952.sbs
+allegrolokalne.pl-pg2i1.sbs
 allegrolokalnie-bond.pages.dev
 allegrolokalnie.01305.rest
 allegrolokalnie.01836431344.surf
@@ -18469,6 +18456,7 @@ allegrolokalnie.pl-ogloszenie6789233412.click
 allegrolokalnie.pl-ogloszenie6789233491.click
 allegrolokalnie.pl-ogloszenie7489834822.click
 allegrolokalnie.pl-ogloszenie9384323147.click
+allegrolokalnie.pl-pg2i1.sbs
 allegrolokalnie.pl-smart24.pl
 allegrolokalnie.pl-wfde.shop
 allegrolokalnie.pl-zamow-oferta-4059212.sbs
@@ -20972,6 +20960,7 @@ anderssens.com
 andes-rendivo-ai.com
 andes-rendivo-austria.com
 andes-rendivo-france.com
+andes-rendivo-italy.com
 andes-rendivo-spain.com
 andescapitalgpt-app-digital.pages.dev
 andescapitalgpt-app.digital
@@ -27683,6 +27672,7 @@ awarenesstech.com
 awarestew.com
 awarialaptopa.pl
 awarnets.com
+awaskjdnbh.shop
 awaue.com
 awaybound.com
 awayshortly.com
@@ -33755,7 +33745,6 @@ bg-adv.com
 bg-mezonet.info
 bg-postbnkbg.firebaseapp.com
 bg-postbnkbg.web.app
-bg-spa.com
 bg-xyz.com
 bg.adocean.pl
 bg.hit.gemius.pl
@@ -65561,6 +65550,7 @@ diawan.club
 diazepam.shengen.ru
 diazidehematid.com
 dibaholding.com
+dibasscriv.store
 dibbchotomies.info
 diboine.com
 dibratrali.store
@@ -83630,14 +83620,9 @@ fisio0-doloribus7.sbs
 fisio1-tempora48.sbs
 fisio7-velit16.sbs
 fisio9-velit2.sbs
-fisios0-recusandae34.sbs
 fisios2-incidunt20.sbs
-fisios3-quia48.sbs
-fisios4-vel72.sbs
 fisios5-sit20.sbs
 fisios6-consequuntur82.sbs
-fisios9-eveniet82.sbs
-fisios9-quo19.sbs
 fisiotiburtina.com
 fisirolesuaryzu.info
 fiskaqqjajwqv.website
@@ -99206,7 +99191,6 @@ hearstdigital.122.2o7.net
 hearstmagazines.112.2o7.net
 hearstugo.112.2o7.net
 heart-1ink.com
-heart-desires.com
 heart-lovedate.com
 heart.guide
 heartachegrabbedlaunching.com
@@ -108901,6 +108885,7 @@ instruments911.net
 instrumentsfrom950.net
 instrumenttactics.com
 insubstantial-cabinet.com
+insufdepel.store
 insufficienteventsenliven.com
 insufficientslogandish.com
 insularimportantly.com
@@ -115160,6 +115145,7 @@ jxylor.pro
 jxyoajgbdlkag.site
 jxyseijobkzzn.space
 jxzdsp.com
+jy.altexro.uk
 jy.ggweb.net
 jy.zhongxues.com
 jy135.com
@@ -116863,6 +116849,7 @@ kera-kretas.com
 keraionprofessional.com
 kerala-ticket.com
 keralaticketonline.com
+keralvexa-prime.org
 keraniganj.com
 keratech.net
 kerbdecrease.com
@@ -119375,6 +119362,8 @@ krau32sdf5.eu.cc
 kravdil.shop
 kravelluxzorvianis.net
 kravexvynosvanz.com
+kravikpr0of-netherlands.sbs
+kravikpr0of-spain.sbs
 kraxcdaaaauuumkaokaokaokaokao.weebly.com
 kraxckakaokaokaokaokaokaokaokao.weebly.com
 kraxckaokaokaokaokaokaokaokaokaokao.weebly.com
@@ -149841,6 +149830,7 @@ oferta-38121-pl.shop
 oferta-4490-pl.shop
 oferta-5172-pl.click
 oferta-7326874-pl.click
+oferta-7542351.cfd
 oferta-7545311.cfd
 oferta-837333218.click
 oferta-84239232-pl.click
@@ -151137,6 +151127,7 @@ olx.pl-oferta018729272.shop
 olx.pl-oferta08492721.shop
 olx.pl-oferta56734sdy5s7.shop
 olx.pl-paycor.club
+olx.pl-pg2i1.sbs
 olx.pl-skrpay.world
 olx.plpay-protranz.click
 olx.sprzedane-521852.click
@@ -154240,6 +154231,7 @@ outletshopping.fr
 outletsissyboy.shop
 outletsmyk-pl.com
 outletsmyk.com
+outletsmykpl.com
 outletssizeer.shop
 outletssmyk.com
 outletstock.fr
@@ -158279,6 +158271,8 @@ perlikewiseamid.com
 perlindungankeluarga.yzza.io
 perlisquadorion.de
 perlkonat-ai-system.com
+perlkonat-belgium.com
+perlkonat.com
 perlkonatai-app.com
 perllegrinates.info
 perlocale.com
@@ -189190,6 +189184,7 @@ shiftmaxaltpro.net
 shiftmaxaltpro.org
 shiftmaxaltprosoftware.com
 shiftotter.com
+shiftprofitex-platform-com.pages.dev
 shiftprofitex-platform.com
 shiftprofitex.live
 shiftroar.com
@@ -191994,6 +191989,7 @@ slaveholdingxxs.info
 slaveryourstender.com
 slavesthy.com
 slaviclabs.net
+slaviperen.store
 slavor-skent-3b82fc-mrkt-grendal.pages.dev
 slawop.net
 slayingbugeyes.com
@@ -207682,6 +207678,7 @@ telohago.cl
 telorguvecit.com
 teloruxis-solution.com
 telos.run
+telpaunman.store
 telpay.fr
 telquna-gld-belxora-r6x4fw38.pages.dev
 telquro-gld-lormavi-r2t5hc16.pages.dev
@@ -223308,6 +223305,7 @@ vabtbjzuwbzki.online
 vabustoami.com
 vacamuertainvestment-es.live
 vacamuertainvestment.live
+vacamuertainvestment.net
 vacamuertainvestment.pro
 vacamuertatrade.com
 vacances-allocataire.fr
