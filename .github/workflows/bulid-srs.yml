@@ -1,8 +1,8 @@
 name: Build Sing-box Rule Set (.srs)
 
-on:
-  schedule:
-    - cron: '0 */6 * * *'   # setiap 6 jam
+#on:
+ # schedule:
+   # - cron: '0 */23 * * *'   # setiap 6 jam
   workflow_dispatch:
 
 jobs:
