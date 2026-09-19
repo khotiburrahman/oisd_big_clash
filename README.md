@@ -1,10 +1,10 @@
 # OISD Big & LoyalSoldier Reject Combined
 
 ### 📊 Statistik Pembaruan Terakhir
-* **Waktu Pembaruan:** 2026-09-19 21:15:13 UTC
-* **Total Domain Mentah Diunduh:** 246523 domain
+* **Waktu Pembaruan:** 2026-09-19 23:54:27 UTC
+* **Total Domain Mentah Diunduh:** 246538 domain
 * **Total Domain Duplikat Dibuang:** 0 domain
-* **Total Aturan Unik Akhir:** **246523 domain**
+* **Total Aturan Unik Akhir:** **246538 domain**
 
 ### 📁 File yang Dihasilkan
 
