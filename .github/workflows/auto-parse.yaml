@@ -30,23 +30,45 @@ jobs:
         print("Mengunduh data...")
         req_headers = {"User-Agent": "Mozilla/5.0"}
 
-        req_oisd = urllib.request.Request("https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt", headers=req_headers)
-        req_loyal = urllib.request.Request("https://raw.githubusercontent.com/LoyalSoldier/clash-rules/release/reject.txt", headers=req_headers)
+        # Daftar URL sumber yang akan digabungkan
+        urls = [
+            # OISD Big
+            "https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt",
+            # LoyalSoldier Reject
+            "https://raw.githubusercontent.com/LoyalSoldier/clash-rules/release/reject.txt",
+            # Hagezi Native Tracker (Semua vendor sesuai gambar)
+            "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/native.apple.txt",
+            "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/native.winoffice.txt",
+            "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/native.samsung.txt",
+            "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/native.xiaomi.txt",
+            "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/native.smart-tv.txt"
+        ]
 
-        oisd_data = urllib.request.urlopen(req_oisd).read().decode("utf-8")
-        loyal_data = urllib.request.urlopen(req_loyal).read().decode("utf-8")
+        combined_data = ""
+        for url in urls:
+            try:
+                print(f"Mengunduh: {url}")
+                req = urllib.request.Request(url, headers=req_headers)
+                data = urllib.request.urlopen(req).read().decode("utf-8")
+                combined_data += data + "\n"
+            except Exception as e:
+                print(f"⚠️ Gagal mengunduh {url}: {e}")
 
         unique_domains = set()
         total_input = 0
         total_duplikat = 0
 
-        for line in (oisd_data + "\n" + loyal_data).splitlines():
+        # Memproses semua data yang sudah digabung
+        for line in combined_data.splitlines():
             line = line.strip()
+            # Abaikan baris kosong dan komentar
             if not line or line.startswith(("#", "!", "[", "-", "@@")):
                 continue
 
+            # Ambil domain pertama jika ada spasi (format hosts file)
             raw_domain = line.split()[0]
 
+            # Bersihkan format Adblock (||domain^)
             if raw_domain.startswith("||"):
                 raw_domain = raw_domain[2:]
 
@@ -149,7 +171,7 @@ jobs:
         # --- README ---
         waktu_sekarang = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
         with open("README.md", "w", encoding="utf-8") as f:
-            f.write("# OISD Big & LoyalSoldier Reject Combined\n\n")
+            f.write("# OISD Big, LoyalSoldier Reject, & Hagezi Native Tracker Combined\n\n")
             f.write("### 📊 Statistik Pembaruan Terakhir\n")
             f.write(f"* **Waktu Pembaruan:** {waktu_sekarang} UTC\n")
             f.write(f"* **Total Domain Mentah Diunduh:** {total_input} domain\n")
