@@ -1,10 +1,10 @@
 # OISD Big, LoyalSoldier Reject, & Hagezi Native Tracker Combined
 
 ### 📊 Statistik Pembaruan Terakhir
-* **Waktu Pembaruan:** 2026-10-19 05:40:05 UTC
-* **Total Domain Mentah Diunduh:** 234534 domain
+* **Waktu Pembaruan:** 2026-10-19 12:00:24 UTC
+* **Total Domain Mentah Diunduh:** 234420 domain
 * **Total Domain Duplikat Dibuang:** 0 domain
-* **Total Aturan Unik Akhir:** **234534 domain**
+* **Total Aturan Unik Akhir:** **234420 domain**
 
 ### 📁 File yang Dihasilkan
 
