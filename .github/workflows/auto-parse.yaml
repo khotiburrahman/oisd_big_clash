@@ -1,4 +1,4 @@
-name: Combine OISD and LoyalSoldier Reject to V2RayNG Geosite & YAML
+name: Combine Ads & Tracker Filters to V2RayNG Geosite & YAML
 
 on:
   schedule:
@@ -32,11 +32,16 @@ jobs:
 
         # Daftar URL sumber yang akan digabungkan
         urls = [
-            # OISD Big
-            "https://raw.githubusercontent.com/sjhgvr/oisd/refs/heads/main/oisd_big.txt",
-            # LoyalSoldier Reject
-            "https://raw.githubusercontent.com/LoyalSoldier/clash-rules/release/reject.txt",
-            # Hagezi Native Tracker (Semua vendor sesuai gambar)
+            # Link Tambahan Baru (Filter Utama)
+            "https://filters.adtidy.org/extension/chromium/filters/2.txt", # AdGuard Base
+            "https://filters.adtidy.org/extension/chromium/filters/11.txt", # Android Tracking
+            "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt", # Anti-Ad
+            "https://raw.githubusercontent.com/YousList/YousList/master/youslist.txt", # AntiPopAds / YousList
+            "https://easylist.to/easylist/easylist.txt", # EasyList
+            "https://big.oisd.nl/domainswild", # OISD Big (Format Wildcard Plain Text)
+            
+            # Link Sumber Eksisting
+            "https://raw.githubusercontent.com/LoyalSoldier/clash-rules/release/reject.txt", # LoyalSoldier Reject
             "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/native.apple.txt",
             "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/native.winoffice.txt",
             "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/domains/native.samsung.txt",
@@ -61,14 +66,14 @@ jobs:
         # Memproses semua data yang sudah digabung
         for line in combined_data.splitlines():
             line = line.strip()
-            # Abaikan baris kosong dan komentar
-            if not line or line.startswith(("#", "!", "[", "-", "@@")):
+            # Abaikan baris kosong, komentar, dan sintaks kosmetik DOM Adblocker (## / #@#)
+            if not line or line.startswith(("#", "!", "[", "-", "@@")) or "##" in line or "#@#" in line:
                 continue
 
             # Ambil domain pertama jika ada spasi (format hosts file)
             raw_domain = line.split()[0]
 
-            # Bersihkan format Adblock (||domain^)
+            # Bersihkan format Adblocker (||domain^ atau ||domain)
             if raw_domain.startswith("||"):
                 raw_domain = raw_domain[2:]
 
@@ -131,19 +136,6 @@ jobs:
             header = (field_number << 3) | 2
             return encode_varint(header) + encode_varint(len(message_bytes)) + message_bytes
 
-        # V2FLY GEOSITE FORMAT
-        # GeoSite {
-        #   repeated GeoLocation entries = 1;
-        # }
-        # GeoLocation {
-        #   required string country_code = 1;
-        #   repeated Domain domains = 2;
-        # }
-        # Domain {
-        #   required Type type = 1;     // 1 = Domain (suffix match)
-        #   required string value = 2;
-        # }
-
         # Buat list domain entries
         domains_data = bytearray()
         for domain in sorted_domains:
@@ -171,7 +163,7 @@ jobs:
         # --- README ---
         waktu_sekarang = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
         with open("README.md", "w", encoding="utf-8") as f:
-            f.write("# OISD Big, LoyalSoldier Reject, & Hagezi Native Tracker Combined\n\n")
+            f.write("# Combined Ads, Trackers, & Reject Rules\n\n")
             f.write("### 📊 Statistik Pembaruan Terakhir\n")
             f.write(f"* **Waktu Pembaruan:** {waktu_sekarang} UTC\n")
             f.write(f"* **Total Domain Mentah Diunduh:** {total_input} domain\n")
@@ -208,7 +200,7 @@ jobs:
           git add keepalive.txt
           git commit -m "Keepalive: $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
         else
-          git commit -m "Update rules: V2RayNG geosite.dat & Clash YAML - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          git commit -m "Update rules: Combined Ads & Tracker Rules - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
         fi
 
         git push origin HEAD
