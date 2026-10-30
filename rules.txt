@@ -249504,9 +249504,7 @@ ampxchange.com
 amqsguelufxcb.online
 amradmin.5173.com
 amritadrino.com/wp-content/plugins/wp-ad-guru/
-amritlink.xyz#%#(()=>{const
-amritlink.xyz#%#//scriptlet('prevent-element-src-loading',
-amritlink.xyz#%#//scriptlet('set-constant',
+amritlink.xyz#%#(()=>{document.addEventListener('click',e=>{const
 amropeway.com
 ams-pageview-public.s3.amazonaws.com
 ams.cdn.arkadiumhosted.com/advertisement/
@@ -256518,6 +256516,7 @@ bkstwfdfozser.site
 bktpcross.com
 bkuntihdhjwpd.site
 bkuxigrmvndcr.site
+bkvoydbakinlq.online
 bkvxjygccpkwk.space
 bkxnutagaejor.online
 bkxsdhfljwjlc.online
@@ -282962,6 +282961,7 @@ fpb8.esce.fr
 fpbb.aizhan.com
 fpbbdx2.bmcx.com
 fpbcode.onlinedown.net
+fpbocevqawdhl.space
 fpbone.ihowguide.com
 fpc.acpinternist.org
 fpc.acpjournals.org
@@ -302955,6 +302955,7 @@ lbwhalvahs.cyou
 lbwjhzikhdoci.space
 lby2kd27c.com
 lby2kd27c.com^$popup
+lbyarvladuyzy.space
 lc-event.pixiv.net
 lc-push.zhihu.com
 lc.jiathis.com
@@ -316972,6 +316973,7 @@ nisputlkdilbu.space
 nithyshipsi.com^$document
 nitmus.com
 nitmus.com^$third-party
+nitriangyrates.com
 nitridslah.com
 nitrilenurling.cyou
 nitroflare-porn.com#?#.box
@@ -319164,6 +319166,7 @@ oglalavoodoo.world^$popup
 oglaszamy24.pl#$#center
 oglaszamy24.pl#%#//scriptlet("set-constant",
 ogmslkksd.com
+ognmrpmzscxrd.website
 ognuhmzyfudyd.site
 ognunn.chavesnamao.com.br
 ogopsmaoxxnfl.website
@@ -328876,6 +328879,7 @@ qpb*.sohu.com
 qpbiyued.com
 qpbphokxkzgit.website
 qpc4.visilab.ch
+qpcnbzqpzckag.space
 qpecjovestjhj.space
 qpetanezqhixk.website
 qpfxfxdwnuxrd.space
@@ -349004,6 +349008,7 @@ thonalbxtwvkw.site
 thonchoosy.qpon
 thongmilletbrutally.com
 thongrooklikelihood.com
+thongyeburine.com
 thongygenevan.com
 thootupaiasautes.qpon
 thorncontinuepalm.com
@@ -366829,6 +366834,7 @@ xqqtsfdxpejqm.online
 xqslse.annadiva.nl
 xqsqczzswxwlr.website
 xqsvsdvvypnij.website
+xqtckqufkrwnv.website
 xqtcur.kirklands.com
 xqucrwabgputg.online
 xqupwc.emp.at
