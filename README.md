@@ -1,8 +1,8 @@
 # Combined Ads, Trackers, & Reject Rules
 
 ### 📊 Statistik Pembaruan Terakhir
-* **Waktu Pembaruan:** 2026-10-31 02:32:00 UTC
-* **Total Domain Unik:** **124725 domain**
+* **Waktu Pembaruan:** 2026-10-31 02:40:58 UTC
+* **Total Domain Unik:** **297183 domain**
 
 ### 📁 File Output Siap Pakai
 * **geosite.dat** (V2RayNG/Xray - tag `ads`)
