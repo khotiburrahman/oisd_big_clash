@@ -34,13 +34,15 @@ jobs:
         print("Mengunduh data...")
         req_headers = {"User-Agent": "Mozilla/5.0"}
 
+        # Daftar URL sumber filter (bebas HTTP 404)
         urls = [
-            "https://filters.adtidy.org/extension/chromium/filters/2.txt",
-            "https://filters.adtidy.org/extension/chromium/filters/11.txt",
-            "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt",
-            "https://easylist.to/easylist/easylist.txt",
-            "https://big.oisd.nl/domainswild",
+            "https://filters.adtidy.org/extension/chromium/filters/2.txt",         # AdGuard Base
+            "https://filters.adtidy.org/extension/chromium/filters/11.txt",        # Android Tracking
+            "https://raw.githubusercontent.com/privacy-protection-tools/anti-AD/master/anti-ad-easylist.txt", # Anti-Ad
+            "https://easylist.to/easylist/easylist.txt",                           # EasyList
+            "https://big.oisd.nl/domainswild",                                     # OISD Big (wildcard *.domain)
             "https://raw.githubusercontent.com/LoyalSoldier/clash-rules/release/reject.txt",
+            # HaGeZi (semua wildcard *.domain)
             "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/apple.txt",
             "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/winoffice.txt",
             "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/samsung.txt",
@@ -58,6 +60,7 @@ jobs:
             except Exception as e:
                 print(f"⚠️ Gagal mengunduh {url}: {e}")
 
+        # --- Regex helper ---
         re_ipv4 = re.compile(r"^\d{1,3}(\.\d{1,3}){3}$")
         re_ip_like = re.compile(r"^[\d\.:]+$")
         re_scheme = re.compile(r"^https?://", re.IGNORECASE)
@@ -71,39 +74,61 @@ jobs:
 
         for line in combined_data.splitlines():
             line = line.strip()
+
+            # 1. Skip komentar & kosmetik
             if not line or line.startswith(("#", "!", "[", "-", "@@")) or "##" in line or "#@#" in line:
                 continue
+
+            # 2. Hapus modifier AdBlocker ($third-party, $popup, dsb)
             if "$" in line:
                 line = line.split("$")[0].strip()
             if not line:
                 continue
+
+            # 3. Handle HOSTS format: "0.0.0.0 domain.com"
             parts = line.split()
             if not parts:
                 continue
             raw_domain = parts[0]
             if len(parts) >= 2 and re_ip_like.match(parts[0]) and not re_ipv4.match(parts[1]):
                 raw_domain = parts[1]
+
+            # 4. Buang prefix AdBlock: || atau |
             if raw_domain.startswith("||"):
                 raw_domain = raw_domain[2:]
             elif raw_domain.startswith("|"):
                 raw_domain = raw_domain[1:]
+
+            # 5. Buang scheme http:// / https://
             raw_domain = re_scheme.sub("", raw_domain)
+
+            # 6. ★ FIX UTAMA ★ Buang prefix wildcard "*.example.com" atau "*example.com"
             if raw_domain.startswith("*."):
                 raw_domain = raw_domain[2:]
             elif raw_domain.startswith("*"):
                 raw_domain = raw_domain[1:]
+
             if not raw_domain:
                 continue
+
+            # 7. Buang path, port, query, parameter
             raw_domain = re_path_cut.sub("", raw_domain)
+
+            # 8. Trim sisa
             domain = raw_domain.strip(" .")
+
+            # 9. Skip jika masih ada simbol terlarang
             if not domain or re_bad_char.search(domain):
                 continue
+
+            # 10. Validasi akhir
             if "." not in domain or not (4 <= len(domain) <= 253):
                 continue
             if re_ipv4.match(domain):
                 continue
             if not re_domain_chars.match(domain):
                 continue
+
             total_input += 1
             if domain in unique_domains:
                 total_duplikat += 1
@@ -114,7 +139,9 @@ jobs:
         total_unik = len(sorted_domains)
         print(f"📊 Total baris valid: {total_input} | Duplikat: {total_duplikat} | Unik: {total_unik}")
 
-        # --- YAML ---
+        # ============================================================
+        # 1. YAML untuk Clash / OpenClash / Clash Meta
+        # ============================================================
         q = chr(39)
         with open("oisd_big.yaml", "w", encoding="utf-8") as f:
             f.write("payload:\n")
@@ -126,12 +153,20 @@ jobs:
             for d in sorted_domains:
                 f.write(f"  - DOMAIN-SUFFIX,{d}\n")
 
-        # --- TXT ---
+        # ============================================================
+        # 2. Plain text
+        # ============================================================
         with open("rules.txt", "w", encoding="utf-8") as f:
             for d in sorted_domains:
                 f.write(f"{d}\n")
 
-        # --- JSON Rule-Set (multi-versi) ---
+        # ============================================================
+        # 3. Rule-Set JSON — WAJIB punya "version" sejak sing-box 1.10.0
+        #    Version 1: sing-box 1.8.0+
+        #    Version 2: sing-box 1.10.0+
+        #    Version 3: sing-box 1.11.0+
+        #    Version 4: sing-box 1.11.0+ (termasuk 1.12+, 1.13+, 1.14+)
+        # ============================================================
         for version in [1, 2, 3, 4]:
             singbox_json = {
                 "version": version,
@@ -144,8 +179,9 @@ jobs:
             with open(f"geosite-ads-all-v{version}.json", "w", encoding="utf-8") as f:
                 json.dump(singbox_json, f, indent=2)
 
-        # JSON default (tanpa version, memakai versi current compiler)
+        # Default (versi 2 — aman untuk semua sing-box modern)
         singbox_json_default = {
+            "version": 2,
             "rules": [
                 {
                     "domain_suffix": sorted_domains
@@ -155,7 +191,10 @@ jobs:
         with open("geosite-ads-all.json", "w", encoding="utf-8") as f:
             json.dump(singbox_json_default, f, indent=2)
 
-        # --- geosite.dat (v2fly, untuk Xray/V2Ray) ---
+        # ============================================================
+        # 4. geosite.dat (v2fly protobuf — HANYA untuk Xray/V2Ray)
+        #    TIDAK kompatibel dengan sing-box 1.12+
+        # ============================================================
         def encode_varint(value):
             if value == 0:
                 return b'\x00'
@@ -178,7 +217,9 @@ jobs:
         def make_message_field(field_number, message_bytes):
             return encode_varint((field_number << 3) | 2) + encode_varint(len(message_bytes)) + message_bytes
 
+        # Domain.Type: Plain=0, Regex=1, Domain=2 (suffix), Full=3
         DOMAIN_TYPE_SUFFIX = 2
+
         domains_data = bytearray()
         for domain in sorted_domains:
             domain_msg = make_int_field(1, DOMAIN_TYPE_SUFFIX) + make_string_field(2, domain)
@@ -186,25 +227,49 @@ jobs:
 
         geo_location = make_string_field(1, "ads") + domains_data
         geosite_data = make_message_field(1, geo_location)
+
         with open("geosite.dat", "wb") as f:
             f.write(geosite_data)
 
-        # --- README ---
+        # ============================================================
+        # 5. README dengan info kompatibilitas lengkap
+        # ============================================================
         waktu_sekarang = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
         with open("README.md", "w", encoding="utf-8") as f:
             f.write("# Combined Ads, Trackers, & Reject Rules\n\n")
             f.write("### 📊 Statistik Pembaruan Terakhir\n")
             f.write(f"* **Waktu Pembaruan:** {waktu_sekarang} UTC\n")
             f.write(f"* **Total Domain Unik:** **{total_unik} domain**\n\n")
-            f.write("### 📁 File Output Siap Pakai\n")
-            f.write("* **geosite.dat** (V2RayNG/Xray - tag `ads`)\n")
-            f.write("* **geosite-ads-all-v1.srs** (Sing-box 1.8.x – 1.9.x)\n")
-            f.write("* **geosite-ads-all-v2.srs** (Sing-box 1.10.x)\n")
-            f.write("* **geosite-ads-all-v3.srs** (Sing-box 1.11.x)\n")
-            f.write("* **geosite-ads-all-v4.srs** (Sing-box 1.12.x ke atas)\n")
-            f.write("* **geosite-ads-all.srs** (Sing-box versi terbaru)\n")
-            f.write("* **oisd_big.yaml** & **oisd_big_old.yaml** (OpenClash/Clash Meta)\n")
-            f.write("* **rules.txt** (Plain Text Domain List)\n")
+
+            f.write("### 📁 File Output & Kompatibilitas\n\n")
+
+            f.write("#### Sing-box Rule-Set (.srs)\n")
+            f.write("| File | Rule-Set Version | Kompatibel dengan |\n")
+            f.write("|---|---|---|\n")
+            f.write("| `geosite-ads-all-v1.srs` | 1 | sing-box 1.8.0 – 1.9.x |\n")
+            f.write("| `geosite-ads-all-v2.srs` | 2 | sing-box 1.10.x |\n")
+            f.write("| `geosite-ads-all-v3.srs` | 3 | sing-box 1.11.x |\n")
+            f.write("| `geosite-ads-all-v4.srs` | 4 | sing-box 1.11.0+ (1.12.x, 1.13.x, 1.14.x) |\n")
+            f.write("| `geosite-ads-all.srs` | default (latest compiler) | sing-box versi terbaru |\n\n")
+
+            f.write("#### Sing-box Rule-Set Source (.json)\n")
+            f.write("Tersedia `geosite-ads-all-v1.json` s/d `geosite-ads-all-v4.json` "
+                    "dan `geosite-ads-all.json` (default version 2).\n\n")
+
+            f.write("#### Format Lain\n")
+            f.write("| File | Format | Untuk |\n")
+            f.write("|---|---|---|\n")
+            f.write("| `geosite.dat` | Protobuf v2fly (tag `ads`) | Xray, V2Ray, V2RayNG **saja** — tidak untuk sing-box 1.12+ |\n")
+            f.write("| `oisd_big.yaml` | Clash Modern (`+.domain`) | OpenClash, Clash Meta, Mihomo |\n")
+            f.write("| `oisd_big_old.yaml` | Clash Legacy (`DOMAIN-SUFFIX`) | Clash lama |\n")
+            f.write("| `rules.txt` | Plain Text | Universal |\n\n")
+
+            f.write("### 💡 Rekomendasi per Aplikasi\n")
+            f.write("* **NekoBox 1.4.x (sing-box 1.12+)** → gunakan `geosite-ads-all-v4.srs` via Custom Config `rule_set`\n")
+            f.write("* **NekoBox lama (sing-box 1.8–1.9)** → gunakan `geosite-ads-all-v1.srs`\n")
+            f.write("* **SFA / SFI / SFM (sing-box)** → gunakan `geosite-ads-all-v2.srs` atau `.srs` default\n")
+            f.write("* **V2RayNG / Xray** → gunakan `geosite.dat` (tag `ads`)\n")
+            f.write("* **OpenClash / Clash Meta** → gunakan `oisd_big.yaml`\n")
 
         print(f"✅ Pemrosesan Python Selesai ({total_unik} domain unik bersih)")
         EOF
@@ -222,13 +287,20 @@ jobs:
         find . -name "sing-box" -type f -executable | head -1 | xargs -I {} mv {} ./sing-box
         chmod +x ./sing-box
 
+        echo "🔎 Versi compiler:"
+        ./sing-box version
+
         echo "⚙️ Mengompilasi rule-set untuk berbagai versi..."
         for v in 1 2 3 4; do
           echo "   -> Version ${v}"
           ./sing-box rule-set compile --output "geosite-ads-all-v${v}.srs" "geosite-ads-all-v${v}.json"
         done
+
         echo "   -> Default (latest)"
         ./sing-box rule-set compile --output "geosite-ads-all.srs" "geosite-ads-all.json"
+
+        echo "📦 Hasil kompilasi:"
+        ls -lh geosite-ads-all*.srs
 
         rm -rf sing-box sing-box.tar.gz
 
