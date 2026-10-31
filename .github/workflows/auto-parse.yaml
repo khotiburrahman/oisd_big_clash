@@ -2,7 +2,7 @@ name: Build & Compile All Adblock Rules (Geosite, Sing-box SRS, YAML)
 
 on:
   schedule:
-    - cron: '0 */12 * * *' # Otomatis berjalan setiap 12 jam
+    - cron: '0 */12 * * *' # Berjalan otomatis setiap 12 jam
   workflow_dispatch:
 
 jobs:
@@ -66,17 +66,30 @@ jobs:
 
         for line in combined_data.splitlines():
             line = line.strip()
+
+            # 1. Abaikan baris kosong, komentar, dan kosmetik DOM Adblocker (## / #@#)
             if not line or line.startswith(("#", "!", "[", "-", "@@")) or "##" in line or "#@#" in line:
                 continue
 
+            # 2. Hapus modifier AdBlocker seperti $third-party, $popup, $script, dll
+            if "$" in line:
+                line = line.split("$")[0]
+
+            # 3. Ambil kolom domain pertama jika ada spasi (format hosts file)
             raw_domain = line.split()[0]
+
+            # 4. Bersihkan karakter awalan AdBlocker (|| atau |)
             if raw_domain.startswith("||"):
                 raw_domain = raw_domain[2:]
+            elif raw_domain.startswith("|"):
+                raw_domain = raw_domain[1:]
 
-            raw_domain = re.sub(r"[\^ \r\n\t]+$", "", raw_domain)
-            domain = raw_domain.strip(".")
+            # 5. Hapus suffix path, wildcard, atau simbol pemisah (^, /, dll)
+            raw_domain = re.sub(r"[\^/ \r\n\t]+.*$", "", raw_domain)
+            domain = raw_domain.strip(" .")
 
-            if "." in domain:
+            # 6. Filter ketat: Pastikan punya titik (TLD valid) & tidak ada simbol aneh
+            if "." in domain and not re.search(r"[,\s\$\~\*\|]", domain):
                 total_input += 1
                 if domain in unique_domains:
                     total_duplikat += 1
@@ -86,22 +99,21 @@ jobs:
         sorted_domains = sorted(list(unique_domains))
         total_unik = len(sorted_domains)
 
-        # 1. oisd_big.yaml (Clash moderno)
+        # 1. oisd_big.yaml (Clash Modern)
         q = chr(39)
         with open("oisd_big.yaml", "w", encoding="utf-8") as f:
             f.write("payload:\n")
             for d in sorted_domains:
                 f.write(f"  - {q}+.{d}{q}\n")
 
-        # 2. oisd_big_old.yaml (Clash legacy)
+        # 2. oisd_big_old.yaml (Clash Legacy)
         with open("oisd_big_old.yaml", "w", encoding="utf-8") as f:
             f.write("payload:\n")
             for d in sorted_domains:
                 f.write(f"  - DOMAIN-SUFFIX,{d}\n")
 
-        # 3. rules.txt (Plain Text)
+        # 3. rules.txt (Plain Text Murni)
         with open("rules.txt", "w", encoding="utf-8") as f:
-            f.write("# V2RayNG / Custom Rules - Domain List\n")
             for d in sorted_domains:
                 f.write(f"{d}\n")
 
@@ -117,7 +129,7 @@ jobs:
         with open("geosite-ads-all.json", "w", encoding="utf-8") as f:
             json.dump(singbox_json, f, indent=2)
 
-        # 5. geosite.dat (Format protobuf v2fly)
+        # 5. geosite.dat (Format protobuf v2fly - tag: "ads")
         def encode_varint(value):
             if value == 0: return b'\x00'
             ret = bytearray()
@@ -161,9 +173,9 @@ jobs:
             f.write("* **geosite-ads-all.srs** (Sing-box Binary Rule Set)\n")
             f.write("* **geosite-ads-all.json** (Sing-box Source Rule Set)\n")
             f.write("* **oisd_big.yaml** & **oisd_big_old.yaml** (OpenClash/Clash Meta)\n")
-            f.write("* **rules.txt** (Plain Text)\n")
+            f.write("* **rules.txt** (Plain Text Domain List)\n")
 
-        print(f"✅ Pemrosesan Python Selesai ({total_unik} domain unik)")
+        print(f"✅ Pemrosesan Python Selesai ({total_unik} domain unik bersih)")
         EOF
         python run.py
         rm run.py
@@ -172,7 +184,7 @@ jobs:
       run: |
         API_URL="https://api.github.com/repos/SagerNet/sing-box/releases/latest"
         DOWNLOAD_URL=$(curl -s $API_URL | jq -r '.assets[] | select(.name | test("linux-amd64\\.tar\\.gz$")) | .browser_download_url')
-        
+
         echo "📥 Mengunduh sing-box dari $DOWNLOAD_URL"
         curl -L -o sing-box.tar.gz "$DOWNLOAD_URL"
         tar -xzf sing-box.tar.gz
@@ -192,6 +204,6 @@ jobs:
         if git diff --staged --quiet; then
           echo "Tidak ada perubahan data."
         else
-          git commit -m "Auto Update Rules: All Formats - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          git commit -m "Auto Update Rules: All Formats Clean - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
           git push origin HEAD
         fi
