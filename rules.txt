@@ -1,6 +1,4 @@
-# V2RayNG Rules - Domain List
-# Gunakan dengan rule: DOMAIN,example.com,REJECT
-
+# V2RayNG / Custom Rules - Domain List
 $cookie=/adb\.key/,domain=expres.cz|televizeseznam.cz|ahaonline.cz|extra.cz|mobilmania.cz|idnes.cz|aktuality.sk|aktualne.cz|blesk.cz|centrum.cz|cnews.cz|e15.cz|karaoketexty.cz|novinky.cz|sport.cz|super.cz|tiscali.cz|zive.cz|antiyoutuber.cz|fights.cz|metro.cz
 $cookie=__adblocker,domain=slate.com|thehindubusinessline.com
 $cookie=adb,domain=expres.cz|televizeseznam.cz|ahaonline.cz|extra.cz|mobilmania.cz|idnes.cz|aktuality.sk|aktualne.cz|blesk.cz|centrum.cz|cnews.cz|e15.cz|karaoketexty.cz|novinky.cz|sport.cz|super.cz|tiscali.cz|zive.cz|antiyoutuber.cz|fights.cz|metro.cz
@@ -137144,11 +137142,6 @@ $~third-party,xmlhttprequest,script,redirect-rule=nooptext,domain=zertalious.xyz
 *.newlook23.sytes.net
 *.newlookesthetic.com
 *.newlucky.fr
-*.newly0-voluptate25.cfd
-*.newly2-aliquam49.cfd
-*.newly2-hic1.cfd
-*.newly9-rem8.cfd
-*.newly9-rerum79.cfd
 *.newmadeo.com
 *.newmagicmail.weebly.com
 *.newmayads.com
@@ -260545,6 +260538,7 @@ ccexperimentsstatic.oracleoutsourcing.com
 ccf8c55f34.63794fc885.com
 ccfebb7661.38b75d2c1e.com
 ccgateway.net
+ccgxteolhlwiq.space
 cchlhb.budgetsport.fi
 cchpvhkoqilnr.online
 cchxgahvhzdoh.site
@@ -274241,6 +274235,7 @@ duendesmolest.com
 duenschdgoplh.online
 duepose.com
 duetcode.com
+duettolutistssquama.qpon
 dueu.0fwg.cn
 dufai4b1ap33z.cloudfront.net
 dufixen.com
@@ -274258,6 +274253,7 @@ dukcapil.go-static.info
 dukerationpecial.com
 dukingdraon.com^$popup
 dukjinqup.in
+dukltbnagegre.space
 dukunsantetampuhjarakjauh8.go-static.info
 dukwznn0x.com
 duleonon.com
@@ -293119,6 +293115,7 @@ ieglcoaqlzesp.store
 iegwze.goldcar.es
 iegybest.club,egybest.fun#%#//scriptlet('prevent-fetch',
 iegzaknrowaju.online
+iehayyxyalsjh.space
 iehbhejfnetvc.site
 iehmiqwudyc.com
 ieiyqbcjpksbk.website
@@ -302124,6 +302121,7 @@ kxexlhdbaosee.website
 kxfnuquwjicjt.site
 kxfvdkxarxejz.space
 kxg49cluu2t3g7.rest
+kxgjouendnfez.online
 kxgteafuhnpoz.online
 kxid.cn
 kxiojzupnyyif.website
@@ -324858,6 +324856,7 @@ pncirjjzsnoqt.website
 pncloudfl.com
 pncrtqanpqidd.site
 pnd.gs
+pndhlndiswrxg.online
 pndrlgbudvcsy.website
 pne8jpfkywx1hewo6.cfd
 pnekru6pxrum-a.akamaihd.net
@@ -330554,6 +330553,7 @@ recruitmentaim.in,jobskimuu.in,skrresults.com,ignoupur.com,newsckp.com,popaar.co
 recruitmentaim.in,jobskimuu.in,skrresults.com,ignoupur.com,powergam.online,qrixpe.com,ajazijobs.in,bharti26.in,paidpe.com,mfulecollegewarud.org,parivahansewa.live,tezjobs.in#%#//scriptlet('remove-node-text',
 recs-api.conde.digital
 recsys-crawl.4paradigm.com
+rectadesc.cfd
 rectangle99.com
 rectangledevelopernewspapers.com
 rectangular10.com
@@ -368804,6 +368804,7 @@ yqsu.cn
 yqtqkfzugqtet.online
 yqwmvnvbhotkw.site
 yqwueei.icu
+yqwydqbnqevss.site
 yqxyktrd.xyz
 yqyuudrknhwsd.site
 yqzpmsjhdccic.online
