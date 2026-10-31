@@ -1,10 +1,10 @@
 # Combined Ads, Trackers, & Reject Rules
 
 ### 📊 Statistik Pembaruan Terakhir
-* **Waktu Pembaruan:** 2026-10-30 22:50:01 UTC
-* **Total Domain Mentah Diunduh:** 460284 domain
-* **Total Domain Duplikat Dibuang:** 89121 domain
-* **Total Aturan Unik Akhir:** **371163 domain**
+* **Waktu Pembaruan:** 2026-10-31 01:58:11 UTC
+* **Total Domain Mentah Diunduh:** 460264 domain
+* **Total Domain Duplikat Dibuang:** 89164 domain
+* **Total Aturan Unik Akhir:** **371100 domain**
 
 ### 📁 File yang Dihasilkan
 
