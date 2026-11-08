@@ -1,8 +1,8 @@
 # Combined Ads, Trackers, & Reject Rules
 
 ### 📊 Statistik Pembaruan Terakhir
-* **Waktu Pembaruan:** 2026-11-07 17:41:58 UTC
-* **Total Domain Unik:** **296540 domain**
+* **Waktu Pembaruan:** 2026-11-08 05:41:39 UTC
+* **Total Domain Unik:** **296269 domain**
 
 ### 📁 File Output & Kompatibilitas
 
