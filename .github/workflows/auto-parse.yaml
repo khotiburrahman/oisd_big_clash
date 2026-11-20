@@ -99,8 +99,7 @@ jobs:
             # 5. Buang scheme http:// / https://
             raw_domain = re_scheme.sub("", raw_domain)
 
-            # 6. ★ FIX FALSE-POSITIVE ★ Skip aturan AdBlock yang menargetkan path/query spesifik
-            # Contoh: "example.com/ads/banner.js^" tidak boleh berubah jadi blokir seluruh "example.com"
+            # 6. Skip aturan AdBlock yang menargetkan path/query spesifik (anti false-positive)
             if "/" in raw_domain or "?" in raw_domain:
                 total_path_skipped += 1
                 continue
@@ -252,23 +251,17 @@ jobs:
         rm -f run.py
 
     - name: Download Sing-box Binaries & Compile .srs (True Multi-Version)
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         compile_srs() {
-          local TAG=$1
+          local URL=$1
           local JSON_FILE=$2
           local OUT_FILE=$3
 
-          if [ "$TAG" == "latest" ]; then
-            API_URL="https://api.github.com/repos/SagerNet/sing-box/releases/latest"
-          else
-            API_URL="https://api.github.com/repos/SagerNet/sing-box/releases/tags/${TAG}"
-          fi
-
-          DOWNLOAD_URL=$(curl -s "$API_URL" | jq -r '.assets[] | select(.name | test("linux-amd64\\.tar\\.gz$")) | .browser_download_url')
-          echo "📥 Mengunduh sing-box ($TAG) dari $DOWNLOAD_URL"
-
+          echo "📥 Mengunduh dari: $URL"
           mkdir -p tmp_sb
-          curl -sL -o tmp_sb/sb.tar.gz "$DOWNLOAD_URL"
+          curl -fSL -o tmp_sb/sb.tar.gz "$URL"
           tar -xzf tmp_sb/sb.tar.gz -C tmp_sb
           SB_BIN=$(find tmp_sb -name "sing-box" -type f | head -1)
           chmod +x "$SB_BIN"
@@ -278,14 +271,15 @@ jobs:
           rm -rf tmp_sb
         }
 
-        # 1. Compile SRS v1 (untuk sing-box 1.8.x - 1.9.x)
-        compile_srs "v1.9.7" "geosite-ads-all-v1.json" "geosite-ads-all-v1.srs"
+        # 1. Compile SRS v1 (URL langsung tanpa API -> anti rate-limit)
+        compile_srs "https://github.com/SagerNet/sing-box/releases/download/v1.9.7/sing-box-1.9.7-linux-amd64.tar.gz" "geosite-ads-all-v1.json" "geosite-ads-all-v1.srs"
 
-        # 2. Compile SRS v2 (untuk sing-box 1.10.x)
-        compile_srs "v1.10.7" "geosite-ads-all-v2.json" "geosite-ads-all-v2.srs"
+        # 2. Compile SRS v2 (URL langsung tanpa API -> anti rate-limit)
+        compile_srs "https://github.com/SagerNet/sing-box/releases/download/v1.10.7/sing-box-1.10.7-linux-amd64.tar.gz" "geosite-ads-all-v2.json" "geosite-ads-all-v2.srs"
 
-        # 3. Compile SRS Latest (untuk sing-box 1.11.0+ / terbaru)
-        compile_srs "latest" "geosite-ads-all.json" "geosite-ads-all.srs"
+        # 3. Compile SRS Latest (menggunakan GH_TOKEN agar tidak kena rate-limit API)
+        LATEST_URL=$(curl -s -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/SagerNet/sing-box/releases/latest" | jq -r '.assets[] | select(.name | test("linux-amd64\\.tar\\.gz$")) | .browser_download_url')
+        compile_srs "$LATEST_URL" "geosite-ads-all.json" "geosite-ads-all.srs"
 
         echo "📦 Hasil kompilasi:"
         ls -lh geosite-ads-all*.srs
