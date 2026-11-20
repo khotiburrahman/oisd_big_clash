@@ -21,7 +21,7 @@ jobs:
         python-version: '3.x'
 
     - name: Install dependencies (jq)
-      run: sudo apt-get install -y jq
+      run: sudo apt-get update && sudo apt-get install -y jq
 
     - name: Download, Clean, and Generate Base Rules
       run: |
@@ -29,18 +29,17 @@ jobs:
         import urllib.request
         import re
         import json
-        from datetime import datetime
+        from datetime import datetime, timezone
 
         print("Mengunduh data...")
         req_headers = {"User-Agent": "Mozilla/5.0"}
 
-        # Daftar URL sumber filter (bebas HTTP 404)
         urls = [
             "https://filters.adtidy.org/extension/chromium/filters/2.txt",         # AdGuard Base
-            "https://filters.adtidy.org/extension/chromium/filters/11.txt",     # Android Tracking
-"https://easylist.to/easylist/easylist.txt",                           # EasyList
+            "https://filters.adtidy.org/extension/chromium/filters/11.txt",        # Android Tracking
+            "https://easylist.to/easylist/easylist.txt",                           # EasyList
             "https://big.oisd.nl/domainswild",                                     # OISD Big (wildcard *.domain)
- "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/apple.txt",
+            "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/apple.txt",
             "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/winoffice.txt",
             "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/samsung.txt",
             "https://raw.githubusercontent.com/hagezi/dns-blocklists/main/wildcard/xiaomi.txt",
@@ -61,18 +60,19 @@ jobs:
         re_ipv4 = re.compile(r"^\d{1,3}(\.\d{1,3}){3}$")
         re_ip_like = re.compile(r"^[\d\.:]+$")
         re_scheme = re.compile(r"^https?://", re.IGNORECASE)
-        re_path_cut = re.compile(r"[\^/:?\s,=].*$")
-        re_bad_char = re.compile(r"[,\s\$\~\*\|]")
+        re_port_caret = re.compile(r"[\^:].*$")
+        re_bad_char = re.compile(r"[,\s\$\~\*\|\?/]")
         re_domain_chars = re.compile(r"^[a-zA-Z0-9_]([a-zA-Z0-9_\-\.]*[a-zA-Z0-9_])?$")
 
         unique_domains = set()
         total_input = 0
         total_duplikat = 0
+        total_path_skipped = 0
 
         for line in combined_data.splitlines():
             line = line.strip()
 
-            # 1. Skip komentar & kosmetik
+            # 1. Skip komentar, whitelist (@@), & aturan kosmetik (##)
             if not line or line.startswith(("#", "!", "[", "-", "@@")) or "##" in line or "#@#" in line:
                 continue
 
@@ -99,7 +99,13 @@ jobs:
             # 5. Buang scheme http:// / https://
             raw_domain = re_scheme.sub("", raw_domain)
 
-            # 6. ★ FIX UTAMA ★ Buang prefix wildcard "*.example.com" atau "*example.com"
+            # 6. ★ FIX FALSE-POSITIVE ★ Skip aturan AdBlock yang menargetkan path/query spesifik
+            # Contoh: "example.com/ads/banner.js^" tidak boleh berubah jadi blokir seluruh "example.com"
+            if "/" in raw_domain or "?" in raw_domain:
+                total_path_skipped += 1
+                continue
+
+            # 7. Buang prefix wildcard "*.example.com" atau "*example.com"
             if raw_domain.startswith("*."):
                 raw_domain = raw_domain[2:]
             elif raw_domain.startswith("*"):
@@ -108,17 +114,17 @@ jobs:
             if not raw_domain:
                 continue
 
-            # 7. Buang path, port, query, parameter
-            raw_domain = re_path_cut.sub("", raw_domain)
+            # 8. Buang separator AdBlock (^) dan port (:8080)
+            raw_domain = re_port_caret.sub("", raw_domain)
 
-            # 8. Trim sisa
+            # 9. Trim sisa titik/spasi
             domain = raw_domain.strip(" .")
 
-            # 9. Skip jika masih ada simbol terlarang
+            # 10. Skip jika masih ada simbol terlarang
             if not domain or re_bad_char.search(domain):
                 continue
 
-            # 10. Validasi akhir
+            # 11. Validasi akhir struktur domain
             if "." not in domain or not (4 <= len(domain) <= 253):
                 continue
             if re_ipv4.match(domain):
@@ -134,7 +140,7 @@ jobs:
 
         sorted_domains = sorted(list(unique_domains))
         total_unik = len(sorted_domains)
-        print(f"📊 Total baris valid: {total_input} | Duplikat: {total_duplikat} | Unik: {total_unik}")
+        print(f"📊 Valid: {total_input} | Duplikat: {total_duplikat} | Path Di-skip: {total_path_skipped} | Unik: {total_unik}")
 
         # ============================================================
         # 1. YAML untuk Clash / OpenClash / Clash Meta
@@ -158,13 +164,9 @@ jobs:
                 f.write(f"{d}\n")
 
         # ============================================================
-        # 3. Rule-Set JSON — WAJIB punya "version" sejak sing-box 1.10.0
-        #    Version 1: sing-box 1.8.0+
-        #    Version 2: sing-box 1.10.0+
-        #    Version 3: sing-box 1.11.0+
-        #    Version 4: sing-box 1.11.0+ (termasuk 1.12+, 1.13+, 1.14+)
+        # 3. Rule-Set JSON untuk Sing-box
         # ============================================================
-        for version in [1, 2, 3, 4]:
+        for version in [1, 2, 3]:
             singbox_json = {
                 "version": version,
                 "rules": [
@@ -176,21 +178,12 @@ jobs:
             with open(f"geosite-ads-all-v{version}.json", "w", encoding="utf-8") as f:
                 json.dump(singbox_json, f, indent=2)
 
-        # Default (versi 2 — aman untuk semua sing-box modern)
-        singbox_json_default = {
-            "version": 2,
-            "rules": [
-                {
-                    "domain_suffix": sorted_domains
-                }
-            ]
-        }
+        # Default JSON (version 2)
         with open("geosite-ads-all.json", "w", encoding="utf-8") as f:
-            json.dump(singbox_json_default, f, indent=2)
+            json.dump({"version": 2, "rules": [{"domain_suffix": sorted_domains}]}, f, indent=2)
 
         # ============================================================
         # 4. geosite.dat (v2fly protobuf — HANYA untuk Xray/V2Ray)
-        #    TIDAK kompatibel dengan sing-box 1.12+
         # ============================================================
         def encode_varint(value):
             if value == 0:
@@ -214,9 +207,7 @@ jobs:
         def make_message_field(field_number, message_bytes):
             return encode_varint((field_number << 3) | 2) + encode_varint(len(message_bytes)) + message_bytes
 
-        # Domain.Type: Plain=0, Regex=1, Domain=2 (suffix), Full=3
         DOMAIN_TYPE_SUFFIX = 2
-
         domains_data = bytearray()
         for domain in sorted_domains:
             domain_msg = make_int_field(1, DOMAIN_TYPE_SUFFIX) + make_string_field(2, domain)
@@ -229,77 +220,75 @@ jobs:
             f.write(geosite_data)
 
         # ============================================================
-        # 5. README dengan info kompatibilitas lengkap
+        # 5. README.md
         # ============================================================
-        waktu_sekarang = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
+        waktu_sekarang = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
         with open("README.md", "w", encoding="utf-8") as f:
             f.write("# Combined Ads, Trackers, & Reject Rules\n\n")
             f.write("### 📊 Statistik Pembaruan Terakhir\n")
             f.write(f"* **Waktu Pembaruan:** {waktu_sekarang} UTC\n")
-            f.write(f"* **Total Domain Unik:** **{total_unik} domain**\n\n")
+            f.write(f"* **Total Domain Unik:** **{total_unik} domain**\n")
+            f.write(f"* **Aturan Path Diabaikan (Anti False-Positive):** {total_path_skipped} baris\n\n")
 
             f.write("### 📁 File Output & Kompatibilitas\n\n")
-
             f.write("#### Sing-box Rule-Set (.srs)\n")
-            f.write("| File | Rule-Set Version | Kompatibel dengan |\n")
+            f.write("| File | Compiler Version | Kompatibel dengan |\n")
             f.write("|---|---|---|\n")
-            f.write("| `geosite-ads-all-v1.srs` | 1 | sing-box 1.8.0 – 1.9.x |\n")
-            f.write("| `geosite-ads-all-v2.srs` | 2 | sing-box 1.10.x |\n")
-            f.write("| `geosite-ads-all-v3.srs` | 3 | sing-box 1.11.x |\n")
-            f.write("| `geosite-ads-all-v4.srs` | 4 | sing-box 1.11.0+ (1.12.x, 1.13.x, 1.14.x) |\n")
-            f.write("| `geosite-ads-all.srs` | default (latest compiler) | sing-box versi terbaru |\n\n")
-
-            f.write("#### Sing-box Rule-Set Source (.json)\n")
-            f.write("Tersedia `geosite-ads-all-v1.json` s/d `geosite-ads-all-v4.json` "
-                    "dan `geosite-ads-all.json` (default version 2).\n\n")
+            f.write("| `geosite-ads-all-v1.srs` | sing-box 1.9.7 (SRS v1) | sing-box 1.8.0 – 1.9.x |\n")
+            f.write("| `geosite-ads-all-v2.srs` | sing-box 1.10.7 (SRS v2) | sing-box 1.10.x |\n")
+            f.write("| `geosite-ads-all.srs` | sing-box latest | sing-box 1.11.0+ / 1.12+ / terbaru |\n\n")
 
             f.write("#### Format Lain\n")
             f.write("| File | Format | Untuk |\n")
             f.write("|---|---|---|\n")
-            f.write("| `geosite.dat` | Protobuf v2fly (tag `ads`) | Xray, V2Ray, V2RayNG **saja** — tidak untuk sing-box 1.12+ |\n")
+            f.write("| `geosite.dat` | Protobuf v2fly (tag `ads`) | Xray, V2Ray, V2RayNG |\n")
             f.write("| `oisd_big.yaml` | Clash Modern (`+.domain`) | OpenClash, Clash Meta, Mihomo |\n")
             f.write("| `oisd_big_old.yaml` | Clash Legacy (`DOMAIN-SUFFIX`) | Clash lama |\n")
-            f.write("| `rules.txt` | Plain Text | Universal |\n\n")
-
-            f.write("### 💡 Rekomendasi per Aplikasi\n")
-            f.write("* **NekoBox 1.4.x (sing-box 1.12+)** → gunakan `geosite-ads-all-v4.srs` via Custom Config `rule_set`\n")
-            f.write("* **NekoBox lama (sing-box 1.8–1.9)** → gunakan `geosite-ads-all-v1.srs`\n")
-            f.write("* **SFA / SFI / SFM (sing-box)** → gunakan `geosite-ads-all-v2.srs` atau `.srs` default\n")
-            f.write("* **V2RayNG / Xray** → gunakan `geosite.dat` (tag `ads`)\n")
-            f.write("* **OpenClash / Clash Meta** → gunakan `oisd_big.yaml`\n")
+            f.write("| `rules.txt` | Plain Text | AdGuard Home / Pi-hole / Dnsmasq |\n\n")
 
         print(f"✅ Pemrosesan Python Selesai ({total_unik} domain unik bersih)")
         EOF
         python run.py
-        rm run.py
+        rm -f run.py
 
-    - name: Download Sing-box Binary & Compile to .srs (Multi-Version)
+    - name: Download Sing-box Binaries & Compile .srs (True Multi-Version)
       run: |
-        API_URL="https://api.github.com/repos/SagerNet/sing-box/releases/latest"
-        DOWNLOAD_URL=$(curl -s $API_URL | jq -r '.assets[] | select(.name | test("linux-amd64\\.tar\\.gz$")) | .browser_download_url')
+        compile_srs() {
+          local TAG=$1
+          local JSON_FILE=$2
+          local OUT_FILE=$3
 
-        echo "📥 Mengunduh sing-box dari $DOWNLOAD_URL"
-        curl -L -o sing-box.tar.gz "$DOWNLOAD_URL"
-        tar -xzf sing-box.tar.gz
-        find . -name "sing-box" -type f -executable | head -1 | xargs -I {} mv {} ./sing-box
-        chmod +x ./sing-box
+          if [ "$TAG" == "latest" ]; then
+            API_URL="https://api.github.com/repos/SagerNet/sing-box/releases/latest"
+          else
+            API_URL="https://api.github.com/repos/SagerNet/sing-box/releases/tags/${TAG}"
+          fi
 
-        echo "🔎 Versi compiler:"
-        ./sing-box version
+          DOWNLOAD_URL=$(curl -s "$API_URL" | jq -r '.assets[] | select(.name | test("linux-amd64\\.tar\\.gz$")) | .browser_download_url')
+          echo "📥 Mengunduh sing-box ($TAG) dari $DOWNLOAD_URL"
 
-        echo "⚙️ Mengompilasi rule-set untuk berbagai versi..."
-        for v in 1 2 3 4; do
-          echo "   -> Version ${v}"
-          ./sing-box rule-set compile --output "geosite-ads-all-v${v}.srs" "geosite-ads-all-v${v}.json"
-        done
+          mkdir -p tmp_sb
+          curl -sL -o tmp_sb/sb.tar.gz "$DOWNLOAD_URL"
+          tar -xzf tmp_sb/sb.tar.gz -C tmp_sb
+          SB_BIN=$(find tmp_sb -name "sing-box" -type f | head -1)
+          chmod +x "$SB_BIN"
 
-        echo "   -> Default (latest)"
-        ./sing-box rule-set compile --output "geosite-ads-all.srs" "geosite-ads-all.json"
+          echo "⚙️ Mengompilasi $OUT_FILE menggunakan $($SB_BIN version | head -1)"
+          "$SB_BIN" rule-set compile --output "$OUT_FILE" "$JSON_FILE"
+          rm -rf tmp_sb
+        }
+
+        # 1. Compile SRS v1 (untuk sing-box 1.8.x - 1.9.x)
+        compile_srs "v1.9.7" "geosite-ads-all-v1.json" "geosite-ads-all-v1.srs"
+
+        # 2. Compile SRS v2 (untuk sing-box 1.10.x)
+        compile_srs "v1.10.7" "geosite-ads-all-v2.json" "geosite-ads-all-v2.srs"
+
+        # 3. Compile SRS Latest (untuk sing-box 1.11.0+ / terbaru)
+        compile_srs "latest" "geosite-ads-all.json" "geosite-ads-all.srs"
 
         echo "📦 Hasil kompilasi:"
         ls -lh geosite-ads-all*.srs
-
-        rm -rf sing-box sing-box.tar.gz
 
     - name: Commit and Push Changes
       run: |
@@ -307,13 +296,13 @@ jobs:
         git config --local user.name "github-actions[bot]"
         git add oisd_big.yaml oisd_big_old.yaml geosite.dat rules.txt \
                 geosite-ads-all.json geosite-ads-all.srs \
-                geosite-ads-all-v1.json geosite-ads-all-v2.json geosite-ads-all-v3.json geosite-ads-all-v4.json \
-                geosite-ads-all-v1.srs geosite-ads-all-v2.srs geosite-ads-all-v3.srs geosite-ads-all-v4.srs \
+                geosite-ads-all-v1.json geosite-ads-all-v2.json geosite-ads-all-v3.json \
+                geosite-ads-all-v1.srs geosite-ads-all-v2.srs \
                 README.md
 
         if git diff --staged --quiet; then
           echo "Tidak ada perubahan data."
         else
-          git commit -m "Auto Update Rules: All Formats Clean (v1-v4 SRS) - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
+          git commit -m "Auto Update Rules: Clean Domain-Only & Multi-Version SRS - $(date -u +'%Y-%m-%d %H:%M:%S UTC')"
           git push origin HEAD
         fi
