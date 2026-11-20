@@ -1,9 +1,9 @@
 # Combined Ads, Trackers, & Reject Rules
 
 ### 📊 Statistik Pembaruan Terakhir
-* **Waktu Pembaruan:** 2026-11-20 09:50:27 UTC
-* **Total Domain Unik:** **244871 domain**
-* **Aturan Path Diabaikan (Anti False-Positive):** 20748 baris
+* **Waktu Pembaruan:** 2026-11-20 12:43:29 UTC
+* **Total Domain Unik:** **383068 domain**
+* **Aturan Path Diabaikan (Anti False-Positive):** 20752 baris
 
 ### 📁 File Output & Kompatibilitas
 
@@ -12,7 +12,7 @@
 |---|---|---|
 | `geosite-ads-all-v1.srs` | sing-box 1.9.7 (SRS v1) | sing-box 1.8.0 – 1.9.x |
 | `geosite-ads-all-v2.srs` | sing-box 1.10.7 (SRS v2) | sing-box 1.10.x |
-| `geosite-ads-all.srs` | sing-box latest | sing-box 1.11.0+ / 1.12+ / terbaru |
+| `geosite-ads-all.srs` | sing-box 1.11.5 (SRS v3) | sing-box 1.11.0+ / 1.12+ / terbaru |
 
 #### Format Lain
 | File | Format | Untuk |
