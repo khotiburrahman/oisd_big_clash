@@ -36,6 +36,7 @@ jobs:
 
         urls = [
             "https://filters.adtidy.org/extension/chromium/filters/2.txt",         # AdGuard Base
+"https://raw.githubusercontent.com/hagezi/dns-blocklists/refs/heads/main/adblock/pro.txt", # hagezi pro
             "https://filters.adtidy.org/extension/chromium/filters/11.txt",        # Android Tracking
             "https://easylist.to/easylist/easylist.txt",                           # EasyList
             "https://big.oisd.nl/domainswild",                                     # OISD Big (wildcard *.domain)
