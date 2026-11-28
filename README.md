@@ -1,9 +1,9 @@
 # Combined Ads, Trackers, & Reject Rules
 
 ### 📊 Statistik Pembaruan Terakhir
-* **Waktu Pembaruan:** 2026-11-27 20:42:24 UTC
-* **Total Domain Unik:** **379321 domain**
-* **Aturan Path Diabaikan (Anti False-Positive):** 20824 baris
+* **Waktu Pembaruan:** 2026-11-28 06:25:48 UTC
+* **Total Domain Unik:** **378275 domain**
+* **Aturan Path Diabaikan (Anti False-Positive):** 20827 baris
 
 ### 📁 File Output & Kompatibilitas
 
